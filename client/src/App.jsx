@@ -1,3 +1,4 @@
+import "./app.scss";
 import Home from "./components/Home";
 
 const App = () => {
