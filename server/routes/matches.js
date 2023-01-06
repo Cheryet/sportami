@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-//Routes for /api/matches
+//
+// ~~ Routes for /api/matches ~~
+//
 
 router.get("/", (req, res) => {
   //DB Query goes here
@@ -9,13 +11,13 @@ router.get("/", (req, res) => {
 
 router
   .route("/:id")
-  .get("/:id", (req, res) => {
+  .get((req, res) => {
     //DB Query goes here
   })
-  .put("/:id", (req, res) => {
+  .put((req, res) => {
     //DB Query goes here
   })
-  .post("/:id", (req, res) => {
+  .post((req, res) => {
     //DB Query goes here
   });
 
