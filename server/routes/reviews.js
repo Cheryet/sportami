@@ -5,17 +5,17 @@ const router = express.Router();
 //Routes for /api/reviews
 //
 
-router.get("/", (res, req) => {
+router.get("/", (req, res) => {
   //DB Query goes here
   res.send("Hello from Reviews URL 👋🏼");
 });
 
 router
   .route("/:id")
-  .get((res, req) => {
+  .get((req, res) => {
     //DB Query goes here
   })
-  .post((res, req) => {
+  .post((req, res) => {
     //DB Query goes here
   });
 
