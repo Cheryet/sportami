@@ -25,7 +25,9 @@ app.use("/api/players", playerRouter);
 const player_sportsRouter = require("./routes/player_sports");
 app.use("/api/player_sports", player_sportsRouter);
 
-// ~ Matches Routes ~
+//Matches Routes
+const matchesRoutes = require("./routes/matches");
+app.use("/api/matches", matchesRoutes);
 
 // ~ Reviews Routes ~
 
