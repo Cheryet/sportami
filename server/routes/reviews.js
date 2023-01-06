@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
+//
 //Routes for /api/reviews
+//
 
 router.get("/", (res, req) => {
   //DB Query goes here
@@ -9,10 +11,10 @@ router.get("/", (res, req) => {
 
 router
   .route("/:id")
-  .get("/:id", (res, req) => {
+  .get((res, req) => {
     //DB Query goes here
   })
-  .post("/id", (res, req) => {
+  .post((res, req) => {
     //DB Query goes here
   });
 
