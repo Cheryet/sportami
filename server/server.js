@@ -10,28 +10,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(morgan("combined"));
 
-//Routes
-
-//Home Route
-app.get("/", (req, res) => {
-  res.send("Hello from server 👋🏼");
-});
-
-//Player Routes
+// Routers
 const playerRouter = require("./routes/players");
-app.use("/api/players", playerRouter);
-
-//Player_sports Routes
 const player_sportsRouter = require("./routes/player_sports");
-app.use("/api/player_sports", player_sportsRouter);
-
-//Matches Routes
 const matchesRoutes = require("./routes/matches");
-app.use("/api/matches", matchesRoutes);
-
-//Reviews Routes
 const reviewRouter = require("./routes/reviews");
+
+// Routes
+app.use("/api/players", playerRouter);
+app.use("/api/player_sports", player_sportsRouter);
+app.use("/api/matches", matchesRoutes);
 app.use("/api/reviews", reviewRouter);
+
+// Home Route
+app.get("/", (req, res) => {
+  res.send("Hello from server 👋🏼!");
+});
 
 // Listening Port for Server
 app.listen(port, () => {
