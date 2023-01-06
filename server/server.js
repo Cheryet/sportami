@@ -29,7 +29,9 @@ app.use("/api/player_sports", player_sportsRouter);
 const matchesRoutes = require("./routes/matches");
 app.use("/api/matches", matchesRoutes);
 
-// ~ Reviews Routes ~
+//Reviews Routes
+const reviewRouter = require("./routes/reviews");
+app.use("/api/reviews", reviewRouter);
 
 // Listening Port for Server
 app.listen(port, () => {
