@@ -7,6 +7,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   //DB Query goes here
+  res.send("Hello from Matches URL 👋🏼");
 });
 
 router
