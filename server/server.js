@@ -11,10 +11,25 @@ app.use(bodyParser.json());
 app.use(morgan("combined"));
 
 //Routes
+
+//Home Route
 app.get("/", (req, res) => {
   res.send("Hello from server 👋🏼");
 });
 
+//Player Routes
+const playerRouter = require("./routes/players");
+app.use("/api/players", playerRouter);
+
+//Player_sports Routes
+const player_sportsRouter = require("./routes/player_sports");
+app.use("/api/player_sports", player_sportsRouter);
+
+// ~ Matches Routes ~
+
+// ~ Reviews Routes ~
+
+// Listening Port for Server
 app.listen(port, () => {
   console.log(`Server listening on port ${port} 👋🏼`);
 });
