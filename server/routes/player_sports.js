@@ -1,16 +1,21 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/olayer_", (req, res) => {
+//
+// ~~ Routes for /api/player_sports ~~
+//
+
+router.get("/", (req, res) => {
   //DB Query goes here
 });
 
-router.get("/:id", (req, res) => {
-  //DB Query goes here
-});
-
-router.post("/:id", (req, res) => {
-  //DB Query goes here
-});
+router
+  .route("/:id")
+  .get((req, res) => {
+    //DB Query goes here
+  })
+  .post((req, res) => {
+    //DB Query goes here
+  });
 
 module.exports = router;
