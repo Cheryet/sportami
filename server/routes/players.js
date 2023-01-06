@@ -1,15 +1,20 @@
-app.get("/api/players", (req, res) => {
+const express = require("express");
+const router = express.Router();
+
+router.get("/", (req, res) => {
   //DB Query goes here
 });
 
-app.get("/api/players/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   //DB Query goes here
 });
 
-app.put("/api/players/:id", (req, res) => {
+router.put("/:id", (req, res) => {
   //DB Query goes here
 });
 
-app.post("/api/players", (req, res) => {
+router.post("/", (req, res) => {
   //DB Query goes here
 });
+
+module.exports = router;
