@@ -1,11 +1,11 @@
 // Express Server
 const express = require("express");
+const morgan = require("morgan");
 const bodyParser = require("body-parser");
+const port = process.env.PORT || 8001;
+const app = express();
 
 // Middleware
-const app = express();
-const port = process.env.PORT || 8001;
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(morgan("combined"));
