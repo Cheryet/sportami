@@ -1,5 +1,6 @@
 INSERT INTO users ( 
   username,
+  first_name,
   password,
   email,
   bio,
@@ -9,6 +10,7 @@ INSERT INTO users (
   profile_pic) 
   VALUES (
     'SportyDuder',
+    'Ophelia',
     '12345',
     '123@gmail.com',
     'Just a cool kid who is bad at sports',
@@ -20,6 +22,7 @@ INSERT INTO users (
 
 INSERT INTO users ( 
   username,
+  first_name,
   password,
   email,
   bio,
@@ -29,6 +32,7 @@ INSERT INTO users (
   profile_pic) 
   VALUES (
     'Less Sporty Person',
+    'Terrance',
     '12345',
     '1234@gmail.com',
     'Just a cool kid who is badder at sports',
