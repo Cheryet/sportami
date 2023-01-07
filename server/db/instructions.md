@@ -1,4 +1,4 @@
-1: In the sportami folder in your terminal type 
+1: In the sportami folder in your terminal type
 
 psql
 
@@ -6,7 +6,7 @@ psql
 
 CREATE DATABASE sportami;
 \c sportami;
-\i server/db/schema/schema.sql
+\i server/db/schema/create.sql
 \i server/db/seeds/users.sql
 \i server/db/seeds/sports.sql
 \i server/db/seeds/users_sports.sql
