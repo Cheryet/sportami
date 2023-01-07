@@ -1,1 +1,42 @@
+.profile-photo {
+  display: flex;
+  flex-direction: column;
+  margin: 22vh 10vw;
+  margin-top: 10vh;
+  margin-bottom: 0;
+  align-content: flex-end;
 
+  .information {
+    font-size: xx-large;
+    margin-top: 10vh;
+
+    h4 {
+      margin-bottom: 5vh;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border: 2px solid black;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+    }
+
+    input {
+      margin-bottom: 3vh;
+    }
+
+    button {
+      background-color: var(--main-colour);
+      border-radius: 6px;
+      height: 35px;
+      border: none;
+      font-size: 20px;
+      font-weight: 200;
+      cursor: pointer;
+    }
+  }
+}
