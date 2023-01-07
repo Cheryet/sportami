@@ -6,7 +6,6 @@ const db = require("../db/queries/reviews_queries");
 // ~~ Routes for /api/reviews ~~
 //
 
-//This route gets all reviews
 router.get("/", (req, res) => {
   db.getAllReviews().then((data) => {
     res.send(data);
@@ -15,13 +14,11 @@ router.get("/", (req, res) => {
 
 router
   .route("/:id")
-  //This route gets a single review based on ID
   .get((req, res) => {
     db.getReviewsById(req.params.id).then((data) => {
       res.send(data);
     });
   })
-  //This route creates a new Review
   .post((req, res) => {
     db.addReview(
       req.params.user_sport_id,
