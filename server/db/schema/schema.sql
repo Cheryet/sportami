@@ -12,9 +12,8 @@ CREATE TABLE users (
     bio TEXT,
     location VARCHAR(255),
     gender VARCHAR(255),
+    age INTEGER,
     profile_pic VARCHAR(255),
-    
-    
 );
 
 CREATE TABLE sports (

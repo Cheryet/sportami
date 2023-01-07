@@ -1,0 +1,2 @@
+INSERT INTO matches ( challenger_id, opponent_id, location_id, sport_id, accepted) VALUES (1, 2, 1, 1, TRUE);
+INSERT INTO matches ( challenger_id, opponent_id, location_id, sport_id, accepted) VALUES (1, 2, 1, 2, FALSE);
