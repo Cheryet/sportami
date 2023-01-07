@@ -1,0 +1,76 @@
+$mainColor: rgb(242, 172, 22);
+
+.temp-nav {
+  position: fixed;
+  top: 0 ;
+  border: 1px solid white;
+  height: 37vh;
+  width: 100%;
+  
+  p {
+    text-align: center;
+  }
+}
+
+// Component styling starts here
+
+.profile-container {
+  //border: 1px solid black;
+  padding-top: 37vh;
+  margin: 1rem;
+
+  .top-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+
+    .profile-photo {
+      //border: 1px solid green;
+      height: 140px;
+      width: 140px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 4px;
+      }
+      
+    }
+
+    .user-info {
+      //border: 1px solid blue;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      p {
+        font-size: 0.85rem;
+        margin: 0.3rem 0rem;
+        padding: 0.3rem;
+        border-radius: 4px;
+        background: rgba(0, 0, 0, 0.091);
+      }
+    }
+  }
+
+  .middle-container {
+    margin-top: 1.5rem;
+
+    .location-gender-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .location-container{
+        display: flex;
+        flex-direction: row;
+
+        .pin-icon {
+          margin-right: 0.3rem;
+        }
+      }
+    }
+  }
+}
+
