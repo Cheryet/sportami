@@ -20,9 +20,13 @@ router
     });
   })
   .post((req, res) => {
-    db.addUserSports(user_id, sport_id, self_skill).then(() => {
-      res.status(204);
-    });
+    db.addUserSports(user_id, sport_id, self_skill)
+      .then(() => {
+        res.status(204);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   });
 
 module.exports = router;
