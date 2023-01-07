@@ -1,0 +1,47 @@
+.email-name {
+  display: flex;
+  flex-direction: column;
+  margin: 22vh 10vw;
+  margin-top: 10vh;
+  align-content: flex-end;
+
+  .information {
+    font-size: xx-large;
+    margin-top: 10vh;
+
+    h4 {
+      margin-bottom: 10vh;
+    }
+
+    .name {
+      height: 30px;
+      text-indent: 6px;
+      margin-bottom: 2vh;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgb(103, 103, 103);
+      width: 100%;
+
+      &::placeholder {
+        color: rgb(130, 130, 130);
+        font-weight: 300;
+        font-size: 15px;
+      }
+    }
+
+    .email {
+      @extend .name;
+      margin-bottom: 5vh;
+    }
+  }
+  button {
+    margin-bottom: 2.5vh;
+    background-color: var(--main-colour);
+    border-radius: 6px;
+    height: 35px;
+    border: none;
+    font-size: 20px;
+    font-weight: 200;
+    cursor: pointer;
+  }
+}
