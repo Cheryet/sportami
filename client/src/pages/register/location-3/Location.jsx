@@ -6,7 +6,7 @@ function Location() {
     <div className="location">
       <ArrowBackIos />
       <h4>My nearest location to play is</h4>
-      <select required name="cities" id="cities">
+      <select required name="cities">
         <option value="" selected disabled>
           Select an option
         </option>
