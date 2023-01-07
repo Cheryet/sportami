@@ -5,15 +5,15 @@ const router = express.Router();
 // ~~ Routes for /api/sports ~~
 //
 
-router.get("/", (req, res) => {
-  //DB Query goes here
-  res.send("Hello from Sports URL 👋🏼");
-});
+module.exports = db => {
+  router.get("/sports", (request, response) => {
+    db.query(`
+      SELECT * FROM sports
+    `)
+      .then(({ rows: sports }) => {
+        response.json(sports);
+      });
+  });
 
-router
-  .route("/:id")
-  .get((req, res) => {
-    //DB Query goes here
-  })
-
-module.exports = router;
+  return router;
+};
