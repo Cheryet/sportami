@@ -1,8 +1,10 @@
 import "./emailName.scss";
+import { ArrowBackIos } from "@material-ui/icons";
 
 function EmailName() {
   return (
     <div className="email-name">
+      <ArrowBackIos />
       <form className="information">
         <h4>My name and email are</h4>
         <input className="name" type="name" placeholder="First Name" />

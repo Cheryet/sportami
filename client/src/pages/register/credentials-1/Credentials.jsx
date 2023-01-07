@@ -1,8 +1,10 @@
 import "./credentials.scss";
+import { ArrowBackIos } from "@material-ui/icons";
 
 function Credentials() {
   return (
     <div className="credentials">
+      <ArrowBackIos />
       <form className="information">
         <h4>My username and password are</h4>
         <input className="username" type="username" placeholder="Username" />
