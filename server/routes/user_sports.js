@@ -1,22 +1,28 @@
 const express = require("express");
 const router = express.Router();
+const db = require("../db/queries/users_sports");
 
 //
-// ~~ Routes for /api/player_sports ~~
+// ~~ Routes for /api/user_sports ~~
 //
 
 router.get("/", (req, res) => {
-  //DB Query goes here
-  res.send("Hello from User_Sports URL 👋🏼");
+  db.getAllUserSports().then((data) => {
+    res.send(data);
+  });
 });
 
 router
   .route("/:id")
   .get((req, res) => {
-    //DB Query goes here
+    db.getUserSportsById(req.params.id).then((data) => {
+      res.send(data);
+    });
   })
   .post((req, res) => {
-    //DB Query goes here
+    db.addUserSports(user_id, sport_id, self_skill).then(() => {
+      res.status(204);
+    });
   });
 
 module.exports = router;
