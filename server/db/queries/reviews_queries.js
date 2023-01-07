@@ -39,7 +39,10 @@ const addReview = (user_sport_id, winner_id, sportsmanship_rating) => {
 };
 
 const setWinner = (winner_id, review_id) => {
-  return pool.query(`UPDATE reviews SET $1 WHERE = $2`, [winner_id, review_id]);
+  return pool.query(`UPDATE reviews SET winner_id = $1 WHERE = $2`, [
+    winner_id,
+    review_id,
+  ]);
 };
 
 module.exports = {
