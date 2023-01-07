@@ -19,4 +19,12 @@ const addUser = (username, password, email, bio, location, gender, age, profile_
   );
 };
 
-module.exports = {getAllUsers, getUserById, addUser}
+const updateLocation = (location, user_id) => {
+  return db.query(
+    "UPDATE users SET location = $1 WHERE id = $2",
+    [location, user_id]
+  );
+};
+
+
+module.exports = {getAllUsers, getUserById, addUser, updateLocation}
