@@ -61,9 +61,9 @@ const Profile = () => {
           <div className="skill-level-container">
             <p className="skill-level-title">SKILL LEVEL</p>
             <ul className="skill-level-list">
+              <li className="skill-level-item">Amatuer</li>
               <li className="skill-level-item">Casual</li>
-              <li className="skill-level-item">Casual</li>
-              <li className="skill-level-item">Casual</li>
+              <li className="skill-level-item">Pro</li>
             </ul>
           </div>
         </div>
