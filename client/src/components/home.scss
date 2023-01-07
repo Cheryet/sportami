@@ -1,0 +1,90 @@
+* {
+  background: linear-gradient(
+    to bottom,
+    var(--main-colour) 37%,
+    rgba(255, 255, 255, 0) 37% 100%
+  );
+  background-attachment: fixed;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+
+  .logo {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 300;
+  }
+
+  .slogan {
+    padding-left: 4vw;
+    margin-bottom: 13vh;
+    font-weight: 300;
+  }
+
+  .login {
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+
+    .username {
+      margin-bottom: 5vh;
+      border-radius: 6px;
+      height: 30px;
+      background-color: rgba(181, 179, 179, 0.109);
+      border-width: 1px;
+      border-color: rgba(181, 179, 179, 0.361);
+      text-indent: 6px;
+
+      &::placeholder {
+        color: rgb(130, 130, 130);
+        font-weight: 300;
+        font-size: 15px;
+      }
+    }
+
+    .password {
+      margin-bottom: 5vh;
+      border-radius: 6px;
+      height: 30px;
+      background-color: rgba(181, 179, 179, 0.109);
+      border-width: 1px;
+      border-color: rgba(181, 179, 179, 0.361);
+      text-indent: 6px;
+
+      &::placeholder {
+        color: rgb(130, 130, 130);
+        font-weight: 300;
+        font-size: 15px;
+      }
+    }
+
+    button {
+      margin-bottom: 2.5vh;
+      background-color: var(--main-colour);
+      border-radius: 6px;
+      height: 35px;
+      border: none;
+      font-size: 20px;
+      font-weight: 200;
+      cursor: pointer;
+      z-index: -1;
+      position: relative;
+      z-index: 999;
+    }
+
+    span {
+      font-weight: 300;
+
+      b {
+        cursor: pointer;
+        color: rgb(83, 155, 255);
+        text-decoration-line: underline;
+      }
+    }
+  }
+}
