@@ -23,7 +23,7 @@
   .slogan {
     padding-left: 4vw;
     margin-bottom: 13vh;
-    font-weight: 200;
+    font-weight: 300;
   }
 
   .login {
@@ -82,6 +82,8 @@
 
       b {
         cursor: pointer;
+        color: rgb(83, 155, 255);
+        text-decoration-line: underline;
       }
     }
   }
