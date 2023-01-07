@@ -7,6 +7,8 @@ const pool = new Pool({
   database: process.env.DB_NAME || "sportami",
 });
 
+// Queries for Matches Table
+
 const getAllMatches = () => {
   return pool
     .query(`SELECT * FROM matches`)
@@ -29,7 +31,21 @@ const getMatchById = (id) => {
     });
 };
 
+const addMatch = (
+  challenger_id,
+  opponent_id,
+  location_id,
+  sport_id,
+  accepted
+) => {
+  return pool.query(
+    `INSERT INTO matches (challenger_id, opponent_id, location_id, sport_id, accepted) VALUES ($1, $2, $3, $4, $5)`,
+    [challenger_id, opponent_id, location_id, sport_id, accepted]
+  );
+};
+
 module.exports = {
   getAllMatches,
   getMatchById,
+  addMatch,
 };
