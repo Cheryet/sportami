@@ -46,7 +46,7 @@
       text-indent: 6px;
 
       &::placeholder {
-        color: rgb(130, 130, 130);
+        color: var(--placeholder-colour);
         font-weight: 300;
         font-size: 15px;
       }
@@ -62,7 +62,7 @@
       text-indent: 6px;
 
       &::placeholder {
-        color: rgb(130, 130, 130);
+        color: var(--placeholder-colour);
         font-weight: 300;
         font-size: 15px;
       }
