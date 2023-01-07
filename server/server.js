@@ -11,14 +11,14 @@ app.use(bodyParser.json());
 app.use(morgan("combined"));
 
 // Routers
-const playerRouter = require("./routes/players");
-const player_sportsRouter = require("./routes/player_sports");
+const userRouter = require("./routes/users");
+const user_sportsRouter = require("./routes/user_sports");
 const matchesRoutes = require("./routes/matches");
 const reviewRouter = require("./routes/reviews");
 
 // Routes
-app.use("/api/players", playerRouter);
-app.use("/api/player_sports", player_sportsRouter);
+app.use("/api/users", userRouter);
+app.use("/api/user_sports", user_sportsRouter);
 app.use("/api/matches", matchesRoutes);
 app.use("/api/reviews", reviewRouter);
 

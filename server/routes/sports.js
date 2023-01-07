@@ -2,12 +2,12 @@ const express = require("express");
 const router = express.Router();
 
 //
-// ~~ Routes for /api/player_sports ~~
+// ~~ Routes for /api/sports ~~
 //
 
 router.get("/", (req, res) => {
   //DB Query goes here
-  res.send("Hello from Player_Sports URL 👋🏼");
+  res.send("Hello from Sports URL 👋🏼");
 });
 
 router
@@ -15,8 +15,5 @@ router
   .get((req, res) => {
     //DB Query goes here
   })
-  .post((req, res) => {
-    //DB Query goes here
-  });
 
 module.exports = router;
