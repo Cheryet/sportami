@@ -16,7 +16,7 @@ $mainColor: rgb(242, 172, 22);
 
 .profile-container {
   //border: 1px solid black;
-  padding-top: 37vh;
+  padding-top: 38vh;
   margin: 1rem;
 
   .top-container {
@@ -27,8 +27,8 @@ $mainColor: rgb(242, 172, 22);
 
     .profile-photo {
       //border: 1px solid green;
-      height: 140px;
-      width: 140px;
+      height: 145px;
+      width: 145px;
 
       img {
         height: 100%;
@@ -44,12 +44,34 @@ $mainColor: rgb(242, 172, 22);
       flex-direction: column;
       justify-content: center;
 
-      p {
-        font-size: 0.85rem;
-        margin: 0.3rem 0rem;
-        padding: 0.3rem;
-        border-radius: 4px;
-        background: rgba(0, 0, 0, 0.091);
+      .name-title, .username-title, .email-title {
+        font-size: 0.5rem;
+        letter-spacing: 0.2rem;
+        
+        
+      }
+
+      .name-title {
+        margin-top: 0.5rem;
+      }
+
+      hr {
+        margin-bottom: 0.4rem;
+        height: 1px;
+        width: 100px;
+        background-color: $mainColor;
+        border: none;
+      }
+
+
+      .item{
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+        margin-left: 0.5rem;
+      }
+
+      .email {
+        margin-bottom: 0;
       }
     }
   }
@@ -67,9 +89,100 @@ $mainColor: rgb(242, 172, 22);
         flex-direction: row;
 
         .pin-icon {
-          margin-right: 0.3rem;
+          margin-right: 0.5rem;
+          color: $mainColor;
+        }
+
+        .down-icon {
+          font-size: 1.1rem;
+          margin-left: 0.5rem;
+          margin-top: 0.2rem;
         }
       }
+
+      .gender {
+        margin-right: 0.5rem
+      }
+    }
+
+    .bio-container {
+      margin-top: 2rem;
+      text-align: left;
+
+      .about-me {
+        text-align: center;
+        letter-spacing: 0.2rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .bottom-container{
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+    .sports-container {
+     
+    
+      .sports-title {
+        margin-left: 1.7rem;
+        letter-spacing: 0.2rem;
+      }
+
+      .sports-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding-left: 2.5rem;
+        margin-top: 1rem;
+
+        .sports-item {
+          margin: 0.2rem;
+        }
+
+      }
+    }
+
+    .skill-level-container {
+     
+    
+      .skill-level-title {
+        letter-spacing: 0.2rem;
+      }
+
+      .skill-level-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0;
+        margin-top: 1rem;
+
+        .skill-level-item {
+          margin: 0.2rem;
+        }
+
+      }
+    }
+  }
+
+  .button-container {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+
+    button {
+      border: 1px solid $mainColor;
+      border-radius: 4px;
+      height: 2rem;
+      width: 50%;
+      background-color: $mainColor;
+      
     }
   }
 }
