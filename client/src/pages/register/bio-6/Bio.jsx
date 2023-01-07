@@ -18,7 +18,7 @@ function Bio() {
         />
         <p>{count} / 300</p>
       </form>
-      <button className="continue-button">Continue</button>
+      <button className="finish-button">Finish</button>
     </div>
   );
 }
