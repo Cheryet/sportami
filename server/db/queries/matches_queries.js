@@ -9,6 +9,7 @@ const pool = new Pool({
 
 // Queries for Matches Table
 
+//This query gets all matches
 const getAllMatches = () => {
   return pool
     .query(`SELECT * FROM matches`)
@@ -20,6 +21,7 @@ const getAllMatches = () => {
     });
 };
 
+//This query is for getting a single match based on ID
 const getMatchById = (id) => {
   return pool
     .query(`SELECT * FROM matches WHERE id = $1`, [id])
@@ -31,6 +33,7 @@ const getMatchById = (id) => {
     });
 };
 
+//This query is for creating a match
 const addMatch = (
   challenger_id,
   opponent_id,
@@ -44,8 +47,18 @@ const addMatch = (
   );
 };
 
+//This query is for when a match is accepted
+const setOpponent = (opponent_id, match_id) => {
+  return pool.query(
+    `UPDATE matches SET opponent_id = $1, accepted = true WHERE id = $2`,
+    [opponent_id, match_id]
+  );
+};
+
+//Exports
 module.exports = {
   getAllMatches,
   getMatchById,
   addMatch,
+  setOpponent,
 };
