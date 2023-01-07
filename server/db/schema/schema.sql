@@ -13,19 +13,19 @@ CREATE TABLE users (
     location VARCHAR(255),
     gender VARCHAR(255),
     age INTEGER,
-    profile_pic VARCHAR(255),
+    profile_pic VARCHAR(255)
 );
 
 CREATE TABLE sports (
     id SERIAL PRIMARY KEY NOT NULL,
-    name VARCHAR(255) NOT NULL UNIQUE,
+    name VARCHAR(255) NOT NULL UNIQUE
 );
 
 CREATE TABLE users_sports (
     id SERIAL PRIMARY KEY NOT NULL,
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     sport_id INTEGER REFERENCES sports(id) ON DELETE CASCADE,
-    self_skill VARCHAR(255),
+    self_skill VARCHAR(255)
 );
 
 CREATE TABLE matches (
