@@ -7,6 +7,9 @@ import BirthGender from "./pages/register/birthGender-4/BirthGender";
 import ProfilePhoto from "./pages/register/profilePhoto-5/ProfilePhoto";
 import Bio from "./pages/register/bio-6/Bio";
 
+import userAppData from "./hooks/userAppData";
+
+
 const App = () => {
   return <ProfilePhoto />;
 };
