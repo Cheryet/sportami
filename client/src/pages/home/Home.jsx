@@ -2,6 +2,7 @@ import React from "react";
 import "./home.scss";
 import { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [email, setEmail] = useState("");
@@ -18,9 +19,6 @@ function Home() {
     } catch (e) {
       console.error(e);
     }
-
-    // 123@gmail.com
-    // 12345
   };
 
   return (
@@ -43,9 +41,11 @@ function Home() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></input>
-          <button className="login-button">Login</button>
+          <button type="submit" className="login-button">
+            Login
+          </button>
           <span>
-            New to Sportami? <b>Sign up now.</b>
+            New to Sportami? <Link to={`register`}>Sign up now.</Link>
           </span>
         </form>
       </div>
