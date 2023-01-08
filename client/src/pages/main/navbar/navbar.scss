@@ -10,13 +10,16 @@ $mainColor: rgb(242, 172, 22);
   height: 37vh;
   width: 100%;
   border: 1px solid black;
+  position: fixed;
+  top: 0;
 
   .top-container {
     //border: 1px solid blue;
-    margin: 1rem;
+    padding: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: whitesmoke;
 
     .title {
       letter-spacing: 0.2rem;
