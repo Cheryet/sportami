@@ -6,9 +6,9 @@ const Navbar = (props) => {
     <>
       <div className="navbar-container">
         <div className="top-container">
-          <div className="title">
-            <p>SPORTAMI</p>
-            <p>Turn an ami into an enemy</p>
+          <div className="title-container">
+            <p className="title">SPORTAMI</p>
+            <p className="slogan">Turn an ami into an enemy</p>
           </div>
           <button>Logout</button>
         </div>
