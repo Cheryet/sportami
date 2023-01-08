@@ -16,6 +16,7 @@ const sportsRouter = require("./routes/sports");
 const user_sportsRouter = require("./routes/user_sports");
 const matchesRoutes = require("./routes/matches");
 const reviewRouter = require("./routes/reviews");
+const loginRouter = require("./routes/login");
 
 // Routes
 app.use("/api/users", userRouter);
@@ -23,6 +24,7 @@ app.use("/api/sports", sportsRouter);
 app.use("/api/user_sports", user_sportsRouter);
 app.use("/api/matches", matchesRoutes);
 app.use("/api/reviews", reviewRouter);
+app.use("/api/login", loginRouter);
 
 // Home Route
 app.get("/", (req, res) => {
