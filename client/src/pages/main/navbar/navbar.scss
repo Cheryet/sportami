@@ -1,5 +1,11 @@
 $mainColor: rgb(242, 172, 22);
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .navbar-container {
   height: 37vh;
   width: 100%;
@@ -24,6 +30,47 @@ $mainColor: rgb(242, 172, 22);
       height: 2rem;
       width: 25%;
       background-color: $mainColor;
+    }
+  }
+
+  .middle-container {
+    background-color: $mainColor;
+    padding: 1rem;
+    border-top: 2px solid rgb(0, 0, 0);
+
+    .welcome-message {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .best-sport {
+      text-align: center;
+      margin-top: 0.6rem;
+    }
+
+    span {
+      font-size: 0.9rem;
+      letter-spacing: 0.2rem;
+    }
+  }
+
+  .navbar {
+    background-color: $mainColor;
+
+    .nav-list {
+      padding-top: 1.1rem;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      list-style: none;
+
+      .nav-item {
+        font-size: 0.65rem;
+        letter-spacing: 0.13rem;
+        text-decoration: none;
+        padding: 0.5rem;
+      }
     }
   }
 }
