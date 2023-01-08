@@ -21,7 +21,7 @@ const Main = () => {
   return (
     <>
       <Navbar changeMode={changeMode} />
-      <Profile />
+      {mode === PROFILE && <Profile />}
     </>
   );
 };
