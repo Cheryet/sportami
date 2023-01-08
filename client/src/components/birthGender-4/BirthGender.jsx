@@ -35,6 +35,7 @@ function BirthGender({ setCurrent, birthGender, setBirthGender }) {
         <select
           required
           name="gender"
+          value={gender}
           onChange={(e) => setGender(e.target.value)}
         >
           <option value="" selected disabled>
