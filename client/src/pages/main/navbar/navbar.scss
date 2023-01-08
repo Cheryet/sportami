@@ -1,5 +1,29 @@
+$mainColor: rgb(242, 172, 22);
+
 .navbar-container {
   height: 37vh;
   width: 100%;
   border: 1px solid black;
+
+  .top-container {
+    //border: 1px solid blue;
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .title {
+      letter-spacing: 0.2rem;
+      font-size: 1.7rem;
+    }
+
+    button {
+      align-self: center;
+      border: 2px solid rgba(0, 0, 0, 0.59);
+      border-radius: 4px;
+      height: 2rem;
+      width: 25%;
+      background-color: $mainColor;
+    }
+  }
 }
