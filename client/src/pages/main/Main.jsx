@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./navbar/Navbar";
 //import userAppData from "./hooks/userAppData";
 import { useState } from "react";
+import Profile from "./profile/Profile";
 
 const Main = () => {
   //Modes for Main Page
@@ -20,7 +21,7 @@ const Main = () => {
   return (
     <>
       <Navbar changeMode={changeMode} />
-      <h1>Hello from main Page</h1>
+      <Profile />
     </>
   );
 };
