@@ -13,7 +13,10 @@ const Navbar = (props) => {
           <button>Logout</button>
         </div>
         <div className="middle-container">
-          <p>Welcome, Corbin!</p>
+          <p className="welcome-message">Welcome, Corbin!</p>
+          <p className="best-sport">
+            <span>TOP SPORT:</span>&nbsp;Golf
+          </p>
         </div>
         <nav className="navbar">
           <ul className="nav-list">
