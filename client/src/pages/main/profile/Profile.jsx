@@ -25,12 +25,6 @@ const Profile = () => {
 
   return (
     <>
-      {/* This is the temp nav bar for design only */}
-      <div className="temp-nav">
-        <p>this is the temp nav bar</p>
-      </div>
-
-      {/* The component start here */}
       <div className="profile-container">
         <div className="top-container">
           <div className="profile-photo">
