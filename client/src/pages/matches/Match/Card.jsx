@@ -2,8 +2,6 @@ import React from "react";
 import "./styles.scss";
 import Button from "../Button";
 
-import { Avatar } from '@mui/material';
-
 export default function MatchesListItem(props) {
 
   let testMatchData = [
@@ -17,30 +15,34 @@ export default function MatchesListItem(props) {
   const testOpponent = {"id":2,"username":"testDude","first_name":"Terrance","email":"1234@gmail.com","location":"Vancouver","profile_pic":"https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW4lMjBmYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80"}
   
   const matchesItem = testMatchData.map((match) => {
+
+    const message = `User ${testOpponent.username} has challenged you to ${match.sport_name}!`
     return (
-      <main class="match" key={match.id}>
-        <section class="opponent">
-          <Avatar
-            alt="Opponent"
+      <main className="match" key={match.id}>
+        <section className="match__opponent">
+          <section className="match__opponent-profile">
+            <img
+            className="match__opponent-profile-pic"
             src={testOpponent.profile_pic}
-            sx={{ width: "2rem", height: "2rem" }}
+            alt={testOpponent.username}
             />
-          <p>
-           User {testOpponent.username} has challenged you to {match.sport_name}!
-          </p>
+          </section>
+          <section className="match__opponent-message">
+           {message}
+          </section>
         </section>
         
-        <section className="buttons">
-          <Button>Accept</Button>
-          <Button>Decline</Button>
+        <section className="match__buttons">
+          <Button accept >Accept</Button>
+          <Button decline >Decline</Button>
         </section>
       </main>
     )}
   );
 
   return (
-    <ul>
+    <section>
       {matchesItem}
-    </ul>
+    </section>
   );
 };

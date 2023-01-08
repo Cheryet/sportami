@@ -1,25 +1,45 @@
 .match {
-  width: 60vh;
+  width: 80vw;
   height: 15vh;
   margin-bottom: 1rem;
   margin-top: 1rem;
-  padding: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 0.5rem;
   border-radius: 1rem;
   background-color: #f2ac16;
-  color: "white";
-  display: "flex";
-  align-items: "center";
+  display: flex;
+  flex-direction: column;
+
  
-  .opponent{
-   display: "flex";
-   flex-direction: row;
- 
+  &__opponent{
+    display: flex;
+    align-items: center;
+    flex-flow:row;
+    justify-content: space-between;
+    height: 8vh;
+    margin: 0.5vh;
+
+    &-profile{
+      height: 10vh;
+      width: 20vw;
+      
+
+      &-pic{
+        height: 8vh;
+        border-radius: 50%;
+      }
+    }
+
+    &-message{
+      height: 10vh;
+      width: 60vw;
+    }
   }
  
-  .buttons{
-   display: "flex";
-   flex-direction: row;
-   justify-content: space-between;
-   height: 15vh;
+  &__buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
   }
  }
