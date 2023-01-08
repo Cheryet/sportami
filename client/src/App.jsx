@@ -9,7 +9,7 @@ import ProfilePhoto from "./pages/register/profilePhoto-5/ProfilePhoto";
 import Bio from "./pages/register/bio-6/Bio";
 
 import userAppData from "./hooks/userAppData";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +31,15 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <BrowserRouter>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/main" element={<Main />} />
+      </BrowserRouter>
+    </>
+  );
 };
 
 export default App;
