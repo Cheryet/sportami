@@ -1,6 +1,6 @@
 import React from "react";
-import "./matches.scss";
-import Button from "./Button";
+import "./styles.scss";
+import Button from "../Button";
 
 import { Avatar } from '@mui/material';
 
@@ -18,8 +18,8 @@ export default function MatchesListItem(props) {
   
   const matchesItem = testMatchData.map((match) => {
     return (
-      <div class="matchitem" key={match.id}>
-        <div class="opponent">
+      <main class="match" key={match.id}>
+        <section class="opponent">
           <Avatar
             alt="Opponent"
             src={testOpponent.profile_pic}
@@ -28,13 +28,13 @@ export default function MatchesListItem(props) {
           <p>
            User {testOpponent.username} has challenged you to {match.sport_name}!
           </p>
-        </div>
+        </section>
         
-        <div className="buttons">
+        <section className="buttons">
           <Button>Accept</Button>
           <Button>Decline</Button>
-        </div>
-      </div>
+        </section>
+      </main>
     )}
   );
 
