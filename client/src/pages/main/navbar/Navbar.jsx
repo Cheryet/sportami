@@ -15,6 +15,13 @@ const Navbar = (props) => {
         <div className="middle-container">
           <p>Welcome, Corbin!</p>
         </div>
+        <nav className="navbar">
+          <ul className="nav-list">
+            <li className="nav-item">MY PROFILE</li>
+            <li className="nav-item">FIND OPPONENT</li>
+            <li className="nav-item">NOTIFICATIONS</li>
+          </ul>
+        </nav>
       </div>
     </>
   );
