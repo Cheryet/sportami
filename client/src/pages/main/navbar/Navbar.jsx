@@ -1,4 +1,5 @@
 import React from "react";
+import * as TbIcon from "react-icons/tb";
 import "./navbar.scss";
 
 const Navbar = (props) => {
@@ -16,6 +17,10 @@ const Navbar = (props) => {
           <p className="welcome-message">Welcome, Corbin!</p>
           <p className="best-sport">
             <span>TOP SPORT:</span>&nbsp;Golf
+          </p>
+          <p className="location">
+            <TbIcon.TbMapPin className="pin-icon" />
+            Lethrbidge
           </p>
         </div>
         <nav className="navbar">
