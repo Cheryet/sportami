@@ -12,8 +12,6 @@ const sports = [
   "Pickleball",
 ];
 
-const skills = ["Beginner", "Intermediate", "Advanced"];
-
 function Sports({ setCurrent }) {
   const [skillsList, setSkillsList] = useState([{ sport: "", skill: "" }]);
 

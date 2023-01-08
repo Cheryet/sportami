@@ -14,6 +14,7 @@ const userParams = {
   password: "",
   firstName: "",
   email: "",
+  location: "",
   // add more params as you incorporate more register pages
 };
 
@@ -44,6 +45,8 @@ function Register() {
     password: "",
   });
   const [emailName, setEmailName] = useState({ firstName: "", email: "" });
+  const [location, setLocation] = useState({ location: "" });
+
   const [allUserParams, setAllUserParams] = useState(userParams);
   useEffect(() => {
     setAllUserParams({
@@ -51,10 +54,11 @@ function Register() {
       password: credentials["password"],
       firstName: emailName["firstName"],
       email: emailName["email"],
+      location: location["location"],
       // add more params as you incorporate more
     });
     console.log(allUserParams);
-  }, [credentials, emailName, setCredentials, setEmailName]);
+  }, [credentials, emailName, location]);
 
   // const postUserDetails = () => {
   //  axios.post(/user, allUserParams)
@@ -78,12 +82,18 @@ function Register() {
           setEmailName={setEmailName}
         />
       )}
-      {current === "Location" && <Location setCurrent={setCurrent} />}
+      {current === "Location" && (
+        <Location
+          setCurrent={setCurrent}
+          location={location}
+          setLocation={setLocation}
+        />
+      )}
       {current === "BirthGender" && <BirthGender setCurrent={setCurrent} />}
       {current === "ProfilePhoto" && <ProfilePhoto setCurrent={setCurrent} />}
       {current === "Sports" && <Sports setCurrent={setCurrent} />}
       {current === "Bio" && <Bio setCurrent={setCurrent} />}
-      {/* refer below on how to post it */}
+      {/* // refer below on how to post it */}
       {/*  {current === "Last" && <Last postDetails={() => postUserDetails)} />} */}
     </>
   );

@@ -1,8 +1,16 @@
 import "./location.scss";
 import { ArrowBackIos } from "@material-ui/icons";
+import React, { useState } from "react";
 
-function Location({ setCurrent }) {
+const cities = ["Lethbridge", "Oakville", "Vancouver"];
+
+function Location({ setCurrent, location, setLocation }) {
+  const [city, setCity] = useState(location["location"]);
+
   const handleContinue = () => {
+    setLocation({
+      location: city,
+    });
     setCurrent("BirthGender");
   };
 
@@ -13,13 +21,17 @@ function Location({ setCurrent }) {
     <div className="location">
       <ArrowBackIos onClick={handleBack} />
       <h4>My nearest location to play is</h4>
-      <select required name="cities">
+      <select required name="cities" onChange={(e) => setCity(e.target.value)}>
         <option value="" selected disabled>
           Select an option
         </option>
-        <option value="one">City 1</option>
-        <option value="two">City 2</option>
-        <option value="three">City 3</option>
+        {cities.map((city) => {
+          return (
+            <option key={city} value={city}>
+              {city}
+            </option>
+          );
+        })}
       </select>
       <button className="continue-button" onClick={handleContinue}>
         Continue
@@ -29,23 +41,3 @@ function Location({ setCurrent }) {
 }
 
 export default Location;
-
-/** Simple dropdown useState
- * import { useState } from 'react';
-
-function Dropdown() {
-  const [value, setValue] = useState('');
-
-  function handleChange(event) {
-    setValue(event.target.value);
-  }
-
-  return (
-    <select value={value} onChange={handleChange}>
-      <option value="option1">Option 1</option>
-      <option value="option2">Option 2</option>
-      <option value="option3">Option 3</option>
-    </select>
-  );
-}
- */
