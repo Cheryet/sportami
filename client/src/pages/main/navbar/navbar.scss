@@ -35,7 +35,7 @@ $mainColor: rgb(242, 172, 22);
 
   .middle-container {
     background-color: $mainColor;
-    padding: 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
     border-top: 2px solid rgb(0, 0, 0);
 
     .welcome-message {
@@ -52,14 +52,21 @@ $mainColor: rgb(242, 172, 22);
       font-size: 0.9rem;
       letter-spacing: 0.2rem;
     }
+
+    .location {
+      padding-top: 0.6rem;
+      text-align: center;
+    }
+
+    .pin-icon {
+      margin-right: 0.5rem;
+    }
   }
 
   .navbar {
     background-color: $mainColor;
 
     .nav-list {
-      padding-top: 1.1rem;
-
       display: flex;
       flex-direction: row;
       justify-content: space-between;
