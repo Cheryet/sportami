@@ -9,9 +9,8 @@ import Bio from "./pages/register/bio-6/Bio";
 
 import userAppData from "./hooks/userAppData";
 
-
 const App = () => {
-  return <ProfilePhoto />;
+  return <Home />;
 };
 
 export default App;

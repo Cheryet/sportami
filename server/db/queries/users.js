@@ -1,10 +1,10 @@
 const db = require('../index.js');
 
 const getAllUsers = () => {
-	return db.query("SELECT * FROM users;").then(data => {
-		return data.rows;
-	})
-}
+  return db.query("SELECT * FROM users;").then(data => {
+    return data.rows;
+  });
+};
 
 const getUserById = (id) => {
   return db.query("SELECT * FROM users WHERE id = $1", [id]).then((data) => {
@@ -26,5 +26,12 @@ const updateLocation = (location, user_id) => {
   );
 };
 
+const getUserByLoginDetails = (username = "NULL", email = "NULL", password) => {
+  return db.query("SELECT * FROM users WHERE (username = $1 OR email = $2) AND password = $3", [username, email, password])
+    .then((data) => {
+      return data.rows;
+    });
+};
 
-module.exports = {getAllUsers, getUserById, addUser, updateLocation}
+
+module.exports = { getAllUsers, getUserById, addUser, updateLocation };
