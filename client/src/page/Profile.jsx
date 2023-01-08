@@ -1,9 +1,28 @@
 import React from "react";
+import { useState } from "react";
 import "./profile.scss";
 import * as TbIcon from "react-icons/tb";
 import * as MdIcon from "react-icons/md";
 
 const Profile = () => {
+  //Location Dropdown state
+  const [dropdown, setDropdown] = useState(false);
+  //Location state
+  const [location, setLocation] = useState("Lethbridge");
+
+  //Show/Hide location dropdown
+  const showDropdown = () => {
+    setDropdown(!dropdown);
+  };
+
+  //Set Location
+  const changeLocation = (city) => {
+    setLocation(city);
+    setDropdown(false);
+  };
+
+  //Set location
+
   return (
     <>
       {/* This is the temp nav bar for design only */}
@@ -34,15 +53,43 @@ const Profile = () => {
         </div>
         <div className="middle-container">
           <div className="location-gender-container">
-            <div className="location-container">
+            <div className="location-container" onClick={showDropdown}>
               <TbIcon.TbMapPin className="pin-icon" />
-              <p>Lethbridge</p>
+              <p>{location}</p>
               <MdIcon.MdOutlineKeyboardArrowDown className="down-icon" />
             </div>
             <p className="gender">Male</p>
           </div>
+          <div
+            className={
+              dropdown ? "location-dropdown active" : "location-dropdown"
+            }
+          >
+            <button
+              onClick={() => {
+                changeLocation("Lethbridge");
+              }}
+            >
+              Lethbridge
+            </button>
+            <button
+              onClick={() => {
+                changeLocation("Oakville");
+              }}
+            >
+              OakVille
+            </button>
+            <button
+              onClick={() => {
+                changeLocation("Vancouver");
+              }}
+            >
+              Vancouver
+            </button>
+          </div>
           <div className="bio-container">
             <p className="about-me">ABOUT ME</p>
+            <hr />
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -52,6 +99,7 @@ const Profile = () => {
         <div className="bottom-container">
           <div className="sports-container">
             <p className="sports-title">SPORTS</p>
+            <hr />
             <ul className="sports-list">
               <li className="sports-item">Tennis</li>
               <li className="sports-item">Golf</li>
@@ -60,6 +108,7 @@ const Profile = () => {
           </div>
           <div className="skill-level-container">
             <p className="skill-level-title">SKILL LEVEL</p>
+            <hr />
             <ul className="skill-level-list">
               <li className="skill-level-item">Amatuer</li>
               <li className="skill-level-item">Casual</li>
