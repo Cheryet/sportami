@@ -1,4 +1,9 @@
-* {
+.background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: linear-gradient(
     to bottom,
     var(--main-colour) 37%,
@@ -41,7 +46,7 @@
       text-indent: 6px;
 
       &::placeholder {
-        color: rgb(130, 130, 130);
+        color: var(--placeholder-colour);
         font-weight: 300;
         font-size: 15px;
       }
@@ -57,7 +62,7 @@
       text-indent: 6px;
 
       &::placeholder {
-        color: rgb(130, 130, 130);
+        color: var(--placeholder-colour);
         font-weight: 300;
         font-size: 15px;
       }
@@ -72,9 +77,6 @@
       font-size: 20px;
       font-weight: 200;
       cursor: pointer;
-      z-index: -1;
-      position: relative;
-      z-index: 999;
     }
 
     span {
