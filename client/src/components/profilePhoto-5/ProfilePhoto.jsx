@@ -2,10 +2,14 @@ import "./profilePhoto.scss";
 import { ArrowBackIos } from "@material-ui/icons";
 import { useState } from "react";
 
-function ProfilePhoto({ setCurrent }) {
-  const [selectedImage, setSelectedImage] = useState(null);
+function ProfilePhoto({ setCurrent, profilePhoto, setProfilePhoto }) {
+  const [selectedImage, setSelectedImage] = useState("");
+  const [fileUrl, setFileUrl] = useState("");
 
   const handleContinue = () => {
+    setProfilePhoto({
+      profile_pic: selectedImage,
+    });
     setCurrent("Sports");
   };
 

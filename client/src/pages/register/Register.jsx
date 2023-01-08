@@ -17,6 +17,7 @@ const userParams = {
   location: "",
   age: "",
   gender: "",
+  profile_pic: "",
   // add more params as you incorporate more register pages
 };
 
@@ -49,6 +50,7 @@ function Register() {
   const [emailName, setEmailName] = useState({ firstName: "", email: "" });
   const [location, setLocation] = useState({ location: "" });
   const [birthGender, setBirthGender] = useState({ age: "", gender: "" });
+  const [profilePhoto, setProfilePhoto] = useState({ profile_pic: "" });
 
   const [allUserParams, setAllUserParams] = useState(userParams);
   useEffect(() => {
@@ -60,10 +62,11 @@ function Register() {
       location: location["location"],
       age: birthGender["age"],
       gender: birthGender["gender"],
+      profile_pic: profilePhoto["profile_pic"],
       // add more params as you incorporate more
     });
     console.log(allUserParams);
-  }, [credentials, emailName, location, birthGender]);
+  }, [credentials, emailName, location, birthGender, profilePhoto]);
 
   // const postUserDetails = () => {
   //  axios.post(/user, allUserParams)
@@ -101,7 +104,13 @@ function Register() {
           setBirthGender={setBirthGender}
         />
       )}
-      {current === "ProfilePhoto" && <ProfilePhoto setCurrent={setCurrent} />}
+      {current === "ProfilePhoto" && (
+        <ProfilePhoto
+          setCurrent={setCurrent}
+          profilePhoto={profilePhoto}
+          setProfilePhoto={setProfilePhoto}
+        />
+      )}
       {current === "Sports" && <Sports setCurrent={setCurrent} />}
       {current === "Bio" && <Bio setCurrent={setCurrent} />}
       {/* // refer below on how to post it */}
