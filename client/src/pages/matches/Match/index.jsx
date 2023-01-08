@@ -4,7 +4,6 @@ import "./styles.scss";
 // import useVisualMode from "/hooks/useVisualMode";
 
 import Accepted from "./Accepted";
-import Card from "./Card";
 import Confirm from "./Confirm";
 import Pending from "./Pending";
 
@@ -30,7 +29,7 @@ export default function Match(props) {
 
    return (
     <>
-      <Card />
+      <Accepted />
       {/* {mode === PENDING && (
         <Pending
           challenger={props.match.challenger}
