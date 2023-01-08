@@ -1,0 +1,45 @@
+*{
+  border: 1px solid purple
+}
+
+.matches {
+  margin-top: 38vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+  .header{
+    font-size: 2rem;
+    margin-left: 4rem;
+  }
+}
+
+
+.matchitem {
+ width: 60vh;
+ height: 15vh;
+ margin-bottom: 1rem;
+ margin-top: 1rem;
+ margin-left: 2.5rem;
+ margin-right: 1rem;
+ padding: 1rem;
+ border-radius: 1rem;
+ background-color: #f2ac16;
+ color: "white";
+ display: "flex";
+ align-items: "center";
+
+ .opponent{
+  display: "flex";
+  flex-direction: row;
+
+ }
+
+ .buttons{
+  display: "flex";
+  flex-direction: row;
+  justify-content: space-between;
+  height: 15vh;
+  margin-left: 3rem;
+ }
+}
