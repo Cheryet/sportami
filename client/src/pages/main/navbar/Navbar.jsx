@@ -1,9 +1,21 @@
 import React from "react";
+import "./navbar.scss";
 
 const Navbar = (props) => {
   return (
     <>
-      <h1>This is the nav bar</h1>
+      <div className="navbar-container">
+        <div className="top-container">
+          <div className="title">
+            <p>SPORTAMI</p>
+            <p>Turn an ami into an enemy</p>
+          </div>
+          <button>Logout</button>
+        </div>
+        <div className="middle-container">
+          <p>Welcome, Corbin!</p>
+        </div>
+      </div>
     </>
   );
 };
