@@ -2,12 +2,20 @@ import "./profilePhoto.scss";
 import { ArrowBackIos } from "@material-ui/icons";
 import { useState } from "react";
 
-function ProfilePhoto() {
+function ProfilePhoto({ setCurrent }) {
   const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleContinue = () => {
+    setCurrent("Sports");
+  };
+
+  const handleBack = () => {
+    setCurrent("BirthGender");
+  };
 
   return (
     <div className="profile-photo">
-      <ArrowBackIos />
+      <ArrowBackIos onClick={handleBack} />
       <form className="information">
         <h4>Add a profile photo</h4>
         {selectedImage && (
@@ -29,7 +37,9 @@ function ProfilePhoto() {
           }}
         />
       </form>
-      <button className="continue-button">Continue</button>
+      <button className="continue-button" onClick={handleContinue}>
+        Continue
+      </button>
     </div>
   );
 }
