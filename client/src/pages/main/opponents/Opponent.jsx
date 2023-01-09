@@ -5,13 +5,6 @@ import * as AiIcon from "react-icons/ai";
 function Opponents() {
   return (
     <div className="opponents">
-      <section className="description-container">
-        <p className="text">Start searching for opponents in your area!</p>
-        <button className="filter-button">FILTER</button>
-      </section>
-
-      <hr />
-
       <div className="profile-photo-container">
         <img
           src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
@@ -31,32 +24,46 @@ function Opponents() {
       <div className="sportsmanship">
         <p className="sportsmanship-text">
           SPORTSMANSHIP&nbsp;
-          <AiIcon.AiFillStar className="star-icon one" />
-          <AiIcon.AiFillStar className="star-icon two" />
-          <AiIcon.AiFillStar className="star-icon three" />
-          <AiIcon.AiFillStar className="star-icon four" />
-          <AiIcon.AiFillStar className="star-icon five" />
+          <AiIcon.AiFillStar className="star-icon-sportsmanship one" />
+          <AiIcon.AiFillStar className="star-icon-sportsmanship two" />
+          <AiIcon.AiFillStar className="star-icon-sportsmanship three" />
+          <AiIcon.AiFillStar className="star-icon-sportsmanship four" />
+          <AiIcon.AiFillStar className="star-icon-sportsmanship five" />
         </p>
       </div>
 
       <div className="bio">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-        laborum labore culpa aliquid officiis laboriosam hic et amet recusandae
-        nam ea numquam officia quia tempora aliquam dignissimos reiciendis, in
-        minima.
+        laborum labore culpa aliquid officiis laboriosam hic et amet.
       </div>
       <section className="sports-skills">
         <div className="sports">
-          <div className="sport">Tennis</div>
-          <div className="sport">Ping Pong</div>
+          <p className="sport-title">SPORTS</p>
+          <p className="sport-ammount">2/6 Sports</p>
+          <div className="sport-item-list">
+            <p className="sport-item">Tennis</p>
+            <p className="sport-item">Ping Pong</p>
+          </div>
         </div>
         <div className="skill-level">
-          <div className="skill-accuracy">SKILL ACCURACY</div>
-          <div className="sport">Amateur</div>
-          <div className="sport">Professional</div>
+          <p className="skill-title">SKILL LEVEL</p>
+          <p className="skill-accuracy">
+            SKILL ACCURACY&nbsp;
+            <AiIcon.AiFillStar className="star-icon-accuracy one" />
+            <AiIcon.AiFillStar className="star-icon-accuracy two" />
+            <AiIcon.AiFillStar className="star-icon-accuracy three" />
+            <AiIcon.AiFillStar className="star-icon-accuracy four" />
+            <AiIcon.AiFillStar className="star-icon-accuracy five" />
+          </p>
+          <div className="sport-item-list">
+            <p className="sport-item">Amateur</p>
+            <p className="sport-item">Professional</p>
+          </div>
         </div>
       </section>
-      <button className="challenge">Challenge Opponent</button>
+      <div className="button-container">
+        <button className="challenge">CHALLENGE OPPONENT</button>
+      </div>
     </div>
   );
 }
