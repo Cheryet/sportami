@@ -3,12 +3,12 @@ import { ArrowBackIos } from "@material-ui/icons";
 import React, { useState } from "react";
 
 function EmailName({ setCurrent, emailName, setEmailName }) {
-  const [firstName, setFirstName] = useState(emailName["firstName"]);
+  const [firstName, setFirstName] = useState(emailName["first_name"]);
   const [email, setEmail] = useState(emailName["email"]);
 
   const handleContinue = () => {
     setEmailName({
-      firstName: firstName,
+      first_name: firstName,
       email: email,
     });
     setCurrent("Location");

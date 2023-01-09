@@ -26,7 +26,7 @@ function Sports({ setCurrent, sports, setSports }) {
   const addFields = () => {
     let object = {
       sport: "",
-      skill: "",
+      self_skill: "",
     };
 
     setSkillsList([...skillsList, object]);
@@ -83,9 +83,9 @@ function Sports({ setCurrent, sports, setSports }) {
               </select>
               <select
                 required
-                name="skill"
+                name="self_skill"
                 onChange={(event) => handleFormChange(event, index)}
-                value={form.skill}
+                value={form.self_skill}
               >
                 <option value="" selected disabled>
                   Select a skill

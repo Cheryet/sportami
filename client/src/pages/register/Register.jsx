@@ -12,7 +12,7 @@ import Bio from "../../components/bio-7/Bio";
 const userParams = {
   username: "",
   password: "",
-  firstName: "",
+  first_name: "",
   email: "",
   location: "",
   age: "",
@@ -23,36 +23,16 @@ const userParams = {
 };
 
 function Register() {
-  // TODO list
-  // 1. add current state to each register page for moving from page to page
-  //    Steps:
-  //      i. pass in setCurrent to the register page component you are onboarding
-  //      ii. In the register sub component: Add onClick={handleContinue} to the continue button, onClick={handleBack} to the back button, handleContinue, handleBack functions,
-  //      iii. add a call in the handleContinue and handleBack functions to setCurrent to the respective page
-  //      iv. in Register.jsx add logic to the jsx such as: {current === "Location" && <Location setCurrent={setCurrent} />}
-  // 2. add userParams state to each page:
-  //    Steps:
-  //        0. Add your new params to the userParams const at the top of Register.jsx
-  //        i. create a use state here in Register.jsx for the params that the register page you are adding has (eg look at [credentials, setCredentials])
-  //        ii. add the state and setter (eg. credentials, setCredentials) to the function props {credentials, setCredentials}
-  //        iii. Add a useState for each input field you have -> look at credentials input field states username and password - make sure to set defaults based on the passed in state from Register.jsx (ie. credentials["username"])
-  //        iv. add value and onChange props to the input fields, if using other methods of input such as dropdown ask ChatGPT
-  //        v. in handleChange add a call to the setter you passed in with the child components state -> setCredentials(username: username) in this case setting username of parent to username of child
-  //        vi. in the useEffect of Register.jsx add the newly created params to the setAllUserParams call: if i add poop then add it too the bottom of setAllUserParams({username: username,..., poop: poop}) just follow whats alraedy there
-  //        vii. Add the new state to the dependency array of useEffect
-  //
-  //
-  //
   const [current, setCurrent] = useState("Credentials");
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
   });
-  const [emailName, setEmailName] = useState({ firstName: "", email: "" });
+  const [emailName, setEmailName] = useState({ first_name: "", email: "" });
   const [location, setLocation] = useState({ location: "" });
   const [birthGender, setBirthGender] = useState({ age: "", gender: "" });
   const [profilePhoto, setProfilePhoto] = useState({ profile_pic: "" });
-  const [sports, setSports] = useState([{ sport: "", skill: "" }]);
+  const [sports, setSports] = useState([{ sport: "", self_skill: "" }]);
   const [bio, setBio] = useState({ bio: "" });
 
   const [isPost, setIsPost] = useState(false);
@@ -62,7 +42,7 @@ function Register() {
     setAllUserParams({
       username: credentials["username"],
       password: credentials["password"],
-      firstName: emailName["firstName"],
+      first_name: emailName["first_name"],
       email: emailName["email"],
       location: location["location"],
       age: birthGender["age"],
