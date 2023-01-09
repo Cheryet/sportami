@@ -3,6 +3,11 @@ import * as TbIcon from "react-icons/tb";
 import "./navbar.scss";
 
 const Navbar = (props) => {
+  //Modes for Navbar
+  const PROFILE = "profile";
+  const OPPONENT = "opponent";
+  const NOTIFICATION = "notificaiton";
+
   return (
     <>
       <div className="navbar-container">
@@ -25,9 +30,36 @@ const Navbar = (props) => {
         </div>
         <nav className="navbar">
           <ul className="nav-list">
-            <li className="nav-item">MY PROFILE</li>
-            <li className="nav-item">FIND OPPONENT</li>
-            <li className="nav-item">NOTIFICATIONS</li>
+            <li
+              className={
+                props.mode === PROFILE ? "nav-item active" : "nav-item"
+              }
+              onClick={() => {
+                props.changeMode(PROFILE);
+              }}
+            >
+              MY PROFILE
+            </li>
+            <li
+              className={
+                props.mode === OPPONENT ? "nav-item active" : "nav-item"
+              }
+              onClick={() => {
+                props.changeMode(OPPONENT);
+              }}
+            >
+              FIND OPPONENT
+            </li>
+            <li
+              className={
+                props.mode === NOTIFICATION ? "nav-item active" : "nav-item"
+              }
+              onClick={() => {
+                props.changeMode(NOTIFICATION);
+              }}
+            >
+              NOTIFICATIONS
+            </li>
           </ul>
         </nav>
       </div>

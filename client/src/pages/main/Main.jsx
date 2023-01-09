@@ -20,8 +20,10 @@ const Main = () => {
 
   return (
     <>
-      <Navbar changeMode={changeMode} />
+      <Navbar changeMode={changeMode} mode={mode} />
       {mode === PROFILE && <Profile />}
+      {/* {mode === OPPONENT && < ~Find Opponent Component goes here~ /> */}
+      {/* {mode === OPPONENT && < ~Notification Component goes here~ /> */}
     </>
   );
 };
