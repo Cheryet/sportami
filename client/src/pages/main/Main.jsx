@@ -3,6 +3,7 @@ import Navbar from "./navbar/Navbar";
 //import userAppData from "./hooks/userAppData";
 import { useState } from "react";
 import Profile from "./profile/Profile";
+import OpponentList from "./opponents/OpponentList";
 
 const Main = () => {
   //Modes for Main Page
@@ -11,7 +12,7 @@ const Main = () => {
   const NOTIFICATION = "notificaiton";
 
   //State for mode
-  const [mode, setMode] = useState("profile");
+  const [mode, setMode] = useState(PROFILE);
 
   //Helper - Set mode fucntion
   const changeMode = (mode) => {
@@ -22,7 +23,7 @@ const Main = () => {
     <>
       <Navbar changeMode={changeMode} mode={mode} />
       {mode === PROFILE && <Profile />}
-      {/* {mode === OPPONENT && < ~Find Opponent Component goes here~ /> */}
+      {mode === OPPONENT && <OpponentList />}
       {/* {mode === OPPONENT && < ~Notification Component goes here~ /> */}
     </>
   );
