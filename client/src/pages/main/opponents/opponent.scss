@@ -3,39 +3,6 @@ $mainColor: rgb(242, 172, 22);
 //Component Styling starts here
 
 .opponents {
-  margin: 40vh 1rem 0 1rem;
-
-  .description-container {
-    //border: 1px solid black;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.094);
-    padding: 0.5rem;
-    border-radius: 5px;
-
-    p {
-      font-size: 0.85rem;
-    }
-
-    button {
-      align-self: center;
-      border: 2px solid rgba(0, 0, 0, 0.59);
-      border-radius: 4px;
-      background-color: $mainColor;
-      padding: 0.1rem 0.6rem;
-      font-size: 0.75rem;
-    }
-  }
-
-  hr {
-    width: 80%;
-    background-color: $mainColor;
-    margin: 1.2rem auto 0rem auto;
-    border: 0.75px solid $mainColor;
-  }
-
   .profile-photo-container {
     margin-top: 1.2rem;
     display: flex;
@@ -61,11 +28,69 @@ $mainColor: rgb(242, 172, 22);
   }
 
   .sportsmanship-text {
+    margin-top: 0.1rem;
     margin-right: 0.5rem;
     font-size: 0.55rem;
   }
 
-  .star-icon {
+  .star-icon-sportsmanship {
     color: $mainColor;
+  }
+
+  .bio {
+    margin-top: 1rem;
+  }
+
+  .sports-skills {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+    .sport-item-list {
+      margin-top: 1rem;
+    }
+
+    .sport-item {
+      margin-left: 1rem;
+    }
+
+    .sports {
+      .sport-title {
+        letter-spacing: 0.2rem;
+      }
+
+      .sport-ammount {
+        font-size: 0.55rem;
+      }
+    }
+
+    .skill-level {
+      .skill-title {
+        letter-spacing: 0.2rem;
+      }
+
+      .skill-accuracy {
+        font-size: 0.55rem;
+
+        .star-icon-accuracy {
+          color: $mainColor;
+        }
+      }
+    }
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+
+    .challenge {
+      margin: 3rem 0;
+      padding: 0.5rem 1.5rem;
+      border: 2px solid rgba(0, 0, 0, 0.59);
+      border-radius: 4px;
+      background-color: $mainColor;
+      letter-spacing: 0.2rem;
+    }
   }
 }
