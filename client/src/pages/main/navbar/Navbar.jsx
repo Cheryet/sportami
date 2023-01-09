@@ -31,7 +31,9 @@ const Navbar = (props) => {
         <nav className="navbar">
           <ul className="nav-list">
             <li
-              className="nav-item"
+              className={
+                props.mode === PROFILE ? "nav-item active" : "nav-item"
+              }
               onClick={() => {
                 props.changeMode(PROFILE);
               }}
@@ -39,7 +41,9 @@ const Navbar = (props) => {
               MY PROFILE
             </li>
             <li
-              className="nav-item"
+              className={
+                props.mode === OPPONENT ? "nav-item active" : "nav-item"
+              }
               onClick={() => {
                 props.changeMode(OPPONENT);
               }}
@@ -47,7 +51,9 @@ const Navbar = (props) => {
               FIND OPPONENT
             </li>
             <li
-              className="nav-item"
+              className={
+                props.mode === NOTIFICATION ? "nav-item active" : "nav-item"
+              }
               onClick={() => {
                 props.changeMode(NOTIFICATION);
               }}
