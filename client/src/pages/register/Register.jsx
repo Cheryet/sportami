@@ -71,7 +71,6 @@ function Register() {
       sports: sports,
       bio: bio["bio"],
     });
-    // console.log(allUserParams);
   }, [
     credentials,
     emailName,
@@ -134,7 +133,6 @@ function Register() {
           setBirthGender={setBirthGender}
         />
       )}
-      {/* figure this one out */}
       {current === "ProfilePhoto" && (
         <ProfilePhoto
           setCurrent={setCurrent}
