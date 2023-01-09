@@ -1,26 +1,25 @@
-import "./opponents.scss";
+import "./opponent.scss";
 
 function Opponents() {
   return (
     <div className="opponents">
-      <section className="nav-header">N A V - H E A D E R</section>
-      <section className="description">
+      <section className="description-container">
         <p className="text">
           Start searching for opponents in your area. Use the filter to further
           sort your results.
         </p>
-        <button className="filter-button"> F I L T E R</button>
+        <button className="filter-button">FILTER</button>
       </section>
-      <img
+      {/* <img
         src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
         alt="profile-photo"
         className="profile-photo"
-      />
+      /> */}
       <section className="personal-info">
         <p className="name-age">Alisa Vorotyntseva, 22</p>
         <p className="location">📍 Oakville, ON</p>
       </section>
-      <div className="sportsmanship">S P O R T S M A N S H I P: </div>
+      <div className="sportsmanship">SPORTSMANSHIP</div>
       <div className="bio">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
         laborum labore culpa aliquid officiis laboriosam hic et amet recusandae
@@ -33,7 +32,7 @@ function Opponents() {
           <div className="sport">Ping Pong</div>
         </div>
         <div className="skill-level">
-          <div className="skill-accuracy">S K I L L-A C C U R A C Y</div>
+          <div className="skill-accuracy">SKILL ACCURACY</div>
           <div className="sport">Amateur</div>
           <div className="sport">Professional</div>
         </div>
