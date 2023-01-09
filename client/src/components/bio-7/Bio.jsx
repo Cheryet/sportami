@@ -1,15 +1,20 @@
 import "./bio.scss";
 import { ArrowBackIos } from "@material-ui/icons";
 import TextareaAutosize from "react-textarea-autosize";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Bio({ setCurrent }) {
+function Bio({ setCurrent, bio, setBio, setIsPost }) {
   const [count, setCount] = useState(0);
+  const [text, setText] = useState(bio["text"]);
 
-  // const handleContinue = () => {
-  //   // handle continue will be an axios.post
-  // };
+  const handleFinish = () => {
+    setBio({
+      bio: text,
+    });
+    setIsPost(true);
+    // handle continue will be an axios.post
+  };
 
   const handleBack = () => {
     setCurrent("Sports");
@@ -23,13 +28,16 @@ function Bio({ setCurrent }) {
         <TextareaAutosize
           placeholder="About yourself"
           maxLength={300}
-          onChange={(event) => setCount(event.target.value.length)}
+          onChange={(event) => {
+            setCount(event.target.value.length);
+            setText(event.target.value);
+          }}
         />
         <p>{count} / 300</p>
       </form>
-      <Link to="/">
-        <button className="finish-button">Finish</button>
-      </Link>
+      <button className="finish-button" onClick={handleFinish}>
+        Finish
+      </button>
     </div>
   );
 }

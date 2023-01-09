@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./sports.scss";
 import { ArrowBackIos } from "@material-ui/icons";
-import { useState } from "react";
 
-const sports = [
+const sportsList = [
   "Golf",
   "Tennis",
   "Bowling",
@@ -12,24 +11,17 @@ const sports = [
   "Pickleball",
 ];
 
-function Sports({ setCurrent }) {
-  const [skillsList, setSkillsList] = useState([{ sport: "", skill: "" }]);
+function Sports({ setCurrent, sports, setSports }) {
+  const [skillsList, setSkillsList] = useState(sports);
 
   const handleFormChange = (event, index) => {
     let data = [...skillsList];
     data[index][event.target.name] = event.target.value;
-    // TODO: When implementing error handling:
-    // add a error popup when someone tries to select a sport they already selected
     setSkillsList(data);
   };
 
   // event.target.name === returns name of the category
   // event.target.value === returns the selected option
-
-  // const submit = (e) => {
-  //   e.preventDefault();
-  //   console.log(skillsList);
-  // };
 
   const addFields = () => {
     let object = {
@@ -47,6 +39,7 @@ function Sports({ setCurrent }) {
   };
 
   const handleContinue = () => {
+    setSports(skillsList);
     setCurrent("Bio");
   };
 
@@ -72,7 +65,7 @@ function Sports({ setCurrent }) {
                 <option value="" selected disabled>
                   Select a sport
                 </option>
-                {sports.map((sport) => {
+                {sportsList.map((sport) => {
                   if (skillsList.find((e) => e.sport === sport)) {
                     return (
                       <option key={sport} value={sport} selected disabled>

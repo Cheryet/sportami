@@ -18,7 +18,8 @@ const userParams = {
   age: "",
   gender: "",
   profile_pic: "",
-  // add more params as you incorporate more register pages
+  sports: [],
+  bio: "",
 };
 
 function Register() {
@@ -51,6 +52,10 @@ function Register() {
   const [location, setLocation] = useState({ location: "" });
   const [birthGender, setBirthGender] = useState({ age: "", gender: "" });
   const [profilePhoto, setProfilePhoto] = useState({ profile_pic: "" });
+  const [sports, setSports] = useState([{ sport: "", skill: "" }]);
+  const [bio, setBio] = useState({ bio: "" });
+
+  const [isPost, setIsPost] = useState(false);
 
   const [allUserParams, setAllUserParams] = useState(userParams);
   useEffect(() => {
@@ -63,10 +68,35 @@ function Register() {
       age: birthGender["age"],
       gender: birthGender["gender"],
       profile_pic: profilePhoto["profile_pic"],
-      // add more params as you incorporate more
+      sports: sports,
+      bio: bio["bio"],
     });
-    console.log(allUserParams);
-  }, [credentials, emailName, location, birthGender, profilePhoto]);
+    // console.log(allUserParams);
+  }, [
+    credentials,
+    emailName,
+    location,
+    birthGender,
+    profilePhoto,
+    sports,
+    bio,
+  ]);
+
+  useEffect(() => {
+    if (isPost) {
+      handlePost();
+    }
+  }, [isPost, allUserParams]);
+
+  const handlePost = () => {
+    const isNotNull = Object.values(allUserParams).every(
+      (param) => param !== null && param !== ""
+    );
+    if (isNotNull) {
+      console.log(allUserParams);
+      setIsPost(false);
+    }
+  };
 
   // const postUserDetails = () => {
   //  axios.post(/user, allUserParams)
@@ -104,6 +134,7 @@ function Register() {
           setBirthGender={setBirthGender}
         />
       )}
+      {/* figure this one out */}
       {current === "ProfilePhoto" && (
         <ProfilePhoto
           setCurrent={setCurrent}
@@ -111,8 +142,17 @@ function Register() {
           setProfilePhoto={setProfilePhoto}
         />
       )}
-      {current === "Sports" && <Sports setCurrent={setCurrent} />}
-      {current === "Bio" && <Bio setCurrent={setCurrent} />}
+      {current === "Sports" && (
+        <Sports setCurrent={setCurrent} sports={sports} setSports={setSports} />
+      )}
+      {current === "Bio" && (
+        <Bio
+          setCurrent={setCurrent}
+          bio={bio}
+          setBio={setBio}
+          setIsPost={setIsPost}
+        />
+      )}
       {/* // refer below on how to post it */}
       {/*  {current === "Last" && <Last postDetails={() => postUserDetails)} />} */}
     </>
