@@ -1,0 +1,93 @@
+$mainColor: rgb(242, 172, 22);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-container {
+  //border: 1px solid black;
+  height: 37vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+
+  .top-container {
+    //border: 1px solid blue;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: whitesmoke;
+
+    .title {
+      letter-spacing: 0.2rem;
+      font-size: 1.7rem;
+    }
+
+    button {
+      align-self: center;
+      border: 2px solid rgba(0, 0, 0, 0.59);
+      border-radius: 4px;
+      height: 2rem;
+      width: 25%;
+      background-color: $mainColor;
+    }
+  }
+
+  .middle-container {
+    background-color: $mainColor;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-top: 2px solid rgb(0, 0, 0);
+
+    .welcome-message {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .best-sport {
+      text-align: center;
+      margin-top: 0.6rem;
+    }
+
+    span {
+      font-size: 0.9rem;
+      letter-spacing: 0.2rem;
+    }
+
+    .location {
+      padding-top: 0.6rem;
+      text-align: center;
+    }
+
+    .pin-icon {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .navbar {
+    background-color: $mainColor;
+    border-bottom: 2px solid black;
+
+    .nav-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      list-style: none;
+
+      .nav-item {
+        font-size: 0.65rem;
+        letter-spacing: 0.13rem;
+        text-decoration: none;
+        padding: 0.5rem;
+        color: rgba(0, 0, 0, 0.63);
+
+        &.active {
+          color: black;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
