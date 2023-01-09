@@ -68,6 +68,7 @@ $mainColor: rgb(242, 172, 22);
 
   .navbar {
     background-color: $mainColor;
+    border-bottom: 2px solid black;
 
     .nav-list {
       display: flex;
