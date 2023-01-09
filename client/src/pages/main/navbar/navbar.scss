@@ -7,9 +7,9 @@ $mainColor: rgb(242, 172, 22);
 }
 
 .navbar-container {
+  //border: 1px solid black;
   height: 37vh;
   width: 100%;
-  border: 1px solid black;
   position: fixed;
   top: 0;
 
@@ -80,6 +80,12 @@ $mainColor: rgb(242, 172, 22);
         letter-spacing: 0.13rem;
         text-decoration: none;
         padding: 0.5rem;
+        color: rgba(0, 0, 0, 0.63);
+
+        &.active {
+          color: black;
+          font-weight: bold;
+        }
       }
     }
   }
