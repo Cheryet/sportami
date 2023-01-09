@@ -12,7 +12,7 @@ const Main = () => {
   const NOTIFICATION = "notificaiton";
 
   //State for mode
-  const [mode, setMode] = useState("profile");
+  const [mode, setMode] = useState(PROFILE);
 
   //Helper - Set mode fucntion
   const changeMode = (mode) => {
