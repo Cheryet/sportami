@@ -22,6 +22,8 @@ const Main = () => {
     <>
       <Navbar changeMode={changeMode} />
       {mode === PROFILE && <Profile />}
+      {/* {mode === OPPONENT && < ~Find Opponent Component goes here~ /> */}
+      {/* {mode === OPPONENT && < ~Notification Component goes here~ /> */}
     </>
   );
 };
