@@ -21,7 +21,12 @@ function Location({ setCurrent, location, setLocation }) {
     <div className="location">
       <ArrowBackIos onClick={handleBack} />
       <h4>My nearest location to play is</h4>
-      <select required name="cities" onChange={(e) => setCity(e.target.value)}>
+      <select
+        value={city}
+        required
+        name="cities"
+        onChange={(e) => setCity(e.target.value)}
+      >
         <option value="" selected disabled>
           Select an option
         </option>

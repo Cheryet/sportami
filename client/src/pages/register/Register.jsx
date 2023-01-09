@@ -6,8 +6,7 @@ import BirthGender from "../../components/birthGender-4/BirthGender";
 import ProfilePhoto from "../../components/profilePhoto-5/ProfilePhoto";
 import Sports from "../../components/sports-6/Sports";
 import Bio from "../../components/bio-7/Bio";
-
-// TODO: import axios
+import axios from "axios";
 
 const userParams = {
   username: "",
@@ -131,7 +130,6 @@ function Register() {
           setIsPost={setIsPost}
         />
       )}
-      {/* // refer below on how to post it */}
       {/*  {current === "Last" && <Last postDetails={() => postUserDetails)} />} */}
     </>
   );
