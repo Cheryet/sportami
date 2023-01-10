@@ -1,0 +1,76 @@
+.sports {
+  display: flex;
+  flex-direction: column;
+  margin: 22vh 10vw;
+  margin-top: 10vh;
+  align-content: flex-end;
+
+  h4 {
+    font-size: xx-large;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+
+  .sport-skill {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  select {
+    height: 30px;
+    text-indent: 6px;
+    margin-bottom: 2vh;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(103, 103, 103);
+    width: 100%;
+    margin-bottom: 2vh;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  select:invalid {
+    color: var(--placeholder-colour);
+  }
+
+  .select-sport {
+    margin-right: 5px;
+  }
+}
+
+.continue-button {
+  margin-bottom: 2.5vh;
+  background-color: var(--main-colour);
+  border-radius: 6px;
+  height: 35px;
+  border: none;
+  font-size: 20px;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.add-button {
+  background-color: var(--main-colour);
+  border-radius: 50%;
+  height: 35px;
+  border: none;
+  font-size: 20px;
+  font-weight: 200;
+  margin: auto;
+  margin-bottom: 3vh;
+  width: 35px;
+  cursor: pointer;
+}
+
+.remove-button {
+  background-color: var(--main-colour);
+  height: 22px;
+  border: none;
+  font-size: 20px;
+  font-weight: 200;
+  margin-bottom: 1vh;
+  margin-left: 3vw;
+  line-height: 20px;
+  cursor: pointer;
+}
