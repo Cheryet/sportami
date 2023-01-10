@@ -1,45 +1,40 @@
+$mainColor: rgb(242, 172, 22);
+
 .button {
   margin-bottom: 2.5vh;
-  background-color: white;
-  border-radius: 6px;
+  background-color: $mainColor;
+  border: 2px solid rgba(0, 0, 0, 0.59);
+  border-radius: 4px;
   height: 35px;
   width: 70px;
-  border: none;
-  font-size: 20px;
-  font-weight: 200;
+  font-size: 0.75rem;
   cursor: pointer;
 }
 
 .button--accept {
-  border-color: #a6cb78;
-  background-color: #a6cb78;
+  background-color: $mainColor;
 }
 
 .button--decline {
-  border-color: #973535;
-  background-color: #973535;
+  background-color: $mainColor;
 }
 
 .button--cancel {
-  border-color: #973535;
-  background-color: #973535;
+
   margin-left: 33vw;
 }
 
 .button--email {
   margin-top: 1vh;
-  border-color: #78a7cb;
-  background-color: #78a7cb;
+
 }
 
 .button--confirmedCancel {
   margin-top: 1vh;
-  border-color: #973535;
-  background-color: #973535;
+
 }
 
 .button--review {
   margin-top: 1vh;
-  border-color: #cba378;
-  background-color: #cba378;
+
 }

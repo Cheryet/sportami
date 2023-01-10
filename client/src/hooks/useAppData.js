@@ -7,7 +7,7 @@ export default function useAppData() {
     users: {},
     sports: {},
     user_sports: {},
-    matches: {},
+    matches: [],
     reviews: {}
   });
 
@@ -22,6 +22,10 @@ export default function useAppData() {
       setState(prev => ({...prev, users: all[0].data, sports: all[1].data, user_sports: all[2].data, matches: all[3].data, reviews: all[4].data}));
     });
   }, []);
+
+  return {
+    state
+  }
 
 };
 

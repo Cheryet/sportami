@@ -13,7 +13,7 @@ const Main = () => {
   const MATCHES = "matches";
 
   //State for mode
-  const [mode, setMode] = useState(PROFILE);
+  const [mode, setMode] = useState(MATCHES);
 
   //Helper - Set mode fucntion
   const changeMode = (mode) => {
@@ -25,7 +25,7 @@ const Main = () => {
       <Navbar changeMode={changeMode} mode={mode} />
       {mode === PROFILE && <Profile />}
       {mode === OPPONENT && <OpponentList />}
-      {/* {mode === OPPONENT && < ~Notification Component goes here~ /> */}
+      {mode === MATCHES && <Matches/>}
     </>
   );
 };

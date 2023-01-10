@@ -6,7 +6,7 @@ const Navbar = (props) => {
   //Modes for Navbar
   const PROFILE = "profile";
   const OPPONENT = "opponent";
-  const NOTIFICATION = "notificaiton";
+  const MATCHES = "matches";
 
   return (
     <>
@@ -52,10 +52,10 @@ const Navbar = (props) => {
             </li>
             <li
               className={
-                props.mode === NOTIFICATION ? "nav-item active" : "nav-item"
+                props.mode === MATCHES ? "nav-item active" : "nav-item"
               }
               onClick={() => {
-                props.changeMode(NOTIFICATION);
+                props.changeMode(MATCHES);
               }}
             >
               NOTIFICATIONS

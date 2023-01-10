@@ -1,14 +1,17 @@
+$mainColor: rgb(242, 172, 22);
+
 .match {
   width: 80vw;
-  height: 18vh;
+  height: 25vh;
   margin-bottom: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
   padding: 0.5rem;
-  border-radius: 1rem;
-  background-color: #f2ac16;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.094);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
  
   &__opponent{
@@ -27,6 +30,7 @@
       &-pic{
         height: 8vh;
         border-radius: 50%;
+        object-fit: cover;
       }
     }
 
