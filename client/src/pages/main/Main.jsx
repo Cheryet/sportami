@@ -10,10 +10,10 @@ const Main = () => {
   //Modes for Main Page
   const PROFILE = "profile";
   const OPPONENT = "opponent";
-  const MATCHES = "matches";
+  const NOTIFICATIONS = "notifications";
 
   //State for mode
-  const [mode, setMode] = useState(MATCHES);
+  const [mode, setMode] = useState(PROFILE);
 
   //Helper - Set mode fucntion
   const changeMode = (mode) => {
@@ -25,7 +25,7 @@ const Main = () => {
       <Navbar changeMode={changeMode} mode={mode} />
       {mode === PROFILE && <Profile />}
       {mode === OPPONENT && <OpponentList />}
-      {mode === MATCHES && <Matches/>}
+      {mode === NOTIFICATIONS && <Matches/>}
     </>
   );
 };
