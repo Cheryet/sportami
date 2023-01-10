@@ -7,6 +7,7 @@ import ProfilePhoto from "../../components/profilePhoto-5/ProfilePhoto";
 import Sports from "../../components/sports-6/Sports";
 import Bio from "../../components/bio-7/Bio";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const userParams = {
   username: "",
@@ -22,6 +23,7 @@ const userParams = {
 };
 
 function Register() {
+  const navigate = useNavigate();
   const [current, setCurrent] = useState("Credentials");
   const [credentials, setCredentials] = useState({
     username: "",
@@ -66,21 +68,27 @@ function Register() {
     }
   }, [isPost, allUserParams]);
 
-  const handlePost = () => {
+  const handlePost = async () => {
     const isNotNull = Object.values(allUserParams).every(
       (param) => param !== null && param !== ""
     );
     if (isNotNull) {
-      console.log(allUserParams);
+      try {
+        const registerSuccess = await axios.post(
+          "/api/register",
+          allUserParams
+        );
+        if (registerSuccess.data.success === true) {
+          navigate("/");
+          // Change to main ^
+        }
+        console.log(registerSuccess);
+      } catch (error) {
+        console.error(error);
+      }
       setIsPost(false);
     }
   };
-
-  // const postUserDetails = () => {
-  //  axios.post(/user, allUserParams)
-  // }
-  // you may need to change allUserParams to look like what the backend is expecting:
-  // example: backend expects the body to have
 
   return (
     <>
