@@ -14,7 +14,7 @@ router.post("/", (req, res) => {
     .then((data) => {
       if (data.length > 0) {
         res.send({
-          token: 'test123',
+          token: data[0].id,
           success: true
         });
 
