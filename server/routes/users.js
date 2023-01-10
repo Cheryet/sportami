@@ -31,6 +31,7 @@ router
   .post((req, res) => {
     db.addUser(
       req.params.username,
+      req.params.first_name,
       req.params.password,
       req.params.email,
       req.params.bio,

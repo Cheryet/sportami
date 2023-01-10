@@ -1,0 +1,59 @@
+.bio {
+  display: flex;
+  flex-direction: column;
+  margin: 22vh 10vw;
+  margin-top: 10vh;
+  margin-bottom: 0;
+  align-content: flex-end;
+
+  .information {
+    font-size: xx-large;
+    margin-top: 10vh;
+
+    h4 {
+      margin-bottom: 10vh;
+    }
+
+    textarea {
+      min-height: 5vh;
+      max-height: 20vh;
+      line-height: 25px;
+      width: 100%;
+      padding-left: 6px;
+      padding-right: 6px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgb(103, 103, 103);
+    }
+
+    textarea::placeholder {
+      font-family: "Nunito", sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    p {
+      margin-bottom: 5vh;
+      text-align: end;
+      font-size: small;
+      font-weight: 200;
+    }
+
+    textarea::-webkit-input-placeholder {
+      position: absolute;
+      bottom: 5px;
+    }
+
+    button {
+      margin-bottom: 2.5vh;
+      background-color: var(--main-colour);
+      border-radius: 6px;
+      height: 35px;
+      width: 100%;
+      border: none;
+      font-size: 20px;
+      font-weight: 200;
+      cursor: pointer;
+    }
+  }
+}
