@@ -8,7 +8,8 @@ export default function Button(props) {
     "button--decline":props.decline,
     "button--cancel":props.cancel,
     "button--confirmedCancel":props.confirmedCancel,
-    "button--email":props.email
+    "button--email":props.email,
+    "button--review":props.review
   });
 
    return (

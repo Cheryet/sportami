@@ -3,6 +3,7 @@
   background-color: white;
   border-radius: 6px;
   height: 35px;
+  width: 70px;
   border: none;
   font-size: 20px;
   font-weight: 200;
@@ -22,7 +23,7 @@
 .button--cancel {
   border-color: #973535;
   background-color: #973535;
-  margin-left: 55vw;
+  margin-left: 33vw;
 }
 
 .button--email {
@@ -35,4 +36,10 @@
   margin-top: 1vh;
   border-color: #973535;
   background-color: #973535;
+}
+
+.button--review {
+  margin-top: 1vh;
+  border-color: #cba378;
+  background-color: #cba378;
 }

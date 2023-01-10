@@ -17,6 +17,8 @@ export default function MatchesListItem(props) {
   const matchesItem = testMatchData.map((match) => {
 
     const message = `Send ${testOpponent.username} a message at ${testChallenger.email} to set up your game of ${match.sport_name}!`
+
+    if (match.accepted === true && match.challenger_id === testChallenger.id) {
     return (
       <main className="match" key={match.id}>
         <section className="match__opponent">
@@ -34,10 +36,12 @@ export default function MatchesListItem(props) {
         
         <section className="match__buttons">
           <Button email >Email</Button>
+          <Button review >Review</Button>
           <Button confirmedCancel >Cancel</Button>
         </section>
       </main>
     )}
+    }
   );
 
   return (

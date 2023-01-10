@@ -30,6 +30,8 @@ export default function Match(props) {
    return (
     <>
       <Accepted />
+      <Confirm />
+      <Pending />
       {/* {mode === PENDING && (
         <Pending
           challenger={props.match.challenger}
