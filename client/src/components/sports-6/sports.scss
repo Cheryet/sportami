@@ -19,7 +19,6 @@
 
   select {
     height: 30px;
-    text-indent: 6px;
     margin-bottom: 2vh;
     background: transparent;
     border: none;
@@ -39,8 +38,8 @@
   }
 }
 
-.continue-button {
-  margin-bottom: 2.5vh;
+.continue {
+  margin-top: 3vh;
   background-color: var(--main-colour);
   border-radius: 6px;
   height: 35px;
@@ -50,7 +49,7 @@
   cursor: pointer;
 }
 
-.add-button {
+.add {
   background-color: var(--main-colour);
   border-radius: 50%;
   height: 35px;
@@ -58,19 +57,15 @@
   font-size: 20px;
   font-weight: 200;
   margin: auto;
-  margin-bottom: 3vh;
   width: 35px;
   cursor: pointer;
 }
 
-.remove-button {
-  background-color: var(--main-colour);
-  height: 22px;
+.remove {
+  background-color: transparent;
   border: none;
   font-size: 20px;
   font-weight: 200;
-  margin-bottom: 1vh;
   margin-left: 3vw;
-  line-height: 20px;
   cursor: pointer;
 }

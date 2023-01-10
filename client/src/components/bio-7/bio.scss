@@ -17,13 +17,19 @@
     textarea {
       min-height: 5vh;
       max-height: 20vh;
-      line-height: 30px;
+      line-height: 25px;
       width: 100%;
       padding-left: 6px;
       padding-right: 6px;
       background: transparent;
       border: none;
       border-bottom: 1px solid rgb(103, 103, 103);
+    }
+
+    textarea::placeholder {
+      font-family: "Nunito", sans-serif;
+      font-size: 15px;
+      font-weight: 300;
     }
 
     p {

@@ -2,7 +2,6 @@ import "./bio.scss";
 import { ArrowBackIos } from "@material-ui/icons";
 import TextareaAutosize from "react-textarea-autosize";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 function Bio({ setCurrent, bio, setBio, setIsPost }) {
   const [count, setCount] = useState(0);
@@ -27,6 +26,7 @@ function Bio({ setCurrent, bio, setBio, setIsPost }) {
         <h4>Add a description about yourself</h4>
         <TextareaAutosize
           placeholder="About yourself"
+          rows="1"
           maxLength={300}
           onChange={(event) => {
             setCount(event.target.value.length);
