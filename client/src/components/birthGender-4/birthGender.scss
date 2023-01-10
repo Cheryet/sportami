@@ -13,7 +13,6 @@
 
   select {
     height: 30px;
-    text-indent: 6px;
     margin-bottom: 2vh;
     background: transparent;
     border: none;
@@ -31,7 +30,10 @@
 
   input {
     @extend select;
-    margin-bottom: 1vh;
+    margin-bottom: 0;
+  }
+  .age {
+    text-indent: 6px;
   }
 }
 button {

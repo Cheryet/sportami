@@ -97,10 +97,7 @@ function Sports({ setCurrent, sports, setSports }) {
               {skillsList.length === 1 ? (
                 <></>
               ) : (
-                <button
-                  className="remove-button"
-                  onClick={() => removeFields(index)}
-                >
+                <button className="remove" onClick={() => removeFields(index)}>
                   x
                 </button>
               )}
@@ -109,13 +106,13 @@ function Sports({ setCurrent, sports, setSports }) {
         })}
       </form>
       {skillsList.length < 3 ? (
-        <button className="add-button" onClick={addFields}>
+        <button className="add" onClick={addFields}>
           +
         </button>
       ) : (
         <></>
       )}
-      <button className="continue-button" onClick={handleContinue}>
+      <button className="continue" onClick={handleContinue}>
         Continue
       </button>
     </div>
