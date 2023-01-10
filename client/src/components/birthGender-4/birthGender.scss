@@ -4,39 +4,36 @@
   margin: 22vh 10vw;
   margin-top: 10vh;
   align-content: flex-end;
-
-  h4 {
-    font-size: xx-large;
-    margin-top: 10vh;
-    margin-bottom: 8vh;
-  }
-
-  select {
-    height: 30px;
-    margin-bottom: 2vh;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid rgb(103, 103, 103);
-    width: 100%;
-    margin-top: 4vh;
-    font-size: 15px;
-    margin-bottom: 5vh;
-    font-weight: 300;
-  }
-
-  select:invalid {
-    color: var(--placeholder-colour);
-  }
-
-  input {
-    @extend select;
-    margin-bottom: 0;
-  }
-  .age {
-    text-indent: 6px;
-  }
 }
-button {
+
+.title {
+  font-size: xx-large;
+  margin-top: 10vh;
+  margin-bottom: 8vh;
+}
+
+.gender {
+  height: 30px;
+  margin-bottom: 2vh;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgb(103, 103, 103);
+  width: 100%;
+  margin-top: 4vh;
+  font-size: 15px;
+  margin-bottom: 5vh;
+  font-weight: 300;
+}
+
+.age {
+  @extend .gender;
+  margin-bottom: 0;
+  text-indent: 6px;
+  margin-top: 0;
+  text-indent: 10px;
+}
+
+.continue-button {
   margin-bottom: 2.5vh;
   background-color: var(--main-colour);
   border-radius: 6px;

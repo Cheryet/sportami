@@ -12,7 +12,6 @@ function Bio({ setCurrent, bio, setBio, setIsPost }) {
       bio: text,
     });
     setIsPost(true);
-    // handle continue will be an axios.post
   };
 
   const handleBack = () => {
@@ -23,8 +22,9 @@ function Bio({ setCurrent, bio, setBio, setIsPost }) {
     <div className="bio">
       <ArrowBackIos onClick={handleBack} />
       <form className="information">
-        <h4>Add a description about yourself</h4>
+        <h4 className="title">Add a description about yourself</h4>
         <TextareaAutosize
+          className="my-bio"
           placeholder="About yourself"
           rows="1"
           maxLength={300}
@@ -33,7 +33,7 @@ function Bio({ setCurrent, bio, setBio, setIsPost }) {
             setText(event.target.value);
           }}
         />
-        <p>{count} / 300</p>
+        <p className="word-count">{count} / 300</p>
       </form>
       <button className="finish-button" onClick={handleFinish}>
         Finish

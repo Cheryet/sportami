@@ -31,11 +31,12 @@ function ProfilePhoto({ setCurrent, profilePhoto, setProfilePhoto }) {
   return (
     <div className="profile-photo">
       <ArrowBackIos onClick={handleBack} />
-      <form className="information">
-        <h4>Add a profile photo</h4>
+      <form className="info1">
+        <h4 className="title1">Add a profile photo</h4>
         {selectedImage && (
           <div className="photo">
             <img
+              className="image"
               alt="not found"
               width={"200px"}
               height={"200px"}
@@ -43,7 +44,12 @@ function ProfilePhoto({ setCurrent, profilePhoto, setProfilePhoto }) {
             />
           </div>
         )}
-        <input type="file" name="myImage" onChange={handleFileChange} />
+        <input
+          className="file"
+          type="file"
+          name="myImage"
+          onChange={handleFileChange}
+        />
       </form>
       <button className="continue-button" onClick={handleContinue}>
         Continue

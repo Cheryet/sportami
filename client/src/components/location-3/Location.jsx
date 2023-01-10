@@ -20,8 +20,9 @@ function Location({ setCurrent, location, setLocation }) {
   return (
     <div className="location">
       <ArrowBackIos onClick={handleBack} />
-      <h4>My nearest location to play is</h4>
+      <h4 className="title">My nearest location to play is</h4>
       <select
+        className="cities"
         value={city}
         required
         name="cities"

@@ -44,7 +44,7 @@ function Home({ setToken }) {
           <button type="submit" className="login-button">
             Login
           </button>
-          <span>
+          <span className="register-link">
             New to Sportami? <Link to={`register`}>Sign up now.</Link>
           </span>
         </form>

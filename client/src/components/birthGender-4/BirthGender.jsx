@@ -23,8 +23,8 @@ function BirthGender({ setCurrent, birthGender, setBirthGender }) {
   return (
     <div className="birth-gender">
       <ArrowBackIos onClick={handleBack} />
-      <form className="information">
-        <h4>My age and gender are</h4>
+      <form className="info1">
+        <h4 className="title">My age and gender are</h4>
         <input
           className="age"
           type="age"
@@ -33,6 +33,7 @@ function BirthGender({ setCurrent, birthGender, setBirthGender }) {
           onChange={(e) => setAge(e.target.value)}
         />
         <select
+          className="gender"
           required
           name="gender"
           value={gender}

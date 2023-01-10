@@ -50,7 +50,7 @@ function Sports({ setCurrent, sports, setSports }) {
   return (
     <div className="sports">
       <ArrowBackIos onClick={handleBack} />
-      <h4>My preferred sports and skills are</h4>
+      <h4 className="title">My preferred sports and skills are</h4>
       <form>
         {skillsList.map((form, index) => {
           return (
@@ -97,7 +97,10 @@ function Sports({ setCurrent, sports, setSports }) {
               {skillsList.length === 1 ? (
                 <></>
               ) : (
-                <button className="remove" onClick={() => removeFields(index)}>
+                <button
+                  className="remove-button"
+                  onClick={() => removeFields(index)}
+                >
                   x
                 </button>
               )}
@@ -106,13 +109,13 @@ function Sports({ setCurrent, sports, setSports }) {
         })}
       </form>
       {skillsList.length < 3 ? (
-        <button className="add" onClick={addFields}>
+        <button className="add-button" onClick={addFields}>
           +
         </button>
       ) : (
         <></>
       )}
-      <button className="continue" onClick={handleContinue}>
+      <button className="continue2" onClick={handleContinue}>
         Continue
       </button>
     </div>

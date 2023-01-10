@@ -18,75 +18,75 @@
   margin-top: 20vh;
   margin-left: 10vw;
   margin-right: 10vw;
+}
 
-  .logo {
-    text-align: center;
-    font-size: 40px;
+.logo {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 300;
+}
+
+.slogan {
+  padding-left: 4vw;
+  margin-bottom: 13vh;
+  font-weight: 300;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.username {
+  margin-bottom: 5vh;
+  border-radius: 6px;
+  height: 30px;
+  background-color: rgba(181, 179, 179, 0.109);
+  border-width: 1px;
+  border-color: rgba(181, 179, 179, 0.361);
+  text-indent: 6px;
+
+  &::placeholder {
+    color: var(--placeholder-colour);
     font-weight: 300;
+    font-size: 15px;
   }
+}
 
-  .slogan {
-    padding-left: 4vw;
-    margin-bottom: 13vh;
+.password {
+  margin-bottom: 5vh;
+  border-radius: 6px;
+  height: 30px;
+  background-color: rgba(181, 179, 179, 0.109);
+  border-width: 1px;
+  border-color: rgba(181, 179, 179, 0.361);
+  text-indent: 6px;
+
+  &::placeholder {
+    color: var(--placeholder-colour);
     font-weight: 300;
+    font-size: 15px;
   }
+}
 
-  .login {
-    display: flex;
-    flex-direction: column;
-    z-index: 999;
+.login-button {
+  margin-bottom: 2.5vh;
+  background-color: var(--main-colour);
+  border-radius: 6px;
+  height: 35px;
+  border: none;
+  font-size: 20px;
+  font-weight: 200;
+  cursor: pointer;
+}
 
-    .username {
-      margin-bottom: 5vh;
-      border-radius: 6px;
-      height: 30px;
-      background-color: rgba(181, 179, 179, 0.109);
-      border-width: 1px;
-      border-color: rgba(181, 179, 179, 0.361);
-      text-indent: 6px;
+.register-link {
+  font-weight: 300;
 
-      &::placeholder {
-        color: var(--placeholder-colour);
-        font-weight: 300;
-        font-size: 15px;
-      }
-    }
-
-    .password {
-      margin-bottom: 5vh;
-      border-radius: 6px;
-      height: 30px;
-      background-color: rgba(181, 179, 179, 0.109);
-      border-width: 1px;
-      border-color: rgba(181, 179, 179, 0.361);
-      text-indent: 6px;
-
-      &::placeholder {
-        color: var(--placeholder-colour);
-        font-weight: 300;
-        font-size: 15px;
-      }
-    }
-
-    button {
-      margin-bottom: 2.5vh;
-      background-color: var(--main-colour);
-      border-radius: 6px;
-      height: 35px;
-      border: none;
-      font-size: 20px;
-      font-weight: 200;
-      cursor: pointer;
-    }
-
-    span {
-      font-weight: 300;
-
-      b {
-        cursor: pointer;
-        color: rgb(83, 155, 255);
-        text-decoration-line: underline;
-      }
-    }
+  b {
+    cursor: pointer;
+    color: rgb(83, 155, 255);
+    text-decoration-line: underline;
   }
 }

@@ -19,17 +19,17 @@ function Credentials({ setCurrent, credentials, setCredentials }) {
       <Link to={`/`}>
         <ArrowBackIos />
       </Link>
-      <form className="information">
-        <h4>My username and password are</h4>
+      <form className="info1">
+        <h4 className="title">My username and password are</h4>
         <input
-          className="username"
+          className="user"
           type="username"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
         <input
-          className="password"
+          className="your-password"
           type="password"
           placeholder="Password"
           value={password}

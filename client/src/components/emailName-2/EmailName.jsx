@@ -20,8 +20,8 @@ function EmailName({ setCurrent, emailName, setEmailName }) {
   return (
     <div className="email-name">
       <ArrowBackIos onClick={handleBack} />
-      <form className="information">
-        <h4>My name and email are</h4>
+      <form className="info1">
+        <h4 className="title">My name and email are</h4>
         <input
           className="name"
           type="name"
