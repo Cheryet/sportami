@@ -21,7 +21,7 @@ const Main = (props) => {
 
   return (
     <>
-      {/* <Navbar changeMode={changeMode} mode={mode} /> */}
+      <Navbar changeMode={changeMode} mode={mode} />
       {mode === PROFILE && <Profile token={props.token} />}
       {mode === OPPONENT && <OpponentList />}
       {/* {mode === OPPONENT && < ~Notification Component goes here~ /> */}

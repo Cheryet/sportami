@@ -66,38 +66,45 @@ const Profile = (props) => {
 
   return (
     <>
-      <div className="profile-container">
-        <div className="top-container">
-          <div className="profile-photo">
+      <div className="profile-container-profile">
+        <div className="top-container-profile">
+          <div className="profile-photo-profile">
             <img
+              className="mugshot"
               src="https://i.pinimg.com/originals/fb/c0/47/fbc047e678aaa3f4e09206c61c819d4f.jpg"
               alt=""
             />
           </div>
-          <div className="user-info">
-            <p className="name-title">NAME</p>
+          <div className="user-info-profile">
+            <p className="name-title-profile">NAME</p>
             <hr className="name-line" />
-            <p className="item name">{userData.user.first_name}</p>
-            <p className="username-title">USERNAME</p>
+            <p className="item-profile name-profile">
+              {userData.user.first_name}
+            </p>
+            <p className="username-title-profile">USERNAME</p>
             <hr className="username-line" />
-            <p className="item username">@{userData.user.username}</p>
-            <p className="email-title">EMAIL</p>
+            <p className="item-profile username-profile">
+              @{userData.user.username}
+            </p>
+            <p className="email-title-profile">EMAIL</p>
             <hr className="email-line" />
-            <p className="item email">{userData.user.email}</p>
+            <p className="item-profile email-profile">{userData.user.email}</p>
           </div>
         </div>
-        <div className="middle-container">
-          <div className="location-gender-container">
-            <div className="location-container" onClick={showDropdown}>
-              <TbIcon.TbMapPin className="pin-icon" />
+        <div className="middle-container-profile">
+          <div className="location-gender-container-profile">
+            <div className="location-container-profile" onClick={showDropdown}>
+              <TbIcon.TbMapPin className="pin-icon-profile" />
               <p>{location}</p>
               <MdIcon.MdOutlineKeyboardArrowDown className="down-icon" />
             </div>
-            <p className="gender">{userData.user.gender}</p>
+            <p className="gender-profile">{userData.user.gender}</p>
           </div>
           <div
             className={
-              dropdown ? "location-dropdown active" : "location-dropdown"
+              dropdown
+                ? "location-dropdown active"
+                : "location-dropdown-profile"
             }
           >
             <button
@@ -122,25 +129,25 @@ const Profile = (props) => {
               Vancouver
             </button>
           </div>
-          <div className="bio-container">
-            <p className="about-me">ABOUT ME</p>
+          <div className="bio-container-profile">
+            <p className="about-me-profile">ABOUT ME</p>
             <hr />
             <p>{userData.user.bio}</p>
           </div>
         </div>
-        <div className="bottom-container">
-          <div className="sports-container">
-            <p className="sports-title">SPORTS</p>
+        <div className="bottom-container-profile">
+          <div className="sports-container-profile">
+            <p className="sports-title-profile">SPORTS</p>
             <hr />
-            <ul className="sports-list">{sportList}</ul>
+            <ul className="sports-list-profile">{sportList}</ul>
           </div>
-          <div className="skill-level-container">
-            <p className="skill-level-title">SKILL LEVEL</p>
+          <div className="skill-level-container-profile">
+            <p className="skill-level-title-profile">SKILL LEVEL</p>
             <hr />
-            <ul className="skill-level-list">{skillList}</ul>
+            <ul className="skill-level-list-profile">{skillList}</ul>
           </div>
         </div>
-        <div className="button-container">
+        <div className="button-container-profile">
           <button>EDIT PROFILE</button>
         </div>
       </div>

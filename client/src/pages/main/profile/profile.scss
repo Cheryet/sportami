@@ -2,42 +2,42 @@ $mainColor: rgb(242, 172, 22);
 
 // Component styling starts here
 
-.profile-container {
+.profile-container-profile {
   //border: 1px solid black;
   padding-top: 38vh;
   margin: 1rem;
 
-  .top-container {
+  .top-container-profile {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 
-    .profile-photo {
+    .profile-photo-profile {
       //border: 1px solid green;
       height: 145px;
       width: 145px;
 
-      img {
+      .mugshot {
         height: 100%;
         width: 100%;
         border-radius: 4px;
       }
     }
 
-    .user-info {
+    .user-info-profile {
       //border: 1px solid blue;
       display: flex;
       flex-direction: column;
       justify-content: center;
 
-      .name-title,
-      .username-title,
-      .email-title {
+      .name-title-profile,
+      .username-title-profile,
+      .email-title-profile {
         font-size: 0.5rem;
         letter-spacing: 0.2rem;
       }
 
-      .name-title {
+      .name-title-profile {
         margin-top: 0.5rem;
       }
 
@@ -49,48 +49,48 @@ $mainColor: rgb(242, 172, 22);
         border: none;
       }
 
-      .item {
+      .item-profile {
         font-size: 0.9rem;
         margin-bottom: 0.8rem;
         margin-left: 0.5rem;
       }
 
-      .email {
+      .email-profile {
         margin-bottom: 0;
       }
     }
   }
 
-  .middle-container {
+  .middle-container-profile {
     margin-top: 1.5rem;
 
-    .location-gender-container {
+    .location-gender-container-profile {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
 
-      .location-container {
+      .location-container-profile {
         display: flex;
         flex-direction: row;
 
-        .pin-icon {
+        .pin-icon-profile {
           margin-right: 0.5rem;
           color: $mainColor;
         }
 
-        .down-icon {
+        .down-icon-profile {
           font-size: 1.1rem;
           margin-left: 0.5rem;
           margin-top: 0.2rem;
         }
       }
 
-      .gender {
+      .gender-profile {
         margin-right: 0.5rem;
       }
     }
 
-    .location-dropdown {
+    .location-dropdown-profile {
       display: none;
       margin-top: 1rem;
 
@@ -109,11 +109,11 @@ $mainColor: rgb(242, 172, 22);
       justify-content: space-evenly;
     }
 
-    .bio-container {
+    .bio-container-profile {
       margin-top: 2rem;
       text-align: left;
 
-      .about-me {
+      .about-me-profile {
         text-align: center;
         letter-spacing: 0.2rem;
         margin-bottom: 0.2rem;
@@ -130,14 +130,14 @@ $mainColor: rgb(242, 172, 22);
     }
   }
 
-  .bottom-container {
+  .bottom-container-profile {
     margin-top: 2.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 
-    .sports-container {
-      .sports-title {
+    .sports-container-profile {
+      .sports-title-profile {
         margin-left: 1.7rem;
         letter-spacing: 0.2rem;
       }
@@ -151,7 +151,7 @@ $mainColor: rgb(242, 172, 22);
         border: none;
       }
 
-      .sports-list {
+      .sports-list-profile {
         list-style: none;
         display: flex;
         flex-direction: column;
@@ -160,14 +160,14 @@ $mainColor: rgb(242, 172, 22);
         padding-left: 2.5rem;
         margin-top: 1rem;
 
-        .sports-item {
+        .sports-item-profile {
           margin: 0.2rem;
         }
       }
     }
 
-    .skill-level-container {
-      .skill-level-title {
+    .skill-level-container-profile {
+      .skill-level-title-profile {
         letter-spacing: 0.2rem;
         margin-left: 0.3rem;
       }
@@ -181,7 +181,7 @@ $mainColor: rgb(242, 172, 22);
         border: none;
       }
 
-      .skill-level-list {
+      .skill-level-list-profile {
         list-style: none;
         display: flex;
         flex-direction: column;
@@ -194,7 +194,7 @@ $mainColor: rgb(242, 172, 22);
     }
   }
 
-  .button-container {
+  .button-container-profile {
     margin-top: 2.5rem;
     display: flex;
     justify-content: center;

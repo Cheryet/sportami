@@ -2,32 +2,35 @@ $mainColor: rgb(242, 172, 22);
 
 //Component Styling starts here
 
-.opponents {
-  .profile-photo-container {
+.opponents-opponents {
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  .profile-photo-container-opponents {
     margin-top: 1.2rem;
     display: flex;
     justify-content: center;
 
-    .profile-photo {
+    .profile-photo-opponents {
       height: 200px;
       width: 200px;
       margin: 0 auto;
     }
   }
 
-  .personal-info {
+  .personal-info-opponents {
     margin-top: 1.5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
-    .pin-icon {
+    .pin-icon-opponents {
       margin-right: 0.25rem;
       color: $mainColor;
     }
   }
 
-  .sportsmanship-text {
+  .sportsmanship-text-opponents {
     margin-top: 0.1rem;
     margin-right: 0.5rem;
     font-size: 0.55rem;
@@ -37,40 +40,41 @@ $mainColor: rgb(242, 172, 22);
     color: $mainColor;
   }
 
-  .bio {
+  .bio-opponents {
     margin-top: 1rem;
   }
 
-  .sports-skills {
+  .sports-skills-opponents {
     margin-top: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
 
-    .sport-item-list {
+    .sport-item-list-opponents {
       margin-top: 1rem;
     }
 
-    .sport-item {
+    .sport-item-opponents {
       margin-left: 1rem;
     }
 
-    .sports {
-      .sport-title {
+    .sports-opponents {
+      .sport-title-opponents {
         letter-spacing: 0.2rem;
       }
 
-      .sport-ammount {
+      .sport-ammount-opponents {
         font-size: 0.55rem;
       }
     }
 
-    .skill-level {
-      .skill-title {
+    .skill-level-opponents {
+      padding-left: 20px;
+      .skill-title-opponents {
         letter-spacing: 0.2rem;
       }
 
-      .skill-accuracy {
+      .skill-accuracy-opponents {
         font-size: 0.55rem;
 
         .star-icon-accuracy {
@@ -80,11 +84,11 @@ $mainColor: rgb(242, 172, 22);
     }
   }
 
-  .button-container {
+  .button-container-opponents {
     display: flex;
     justify-content: center;
 
-    .challenge {
+    .challenge-opponents {
       margin: 3rem 0;
       padding: 0.5rem 1.5rem;
       border: 2px solid rgba(0, 0, 0, 0.59);

@@ -21,12 +21,12 @@ $mainColor: rgb(242, 172, 22);
     justify-content: space-between;
     background-color: whitesmoke;
 
-    .title {
+    .brand-name {
       letter-spacing: 0.2rem;
       font-size: 1.7rem;
     }
 
-    button {
+    .logout-button {
       align-self: center;
       border: 2px solid rgba(0, 0, 0, 0.59);
       border-radius: 4px;
@@ -38,7 +38,7 @@ $mainColor: rgb(242, 172, 22);
 
   .middle-container {
     background-color: $mainColor;
-    padding: 0.5rem 1rem 0.5rem 1rem;
+    padding-top: 10px;
     border-top: 2px solid rgb(0, 0, 0);
 
     .welcome-message {
@@ -51,12 +51,12 @@ $mainColor: rgb(242, 172, 22);
       margin-top: 0.6rem;
     }
 
-    span {
+    .top-sport {
       font-size: 0.9rem;
       letter-spacing: 0.2rem;
     }
 
-    .location {
+    .location-nav {
       padding-top: 0.6rem;
       text-align: center;
     }

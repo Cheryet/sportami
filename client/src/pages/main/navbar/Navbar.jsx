@@ -13,17 +13,17 @@ const Navbar = (props) => {
       <div className="navbar-container">
         <div className="top-container">
           <div className="title-container">
-            <p className="title">SPORTAMI</p>
-            <p className="slogan">Turn an ami into an enemy</p>
+            <p className="brand-name">SPORTAMI</p>
+            <p className="slogan-nav">Turn an ami into an enemy</p>
           </div>
-          <button>Logout</button>
+          <button className="logout-button">Logout</button>
         </div>
         <div className="middle-container">
           <p className="welcome-message">Welcome, Corbin!</p>
           <p className="best-sport">
-            <span>TOP SPORT:</span>&nbsp;Golf
+            <span className="top-sport">TOP SPORT:</span>&nbsp;Golf
           </p>
-          <p className="location">
+          <p className="location-nav">
             <TbIcon.TbMapPin className="pin-icon" />
             Lethrbidge
           </p>
