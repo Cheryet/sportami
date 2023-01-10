@@ -5,11 +5,11 @@ import { getAcceptedMatchesByUser, getMatchSport, getMatchChallenger, getMatchOp
 import "./styles.scss";
 import Button from "../Button";
 
-export default function MatchesListItem(props) {
+export default function MatchesListItem() {
   
   const testID = 1
 
-  const { state, setMatches } = useContext(matchContext);
+  const { state } = useContext(matchContext);
 
   const { matches } = state
 

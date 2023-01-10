@@ -4,7 +4,7 @@ import { getSentMatchesByUser, getMatchSport, getMatchOpponent } from "../../../
 import "./styles.scss";
 import Button from "../Button";
 
-export default function MatchesListItem(props) {
+export default function MatchesListItem() {
   
   const testID = 1
 

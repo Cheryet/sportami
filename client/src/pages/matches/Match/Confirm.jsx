@@ -1,11 +1,11 @@
 import { React, useContext } from "react";
 import { matchContext } from "../../../providers/MatchProvider";
-import { getReceivedMatchesByUser, getMatchSport, getMatchOpponent, getMatchChallenger } from "../../../helpers/selectors";
+import { getReceivedMatchesByUser, getMatchSport, getMatchChallenger } from "../../../helpers/selectors";
 
 import "./styles.scss";
 import Button from "../Button";
 
-export default function MatchesListItem(props) {
+export default function MatchesListItem() {
   const testID = 1
 
   const { state } = useContext(matchContext);

@@ -11,7 +11,7 @@ export function getUser(state, userId) {
 export function getAcceptedMatchesByUser(matches, userId) {
 
   let userMatches = matches.filter(match => 
-    match.challenger_id === userId && match.accepted === true || match.opponent_id === userId && match.accepted === true);
+    (match.challenger_id === userId && match.accepted === true) || (match.opponent_id === userId && match.accepted === true));
 
   return userMatches;
 }
