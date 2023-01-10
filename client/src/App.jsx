@@ -1,6 +1,7 @@
 import "./app.scss";
 import Home from "./pages/home/Home";
 import Main from "./pages/main/Main";
+// import Register from "./pages/register/Register";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
