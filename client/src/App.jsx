@@ -16,12 +16,11 @@ const App = () => {
         <Routes>
           <Route
             path="/"
-            element={!token ? <Home setToken={setToken} /> : <Main />}
+            element={
+              !token ? <Home setToken={setToken} /> : <Main token={token} />
+            }
           />
-          <Route
-            path="/register"
-            element={!token ? <Home setToken={setToken} /> : <Register />}
-          />
+          <Route path="/register" element={<Register />} />
           <Route
             path="/main"
             element={
