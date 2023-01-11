@@ -12,7 +12,7 @@ const Main = (props) => {
   const NOTIFICATION = "notificaiton";
 
   //State for mode
-  const [mode, setMode] = useState(PROFILE);
+  const [mode, setMode] = useState(OPPONENT);
 
   //Helper - Set mode fucntion
   const changeMode = (mode) => {
@@ -23,7 +23,7 @@ const Main = (props) => {
     <>
       {/* <Navbar changeMode={changeMode} mode={mode} /> */}
       {mode === PROFILE && <Profile token={props.token} />}
-      {mode === OPPONENT && <OpponentList />}
+      {mode === OPPONENT && <OpponentList token={props.token} />}
       {/* {mode === OPPONENT && < ~Notification Component goes here~ /> */}
     </>
   );
