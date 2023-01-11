@@ -7,7 +7,7 @@ import "./styles.scss";
 export default function MatchesListItem() {
   const testID = 1
 
-  const { state, acceptMatch, handleSubmit } = useContext(matchContext);
+  const { state, acceptMatch, deleteMatch } = useContext(matchContext);
 
   const { matches } = state
 
@@ -17,7 +17,9 @@ export default function MatchesListItem() {
 
     const matchSport = getMatchSport(state, match)
 
-    const confirm = () => {handleSubmit(match.id)}
+    const confirm = () => {acceptMatch(match.id)}
+
+    const cancel = () => {deleteMatch(match.id)}
 
     const challenger = getMatchChallenger(state, match)
 
@@ -41,7 +43,7 @@ export default function MatchesListItem() {
         
         <section className="match__buttons">
           <button className="confirmButton" onClick={confirm}>ACCEPT</button>
-          <button className="confirmButton" >DECLINE</button>
+          <button className="confirmButton" onClick={cancel}>DECLINE</button>
         </section>
       </main>
     )}

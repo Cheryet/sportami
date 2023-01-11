@@ -11,7 +11,7 @@ export default function MatchesListItem() {
 
   const { changeMode, REVIEW } = useContext(modeContext);
 
-  const { state } = useContext(matchContext);
+  const { state, deleteMatch } = useContext(matchContext);
 
   const { matches } = state
 
@@ -20,10 +20,10 @@ export default function MatchesListItem() {
   const matchesItem = userMatches.map((match) => {
 
     const matchSport = getMatchSport(state, match)
-
     const opponent = getMatchOpponent(state, match)
-    
     const challenger = getMatchChallenger(state, match)
+
+    const cancel = () => {deleteMatch(match.id)}
 
     if (match.challenger_id === testID) {
 
@@ -49,7 +49,7 @@ export default function MatchesListItem() {
         <button className="acceptedButton" onClick={() => {changeMode(REVIEW)}}>
             REVIEW
         </button>
-        <button className="acceptedButton" >CANCEL</button>
+        <button className="acceptedButton" onClick={cancel} >CANCEL</button>
         </section>
       </main>
     )} else {
@@ -76,7 +76,7 @@ export default function MatchesListItem() {
             <button className="acceptedButton" onClick={() => {changeMode(REVIEW)}}>
                 REVIEW
             </button>
-            <button className="acceptedButton" >CANCEL</button>
+            <button className="acceptedButton" onClick={cancel} >CANCEL</button>
           </section>
         </main>
       )}

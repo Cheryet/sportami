@@ -40,6 +40,14 @@ router
       .catch((error) => {
         console.log(error);
       });
-  });
+    })
+  .delete((req, res) => {
+    const id = parseInt(req.params.id)
+    db.deleteMatch(id).then((response) => {
+      console.log("response", response);
+      res.status(200).send(`Match deleted with id: ${id}`);
+    });
+  })
+    
 
 module.exports = router;

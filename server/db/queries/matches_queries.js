@@ -51,10 +51,22 @@ const acceptMatch = (id) => {
   );
 };
 
+//This query is for when a match is deleted
+const deleteMatch = (id) => {
+  return db.query(
+    `
+    DELETE FROM matches
+    WHERE id = $1
+    returning *;`,
+    [`${id}`]
+  );
+};
+
 //Exports
 module.exports = {
   getAllMatches,
   getMatchById,
   addMatch,
   acceptMatch,
+  deleteMatch
 };

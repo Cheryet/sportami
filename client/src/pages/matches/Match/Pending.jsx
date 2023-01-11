@@ -6,20 +6,17 @@ import "./styles.scss";
 export default function MatchesListItem() {
   
   const testID = 1
-
-  const { state } = useContext(matchContext);
-
+  const { state, deleteMatch } = useContext(matchContext);
   const { matches } = state
-
   const sentMatches = getSentMatchesByUser(matches, testID)
   
   const matchesItem = sentMatches.map((match) => {
 
     const matchSport = getMatchSport(state, match)
-
     const opponent = getMatchOpponent(state, match)
-
     const message = `User ${opponent.username} has not yet accepted your ${matchSport} challenge`
+
+    const cancel = () => {deleteMatch(match.id)}
 
     return (
       <main className="match" key={match.id}>
@@ -37,7 +34,7 @@ export default function MatchesListItem() {
         </section>
         
         <section className="match__buttons">
-          <button className="buttonCancel" >CANCEL</button>
+          <button className="buttonCancel" onClick={cancel} >CANCEL</button>
         </section>
       </main>
     )}

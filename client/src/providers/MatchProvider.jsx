@@ -25,28 +25,35 @@ export default function MatchProvider(props) {
     });
   }, []);
 
-  const acceptMatch = (matchID) => {
-    axios
-      .put(`/api/matches/${matchID}`, {
-        match_id: matchID,
-      })
-      .then((res) => {
-        const matches = [...state.matches];
-        matches.push(res.data);
-        setState({ ...state, matches });
-        console.log("Match updated");
-      })
-      .catch((err) => console.log("Match not updated", err.message));
-  };
-
-  const handleSubmit = (id) => {
+  const acceptMatch = (id) => {
     console.log("/api/matches/" + id)
     axios.put("/api/matches/" + id, {
       id: id
     })
-  }
+    .then((res) => {
+      const matches = [...state.matches];
+      matches.push(res.data);
+      setState({ ...state, matches });
+      console.log("Match updated");
+    })
+    .catch((err) => console.log("Match not updated", err.message));
+  };
 
-  const matchData = { state, acceptMatch, handleSubmit };
+  const deleteMatch = (id) => {
+    console.log("/api/matches/" + id)
+    axios.delete("/api/matches/" + id, {
+      id: id
+    })
+    .then((res) => {
+      const matches = [...state.matches];
+      matches.push(res.data);
+      setState({ ...state, matches });
+      console.log("Match deleted");
+    })
+    .catch((err) => console.log("Match not deleted", err.message));
+  };
+
+  const matchData = { state, acceptMatch, deleteMatch };
   
   return (
     <matchContext.Provider value={matchData}>
