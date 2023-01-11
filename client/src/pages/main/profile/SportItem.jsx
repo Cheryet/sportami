@@ -26,9 +26,6 @@ const SportItem = (props) => {
 
   getSportById(props.sport_id);
 
-  console.log("sport", sport);
-
-  console.log("sports", sports);
   return (
     <>
       <li className="sports-item">{sport}</li>
