@@ -4,7 +4,7 @@ import Home from "./pages/home/Home";
 import Main from "./pages/main/Main";
 import Register from "./pages/register/Register";
 import useToken from "./hooks/useToken";
-import Filter from "./components/filter/Filter";
+import Accordion from "./components/filter/Accordion";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -28,7 +28,7 @@ const App = () => {
               !token ? <Home setToken={setToken} /> : <Main token={token} />
             }
           />
-          <Route path="/filter" element={<Filter />} />
+          <Route path="/filter" element={<Accordion />} />
         </Routes>
       </BrowserRouter>
     </>
