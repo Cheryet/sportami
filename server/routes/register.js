@@ -35,7 +35,7 @@ router.post("/", (req, res) => {
           });
           Promise.all(requests)
             .then(() => {
-              res.status(201).send({ "success": true, "user_id": newUser["id"] });
+              res.status(201).send({ success: true, token: newUser["id"] });
             })
             .catch(error => {
               res.status(500).send(error);

@@ -22,7 +22,7 @@ const userParams = {
   bio: "",
 };
 
-function Register() {
+function Register({ setToken }) {
   const navigate = useNavigate();
   const [current, setCurrent] = useState("Credentials");
   const [credentials, setCredentials] = useState({
@@ -68,6 +68,7 @@ function Register() {
     }
   }, [isPost, allUserParams]);
 
+  // HAS TO CHANGE TO SEND A TOKEN
   const handlePost = async () => {
     const isNotNull = Object.values(allUserParams).every(
       (param) => param !== null && param !== ""
@@ -79,10 +80,10 @@ function Register() {
           allUserParams
         );
         if (registerSuccess.data.success === true) {
-          navigate("/");
+          setToken(registerSuccess.data.token);
+          navigate("/main");
           // Change to main ^
         }
-        console.log(registerSuccess);
       } catch (error) {
         console.error(error);
       }
