@@ -4,11 +4,13 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const port = process.env.PORT || 8001;
 const app = express();
+const cors = require("cors");
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(morgan("combined"));
+app.use(cors());
 
 // Routers
 const userRouter = require("./routes/users");
