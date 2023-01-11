@@ -4,23 +4,24 @@ import "./opponent.scss";
 import * as TbIcon from "react-icons/tb";
 import * as AiIcon from "react-icons/ai";
 
-function Opponents() {
-
-  const testUserID = 1;
+function Opponents(props) {
+  const userID = props.token;
   const testOpponentID = 2;
   const testOpponentLocation = 3;
   const testSportID = 1;
 
   const { sendMatchRequest } = useContext(matchContext);
-  
-  const sendRequest = () => {sendMatchRequest(testUserID, testOpponentID, testOpponentLocation, testSportID)};
+
+  const sendRequest = () => {
+    sendMatchRequest(userID, testOpponentID, testOpponentLocation, testSportID);
+  };
 
   return (
     <div className="opponents">
       <div className="profile-photo-container">
         <img
           src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-          alt="profile-photo"
+          alt="profile"
           className="profile-photo"
         />
       </div>
@@ -74,7 +75,9 @@ function Opponents() {
         </div>
       </section>
       <div className="button-container">
-        <button className="challenge" onClick={sendRequest} >CHALLENGE OPPONENT</button>
+        <button className="challenge" onClick={sendRequest}>
+          CHALLENGE OPPONENT
+        </button>
       </div>
     </div>
   );

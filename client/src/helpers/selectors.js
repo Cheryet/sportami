@@ -1,70 +1,78 @@
+//returns user from DB with given user ID
 export function getUser(state, userId) {
   const users = state.users;
 
-  let user = users.filter(user => user.id === userId);
-  
+  let user = users.filter((user) => user.id === userId);
+
   let userObj = user[0];
 
   return userObj;
 }
 
+//returns matches for given user that have been accepted by opponent
 export function getAcceptedMatchesByUser(matches, userId) {
-
-  let userMatches = matches.filter(match => 
-    (match.challenger_id === userId && match.accepted === true) || (match.opponent_id === userId && match.accepted === true));
+  let userMatches = matches.filter(
+    (match) =>
+      (match.challenger_id === userId && match.accepted === true) ||
+      (match.opponent_id === userId && match.accepted === true)
+  );
 
   return userMatches;
 }
 
+//returns matches for given user that have not yet been accepted
 export function getSentMatchesByUser(matches, userId) {
-
-  let sentMatches = matches.filter(match => match.challenger_id === userId && match.accepted === false);
+  let sentMatches = matches.filter(
+    (match) => match.challenger_id === userId && match.accepted === false
+  );
 
   return sentMatches;
 }
 
+//returns matches requests for given user that they have yet to accept
 export function getReceivedMatchesByUser(matches, userId) {
-
-  let receivedMatches = matches.filter(match => match.opponent_id === userId && match.accepted === false);
+  let receivedMatches = matches.filter(
+    (match) => match.opponent_id === userId && match.accepted === false
+  );
 
   return receivedMatches;
 }
 
+//returns the sport name for given match
 export function getMatchSport(state, match) {
-  
-  const matchSportID = match.sport_id
+  const matchSportID = match.sport_id;
 
-  const sports = state.sports
+  const sports = state.sports;
 
-  let matchSport = sports.filter(sport => sport.id === matchSportID);
+  let matchSport = sports.filter((sport) => sport.id === matchSportID);
 
-  let sportName = matchSport[0].name
+  let sportName = matchSport[0].name;
 
   return sportName;
 }
 
+//returns the user who sent the match request
 export function getMatchChallenger(state, match) {
-  
-  const matchChallengerID = match.challenger_id
+  const matchChallengerID = match.challenger_id;
 
-  const users = state.users
+  const users = state.users;
 
-  let matchChallenger = users.filter(user => user.id === matchChallengerID);
+  let matchChallenger = users.filter((user) => user.id === matchChallengerID);
 
-  let challenger = matchChallenger[0]
+  let challenger = matchChallenger[0];
 
   return challenger;
 }
 
+//returns the user who received the match request
 export function getMatchOpponent(state, match) {
-  
-  const matchOpponentID = match.opponent_id
+  const matchOpponentID = match.opponent_id;
 
-  const users = state.users
+  const users = state.users;
 
-  let matchOpponent = users.filter(user => user.id === matchOpponentID);
+  let matchOpponent = users.filter((user) => user.id === matchOpponentID);
 
-  let opponent = matchOpponent[0]
+  let opponent = matchOpponent[0];
 
   return opponent;
 }

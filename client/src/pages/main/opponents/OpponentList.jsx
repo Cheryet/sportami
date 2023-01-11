@@ -2,7 +2,7 @@ import React from "react";
 import Opponents from "./Opponent";
 import "./opponentList.scss";
 
-const OpponentList = () => {
+const OpponentList = (props) => {
   return (
     <>
       <div className="opponent-list">
@@ -11,7 +11,7 @@ const OpponentList = () => {
           <button className="filter-button">FILTER</button>
         </section>
         <hr />
-        <Opponents />
+        <Opponents token={props.token} />
       </div>
     </>
   );

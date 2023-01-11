@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./app.scss";
 import Home from "./pages/home/Home";
 import Main from "./pages/main/Main";
@@ -26,7 +26,15 @@ const App = () => {
           <Route
             path="/main"
             element={
-              !token ? <ModeProvider><Home setToken={setToken} /></ModeProvider> : <ModeProvider><Main token={token} /></ModeProvider>
+              !token ? (
+                <ModeProvider>
+                  <Home setToken={setToken} />
+                </ModeProvider>
+              ) : (
+                <ModeProvider>
+                  <Main token={token} />
+                </ModeProvider>
+              )
             }
           />
         </Routes>
