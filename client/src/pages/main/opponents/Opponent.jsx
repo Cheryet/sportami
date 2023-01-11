@@ -1,23 +1,98 @@
+import { useContext, useState } from "react";
+import { matchContext } from "../../../providers/MatchProvider";
+
 import "./opponent.scss";
 import * as TbIcon from "react-icons/tb";
 import * as AiIcon from "react-icons/ai";
+import SkillItem from "../profile/Skilltem";
+import SportItem from "../profile/SportItem";
+import SportItemChallenge from "./SportItemChallenge";
 
-function Opponents() {
+function Opponents(props) {
+  //state for challenge drop down buttons
+  const [dropdown, setDropdown] = useState(false);
+
+  //state for if challenge was sent or not
+  const [sentChallenge, setSentChallenge] = useState(false);
+
+  //Helper - Show/Hide challenge button dropdown
+  const showDropdown = () => {
+    setDropdown(!dropdown);
+  };
+
+  //Helper - Toggle SentChallenge
+  const toggleChallenge = () => {
+    setSentChallenge(!sentChallenge);
+  };
+
+  //Helper - Get Sports for player from list
+  let mySports = [];
+  const getMySports = (user_id) => {
+    props.sports.forEach((item) => {
+      if (item.user_id === user_id) {
+        mySports.push(item);
+      }
+    });
+  };
+
+  // Helper - Get Skill Level for user
+  let skillList = [];
+  const getSkillList = () => {
+    if (mySports) {
+      skillList = mySports.map((item, index) => {
+        return <SkillItem key={index} skillLevel={item.self_skill} />;
+      });
+    }
+  };
+
+  //Helper - Get Sports for user
+  let sportList = [];
+  const getSportsList = () => {
+    if (mySports) {
+      sportList = mySports.map((item, index) => {
+        return <SportItem key={index} sport_id={item.sport_id} />;
+      });
+    }
+  };
+
+  //Helper - Get Sports for user for challenge
+  let sportListChallenge = [];
+  const getSportsListChallenge = () => {
+    if (mySports) {
+      sportListChallenge = mySports.map((item, index) => {
+        return (
+          <SportItemChallenge
+            key={index}
+            sport_id={item.sport_id}
+            token={props.token}
+            user_id={props.user_id}
+            location={props.location}
+            showDropdown={showDropdown}
+            toggleChallenge={toggleChallenge}
+          />
+        );
+      });
+    }
+  };
+
+  getMySports(props.user_id);
+  getSkillList();
+  getSportsList();
+  getSportsListChallenge();
+
   return (
-    <div className="opponents-opponents">
-      <div className="profile-photo-container-opponents">
-        <img
-          src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-          alt="profile-photo"
-          className="profile-photo-opponents"
-        />
+    <div className="opponents">
+      <div className="profile-photo-container">
+        <img src={props.profile_pic} alt="profile" className="profile-photo" />
       </div>
 
-      <section className="personal-info-opponents">
-        <p className="name-age-opponents">Alisa Vorotyntseva, 22</p>
-        <p className="location-opponents">
-          <TbIcon.TbMapPin className="pin-icon-opponents" />
-          Oakville, ON
+      <section className="personal-info-123">
+        <p className="name-age">
+          {props.first_name}, {props.age}
+        </p>
+        <p className="location">
+          <TbIcon.TbMapPin className="pin-icon" />
+          {props.location}
         </p>
       </section>
 
@@ -32,18 +107,12 @@ function Opponents() {
         </p>
       </div>
 
-      <div className="bio-opponents">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-        laborum labore culpa aliquid officiis laboriosam hic et amet.
-      </div>
-      <section className="sports-skills-opponents">
-        <div className="sports-opponents">
-          <p className="sport-title-opponents">SPORTS</p>
-          <p className="sport-ammount-opponents">2/6 Sports</p>
-          <div className="sport-item-list-opponents">
-            <p className="sport-item-opponents">Tennis</p>
-            <p className="sport-item-opponents">Ping Pong</p>
-          </div>
+      <div className="bio">{props.bio}</div>
+      <section className="sports-skills">
+        <div className="sports">
+          <p className="sport-title">SPORTS</p>
+          <p className="sport-ammount">{mySports.length}/6 Sports</p>
+          <ul className="sport-item-list">{sportList}</ul>
         </div>
         <div className="skill-level-opponents">
           <p className="skill-title-opponents">SKILL LEVEL</p>
@@ -55,14 +124,44 @@ function Opponents() {
             <AiIcon.AiFillStar className="star-icon-accuracy four" />
             <AiIcon.AiFillStar className="star-icon-accuracy five" />
           </p>
-          <div className="sport-item-list-opponents">
-            <p className="sport-item-opponents">Amateur</p>
-            <p className="sport-item-opponents">Professional</p>
-          </div>
+          <ul className="sport-item-list">{skillList}</ul>
         </div>
       </section>
-      <div className="button-container-opponents">
-        <button className="challenge-opponents">CHALLENGE OPPONENT</button>
+      <div
+        className={
+          dropdown
+            ? "opponent-challenge-button"
+            : "opponent-challenge-button active"
+        }
+      >
+        <button className="opponent-challenge-btn" onClick={showDropdown}>
+          CHALLENGE OPPONENT
+        </button>
+      </div>
+      <div
+        className={
+          dropdown
+            ? "opponent-challenge-sports-btn-container active"
+            : "opponent-challenge-sports-btn-container"
+        }
+      >
+        {!sentChallenge && (
+          <p className="opponent-challenge-title">
+            Choose a sport to challenge {props.first_name}!
+          </p>
+        )}
+        {sentChallenge && (
+          <p className="opponent-challenge-title">
+            Challenge sent to {props.first_name}!
+          </p>
+        )}
+
+        <div className="opponent-selection-btn">
+          {sportListChallenge}
+          <button className="sportItemChallenge-button" onClick={showDropdown}>
+            Back
+          </button>
+        </div>
       </div>
     </div>
   );

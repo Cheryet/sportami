@@ -1,4 +1,4 @@
-const db = require('../index.js');
+const db = require("../index.js");
 
 // Queries for Reviews Table
 
@@ -24,10 +24,10 @@ const getReviewsById = (id) => {
     });
 };
 
-const addReview = (user_sport_id, winner_id, sportsmanship_rating) => {
+const addReview = (review) => {
   return db.query(
     `INSERT INTO reviews (user_sport_id, winner_id, sportsmanship_rating) VALUES ($1, $2, $3)`,
-    [user_sport_id, winner_id, sportsmanship_rating]
+    [review.user_sport_id, review.winner_id, review.sportsmanship_rating]
   );
 };
 

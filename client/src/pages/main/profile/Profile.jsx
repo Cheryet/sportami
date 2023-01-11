@@ -1,6 +1,6 @@
-import React from "react";
-import axios from "axios";
-import { useState, useEffect } from "react";
+import React, { useContext } from "react";
+import { userDataContext } from "../../../providers/UserDataProvider";
+import { useState } from "react";
 import "./profile.scss";
 import * as TbIcon from "react-icons/tb";
 import * as MdIcon from "react-icons/md";
@@ -8,14 +8,11 @@ import SkillItem from "./Skilltem";
 import SportItem from "./SportItem";
 
 const Profile = (props) => {
+  //Provider
+  const { userData, setLocation, location } = useContext(userDataContext);
+
   //Location Dropdown state
   const [dropdown, setDropdown] = useState(false);
-
-  //Location state
-  const [location, setLocation] = useState("Lethbridge");
-
-  //User State
-  const [userData, setUserData] = useState({ user: {}, sports: [] });
 
   //Helper - Show/Hide location dropdown
   const showDropdown = () => {
@@ -28,18 +25,7 @@ const Profile = (props) => {
     setDropdown(false);
   };
 
-  //Helper - Get users data when logged in
-  useEffect(() => {
-    //Gets user data based on user_id -- ONCE TOKEN IS DONE, REPLACE ID(6) WITH USER-TOKEN
-    const userPromise = axios.get(`/api/users/1`);
-    const sportsPromise = axios.get(`/api/user_sports/1`);
-
-    Promise.all([userPromise, sportsPromise]).then((all) => {
-      setUserData({ user: all[0].data[0], sports: all[1].data });
-    });
-  }, []);
-
-  // Helper - Get Skill Level for user
+  // Helper - Get Skill Levels for user
   let skillList = [];
   const getSkillList = () => {
     if (userData.sports) {
@@ -59,21 +45,15 @@ const Profile = (props) => {
     }
   };
 
-  console.log("Token:", props.token);
-
   getSportsList();
   getSkillList();
 
   return (
     <>
-      <div className="profile-container-profile">
-        <div className="top-container-profile">
-          <div className="profile-photo-profile">
-            <img
-              className="mugshot"
-              src="https://i.pinimg.com/originals/fb/c0/47/fbc047e678aaa3f4e09206c61c819d4f.jpg"
-              alt=""
-            />
+      <div className="profile-container">
+        <div className="top-container">
+          <div className="profile-photo-123">
+            <img src={userData.user.profile_pic} alt="" />
           </div>
           <div className="user-info-profile">
             <p className="name-title-profile">NAME</p>
@@ -103,11 +83,12 @@ const Profile = (props) => {
           <div
             className={
               dropdown
-                ? "location-dropdown active"
-                : "location-dropdown-profile"
+                ? "location-dropdown-123 active"
+                : "location-dropdown-123"
             }
           >
             <button
+              className="btn-location-profile"
               onClick={() => {
                 changeLocation("Lethbridge");
               }}
@@ -115,6 +96,7 @@ const Profile = (props) => {
               Lethbridge
             </button>
             <button
+              className="btn-location-profile"
               onClick={() => {
                 changeLocation("Oakville");
               }}
@@ -122,6 +104,7 @@ const Profile = (props) => {
               OakVille
             </button>
             <button
+              className="btn-location-profile"
               onClick={() => {
                 changeLocation("Vancouver");
               }}

@@ -36,7 +36,8 @@ $mainColor: rgb(242, 172, 22);
     }
   }
 
-  .middle-container {
+  .container-middle {
+    //height: 20vh;
     background-color: $mainColor;
     padding-top: 10px;
     border-top: 2px solid rgb(0, 0, 0);
@@ -56,7 +57,7 @@ $mainColor: rgb(242, 172, 22);
       letter-spacing: 0.2rem;
     }
 
-    .location-nav {
+    .nav-location {
       padding-top: 0.6rem;
       text-align: center;
     }

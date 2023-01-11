@@ -1,12 +1,37 @@
-import React from "react";
+import { React, useContext, useState } from "react";
+import { modeContext } from "../../../providers/ModeProvider";
+import { userDataContext } from "../../../providers/UserDataProvider";
+import TopSport from "./TopSport";
 import * as TbIcon from "react-icons/tb";
 import "./navbar.scss";
+import { useEffect } from "react";
 
-const Navbar = (props) => {
-  //Modes for Navbar
-  const PROFILE = "profile";
-  const OPPONENT = "opponent";
-  const NOTIFICATION = "notificaiton";
+const Navbar = () => {
+  //Providers
+  const { mode, changeMode, PROFILE, OPPONENT, NOTIFICATIONS } =
+    useContext(modeContext);
+
+  const { userData, location } = useContext(userDataContext);
+
+  const [topSportId, setTopSportId] = useState();
+
+  //Helper - Get top sport for user
+
+  const getTopSport = (sports) => {
+    sports.forEach((item) => {
+      if (item.self_skill === "Pro") {
+        return setTopSportId(item.sport_id);
+      }
+
+      if (item.self_skill === "Amatuer") {
+        return setTopSportId(item.sport_id);
+      }
+    });
+  };
+
+  useEffect(() => {
+    getTopSport(userData.sports);
+  });
 
   return (
     <>
@@ -18,44 +43,43 @@ const Navbar = (props) => {
           </div>
           <button className="logout-button">Logout</button>
         </div>
-        <div className="middle-container">
-          <p className="welcome-message">Welcome, Corbin!</p>
-          <p className="best-sport">
-            <span className="top-sport">TOP SPORT:</span>&nbsp;Golf
+        <div className="container-middle">
+          <p className="welcome-message">
+            Welcome, {userData.user.first_name}!
           </p>
-          <p className="location-nav">
+          <p className="best-sport">
+            <span>TOP SPORT:&nbsp;</span>
+            <TopSport sport_id={topSportId} />
+          </p>
+          <p className="nav-location">
             <TbIcon.TbMapPin className="pin-icon" />
-            Lethrbidge
+            {location}
           </p>
         </div>
         <nav className="navbar">
           <ul className="nav-list">
             <li
-              className={
-                props.mode === PROFILE ? "nav-item active" : "nav-item"
-              }
+              className={mode === PROFILE ? "nav-item active" : "nav-item"}
               onClick={() => {
-                props.changeMode(PROFILE);
+                changeMode(PROFILE);
               }}
             >
               MY PROFILE
             </li>
             <li
-              className={
-                props.mode === OPPONENT ? "nav-item active" : "nav-item"
-              }
+              className={mode === OPPONENT ? "nav-item active" : "nav-item"}
               onClick={() => {
-                props.changeMode(OPPONENT);
+                changeMode(OPPONENT);
               }}
             >
               FIND OPPONENT
             </li>
             <li
               className={
-                props.mode === NOTIFICATION ? "nav-item active" : "nav-item"
+                mode === NOTIFICATIONS ? "nav-item active" : "nav-item"
               }
               onClick={() => {
-                props.changeMode(NOTIFICATION);
+                changeMode(NOTIFICATIONS);
               }}
             >
               NOTIFICATIONS

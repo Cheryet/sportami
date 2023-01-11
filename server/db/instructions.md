@@ -7,11 +7,14 @@ psql
 CREATE DATABASE sportami;
 \c sportami;
 \i server/db/schema/create.sql
+
 \i server/db/seeds/users.sql
 \i server/db/seeds/sports.sql
 \i server/db/seeds/users_sports.sql
 \i server/db/seeds/matches.sql
 \i server/db/seeds/reviews.sql
+or 
+\i server/db/seeds/allSeeds.sql
 
 3: Copy and paste the following commands into your terminal to confirm the tables were created
 
