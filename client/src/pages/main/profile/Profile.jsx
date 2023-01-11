@@ -14,6 +14,9 @@ const Profile = (props) => {
   //Location state
   const [location, setLocation] = useState("Lethbridge");
 
+  //User State
+  const [userData, setUserData] = useState({ user: {}, sports: [] });
+
   //Helper - Show/Hide location dropdown
   const showDropdown = () => {
     setDropdown(!dropdown);
@@ -25,9 +28,6 @@ const Profile = (props) => {
     setDropdown(false);
   };
 
-  //User State
-  const [userData, setUserData] = useState({ user: {}, sports: [] });
-
   //Helper - Get users data when logged in
   useEffect(() => {
     //Gets user data based on user_id -- ONCE TOKEN IS DONE, REPLACE ID(6) WITH USER-TOKEN
@@ -38,10 +38,6 @@ const Profile = (props) => {
       setUserData({ user: all[0].data[0], sports: all[1].data });
     });
   }, []);
-
-  console.log("userData.user", userData);
-  console.log("userData.user", userData.user);
-  console.log("userdata.sports", userData.sports);
 
   // Helper - Get Skill Level for user
   let skillList = [];
@@ -62,6 +58,8 @@ const Profile = (props) => {
       });
     }
   };
+
+  console.log("Token:", props.token);
 
   getSportsList();
   getSkillList();
