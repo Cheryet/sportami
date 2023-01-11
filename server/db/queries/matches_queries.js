@@ -26,16 +26,10 @@ const getMatchById = (id) => {
 };
 
 //This query is for creating a match
-const addMatch = (
-  challenger_id,
-  opponent_id,
-  location_id,
-  sport_id,
-  accepted
-) => {
+const addMatch = (match) => {
   return db.query(
-    `INSERT INTO matches (challenger_id, opponent_id, location_id, sport_id, accepted) VALUES ($1, $2, $3, $4, $5)`,
-    [challenger_id, opponent_id, location_id, sport_id, accepted]
+    `INSERT INTO matches (challenger_id, opponent_id, location_id, sport_id, accepted) VALUES ($1, $2, $3, $4, FALSE)`,
+    [match.challenger_id, match.opponent_id, match.location_id, match.sport_id]
   );
 };
 

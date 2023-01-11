@@ -1,8 +1,11 @@
 import { React, useContext} from "react";
+import { modeContext } from "../../providers/ModeProvider";
+import MatchProvider from "../../providers/MatchProvider";
 import Navbar from "./navbar/Navbar";
 //import userAppData from "./hooks/userAppData";
 
-import { modeContext } from "../../providers/ModeProvider";
+
+
 
 import Profile from "./profile/Profile";
 import OpponentList from "./opponents/OpponentList";
@@ -14,13 +17,13 @@ const Main = () => {
   const { mode, PROFILE, OPPONENT, NOTIFICATIONS, REVIEW } = useContext(modeContext);
 
   return (
-    <>
-      {/* <Navbar/> */}
+    <MatchProvider>
+      <Navbar/>
       {mode === PROFILE && <Profile />}
       {mode === OPPONENT && <OpponentList />}
       {mode === NOTIFICATIONS && <Matches/>}
       {mode === REVIEW && <Review/>}
-    </>
+    </MatchProvider>
   );
 };
 
