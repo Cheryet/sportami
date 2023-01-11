@@ -68,7 +68,6 @@ function Register({ setToken }) {
     }
   }, [isPost, allUserParams]);
 
-  // HAS TO CHANGE TO SEND A TOKEN
   const handlePost = async () => {
     const isNotNull = Object.values(allUserParams).every(
       (param) => param !== null && param !== ""
@@ -79,10 +78,10 @@ function Register({ setToken }) {
           "/api/register",
           allUserParams
         );
+        console.log(allUserParams);
         if (registerSuccess.data.success === true) {
           setToken(registerSuccess.data.token);
           navigate("/main");
-          // Change to main ^
         }
       } catch (error) {
         console.error(error);

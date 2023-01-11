@@ -11,6 +11,7 @@ const users_sports = require("../db/queries/users_sports");
 
 router.post("/", (req, res) => {
   const userSports = req.body.sports;
+  console.log("userSports", userSports);
   user.addUser(
     req.body.username,
     req.body.first_name,
@@ -26,13 +27,17 @@ router.post("/", (req, res) => {
       const newUser = user["rows"][0];
       sports.getAllSports()
         .then((sports) => {
-          const userSportsWithId = sports.map(sport => {
+          const userSportsWithId = sports.filter(sport => {
+            return userSports.find(userSport => userSport.sport === sport.name);
+          }).map(sport => {
             const matchingObject = userSports.find(userSport => userSport.sport === sport.name);
             return { ...sport, ...matchingObject };
           });
+          console.log("userSportsWithId", userSportsWithId);
           const requests = userSportsWithId.map(userSportWithId => {
             return users_sports.addUserSports(newUser["id"], userSportWithId["id"], userSportWithId["self_skill"]);
           });
+          console.log("requests", requests);
           Promise.all(requests)
             .then(() => {
               res.status(201).send({ success: true, token: newUser["id"] });
