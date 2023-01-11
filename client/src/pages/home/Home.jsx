@@ -1,21 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./home.scss";
-import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-function Home() {
+function Home({ setToken }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const login = async (event) => {
     event.preventDefault();
     try {
-      const loginSuccess = await axios.post("/api/login", {
+      const token = await axios.post("/api/login", {
         email: email,
         password: password,
       });
-      console.log(loginSuccess);
+      setToken(token.data.token);
     } catch (e) {
       console.error(e);
     }
@@ -52,5 +52,9 @@ function Home() {
     </div>
   );
 }
+
+Home.propTypes = {
+  setToken: PropTypes.func.isRequired,
+};
 
 export default Home;

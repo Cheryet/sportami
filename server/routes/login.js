@@ -13,11 +13,20 @@ router.post("/", (req, res) => {
   db.getUserByLoginDetails(req.body.email, req.body.password)
     .then((data) => {
       if (data.length > 0) {
-        res.status(200).send({ success: true });
+        res.send({
+          token: data[0].id,
+          success: true
+        });
+
       } else {
         res.status(401).send({ message: "Invalid email/username or password" });
       }
+    })
+    .catch((err) => {
+      res.status(500).send({ message: "Error retrieving user from database" });
     });
 });
+
+
 
 module.exports = router;
