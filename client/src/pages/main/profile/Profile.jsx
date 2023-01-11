@@ -30,7 +30,6 @@ const Profile = (props) => {
 
   //Helper - Get users data when logged in
   useEffect(() => {
-    //Gets user data based on user_id -- ONCE TOKEN IS DONE, REPLACE ID(6) WITH USER-TOKEN
     const userPromise = axios.get(`/api/users/${props.token}`);
     const sportsPromise = axios.get(`/api/user_sports/${props.token}`);
 
