@@ -20,8 +20,10 @@ router
     });
   })
   .put((req, res) => {
-    db.setOpponent(req.body.opponent_id, req.body.match_id).then(() => {
-      res.send(204).json();
+    const id = parseInt(req.params.id)
+    db.acceptMatch(id).then((response) => {
+      console.log("response", response);
+      res.status(200).send(`Match modified with id: ${id}`);
     });
   })
   .post((req, res) => {

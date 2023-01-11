@@ -40,10 +40,14 @@ const addMatch = (
 };
 
 //This query is for when a match is accepted
-const setOpponent = (opponent_id, match_id) => {
+const acceptMatch = (id) => {
   return db.query(
-    `UPDATE matches SET opponent_id = $1, accepted = true WHERE id = $2`,
-    [opponent_id, match_id]
+    `
+    UPDATE matches
+    SET accepted = true
+    WHERE id = $1
+    returning *;`,
+    [`${id}`]
   );
 };
 
@@ -52,5 +56,5 @@ module.exports = {
   getAllMatches,
   getMatchById,
   addMatch,
-  setOpponent,
+  acceptMatch,
 };

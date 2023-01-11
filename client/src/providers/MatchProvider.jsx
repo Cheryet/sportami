@@ -25,9 +25,28 @@ export default function MatchProvider(props) {
     });
   }, []);
 
-  const setMatches = matches => setState(prev => ({...prev, matches}));
+  const acceptMatch = (matchID) => {
+    axios
+      .put(`/api/matches/${matchID}`, {
+        match_id: matchID,
+      })
+      .then((res) => {
+        const matches = [...state.matches];
+        matches.push(res.data);
+        setState({ ...state, matches });
+        console.log("Match updated");
+      })
+      .catch((err) => console.log("Match not updated", err.message));
+  };
 
-  const matchData = { state, setMatches };
+  const handleSubmit = (id) => {
+    console.log("/api/matches/" + id)
+    axios.put("/api/matches/" + id, {
+      id: id
+    })
+  }
+
+  const matchData = { state, acceptMatch, handleSubmit };
   
   return (
     <matchContext.Provider value={matchData}>

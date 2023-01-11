@@ -1,31 +1,25 @@
-import React from "react";
+import { React, useContext} from "react";
 import Navbar from "./navbar/Navbar";
 //import userAppData from "./hooks/userAppData";
-import { useState } from "react";
+
+import { modeContext } from "../../providers/ModeProvider";
+
 import Profile from "./profile/Profile";
 import OpponentList from "./opponents/OpponentList";
 import Matches from "../matches/Matches";
+import Review from "./review/Review"
 
 const Main = () => {
-  //Modes for Main Page
-  const PROFILE = "profile";
-  const OPPONENT = "opponent";
-  const NOTIFICATIONS = "notifications";
 
-  //State for mode
-  const [mode, setMode] = useState(PROFILE);
-
-  //Helper - Set mode fucntion
-  const changeMode = (mode) => {
-    setMode(mode);
-  };
+  const { mode, PROFILE, OPPONENT, NOTIFICATIONS, REVIEW } = useContext(modeContext);
 
   return (
     <>
-      <Navbar changeMode={changeMode} mode={mode} />
+      {/* <Navbar/> */}
       {mode === PROFILE && <Profile />}
       {mode === OPPONENT && <OpponentList />}
       {mode === NOTIFICATIONS && <Matches/>}
+      {mode === REVIEW && <Review/>}
     </>
   );
 };

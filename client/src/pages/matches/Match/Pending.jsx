@@ -2,7 +2,6 @@ import { React, useContext } from "react";
 import { matchContext } from "../../../providers/MatchProvider";
 import { getSentMatchesByUser, getMatchSport, getMatchOpponent } from "../../../helpers/selectors";
 import "./styles.scss";
-import Button from "../Button";
 
 export default function MatchesListItem() {
   
@@ -38,7 +37,7 @@ export default function MatchesListItem() {
         </section>
         
         <section className="match__buttons">
-          <Button cancel >CANCEL</Button>
+          <button className="buttonCancel" >CANCEL</button>
         </section>
       </main>
     )}

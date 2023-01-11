@@ -46,3 +46,37 @@ $mainColor: rgb(242, 172, 22);
     justify-content: space-evenly;
   }
  }
+ 
+ .confirmButton {
+  margin-bottom: 2.5vh;
+  background-color: $mainColor;
+  border: 2px solid rgba(0, 0, 0, 0.59);
+  border-radius: 4px;
+  height: 35px;
+  width: 70px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+ .acceptedButton {
+  margin-bottom: 2.5vh;
+  margin-top: 1vh;
+  background-color: $mainColor;
+  border: 2px solid rgba(0, 0, 0, 0.59);
+  border-radius: 4px;
+  height: 35px;
+  width: 70px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.buttonCancel {
+  margin-bottom: 2.5vh;
+  margin-left: 33vw;
+  background-color: $mainColor;
+  border: 2px solid rgba(0, 0, 0, 0.59);
+  border-radius: 4px;
+  height: 35px;
+  width: 70px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}

@@ -1,13 +1,15 @@
 import { React, useContext } from "react";
 import { matchContext } from "../../../providers/MatchProvider";
+import { modeContext } from "../../../providers/ModeProvider";
 import { getAcceptedMatchesByUser, getMatchSport, getMatchChallenger, getMatchOpponent } from "../../../helpers/selectors";
 
 import "./styles.scss";
-import Button from "../Button";
 
 export default function MatchesListItem() {
   
   const testID = 1
+
+  const { changeMode, REVIEW } = useContext(modeContext);
 
   const { state } = useContext(matchContext);
 
@@ -20,6 +22,7 @@ export default function MatchesListItem() {
     const matchSport = getMatchSport(state, match)
 
     const opponent = getMatchOpponent(state, match)
+    
     const challenger = getMatchChallenger(state, match)
 
     if (match.challenger_id === testID) {
@@ -42,9 +45,11 @@ export default function MatchesListItem() {
         </section>
         
         <section className="match__buttons">
-          <Button email >EMAIL</Button>
-          <Button review >REVIEW</Button>
-          <Button confirmedCancel >CANCEL</Button>
+        <button className="acceptedButton" >EMAIL</button>
+        <button className="acceptedButton" onClick={() => {changeMode(REVIEW)}}>
+            REVIEW
+        </button>
+        <button className="acceptedButton" >CANCEL</button>
         </section>
       </main>
     )} else {
@@ -67,9 +72,11 @@ export default function MatchesListItem() {
           </section>
           
           <section className="match__buttons">
-            <Button email >EMAIL</Button>
-            <Button review >REVIEW</Button>
-            <Button confirmedCancel >CANCEL</Button>
+            <button className="acceptedButton" >EMAIL</button>
+            <button className="acceptedButton" onClick={() => {changeMode(REVIEW)}}>
+                REVIEW
+            </button>
+            <button className="acceptedButton" >CANCEL</button>
           </section>
         </main>
       )}
