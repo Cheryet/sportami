@@ -1,27 +1,68 @@
 import React from "react";
-import { useState } from "react";
+import axios from "axios";
+import { useState, useEffect } from "react";
 import "./profile.scss";
 import * as TbIcon from "react-icons/tb";
 import * as MdIcon from "react-icons/md";
+import SkillItem from "./Skilltem";
+import SportItem from "./SportItem";
 
-const Profile = () => {
+const Profile = (props) => {
   //Location Dropdown state
   const [dropdown, setDropdown] = useState(false);
+
   //Location state
   const [location, setLocation] = useState("Lethbridge");
 
-  //Show/Hide location dropdown
+  //User State
+  const [userData, setUserData] = useState({ user: {}, sports: [] });
+
+  //Helper - Show/Hide location dropdown
   const showDropdown = () => {
     setDropdown(!dropdown);
   };
 
-  //Set Location
+  //Helper - Set Location
   const changeLocation = (city) => {
     setLocation(city);
     setDropdown(false);
   };
 
-  //Set location
+  //Helper - Get users data when logged in
+  useEffect(() => {
+    //Gets user data based on user_id -- ONCE TOKEN IS DONE, REPLACE ID(6) WITH USER-TOKEN
+    const userPromise = axios.get(`/api/users/6`);
+    const sportsPromise = axios.get(`/api/user_sports/6`);
+
+    Promise.all([userPromise, sportsPromise]).then((all) => {
+      setUserData({ user: all[0].data[0], sports: all[1].data });
+    });
+  }, []);
+
+  // Helper - Get Skill Level for user
+  let skillList = [];
+  const getSkillList = () => {
+    if (userData.sports) {
+      skillList = userData.sports.map((item, index) => {
+        return <SkillItem key={index} skillLevel={item.self_skill} />;
+      });
+    }
+  };
+
+  //Helper - Get Sports for user
+  let sportList = [];
+  const getSportsList = () => {
+    if (userData.sports) {
+      sportList = userData.sports.map((item, index) => {
+        return <SportItem key={index} sport_id={item.sport_id} />;
+      });
+    }
+  };
+
+  console.log("Token:", props.token);
+
+  getSportsList();
+  getSkillList();
 
   return (
     <>
@@ -36,13 +77,13 @@ const Profile = () => {
           <div className="user-info">
             <p className="name-title">NAME</p>
             <hr className="name-line" />
-            <p className="item name">Corbin Heryet</p>
+            <p className="item name">{userData.user.first_name}</p>
             <p className="username-title">USERNAME</p>
             <hr className="username-line" />
-            <p className="item username">@Cheryet</p>
+            <p className="item username">@{userData.user.username}</p>
             <p className="email-title">EMAIL</p>
             <hr className="email-line" />
-            <p className="item email">C.Heryet@outlook.com</p>
+            <p className="item email">{userData.user.email}</p>
           </div>
         </div>
         <div className="middle-container">
@@ -52,7 +93,7 @@ const Profile = () => {
               <p>{location}</p>
               <MdIcon.MdOutlineKeyboardArrowDown className="down-icon" />
             </div>
-            <p className="gender">Male</p>
+            <p className="gender">{userData.user.gender}</p>
           </div>
           <div
             className={
@@ -84,30 +125,19 @@ const Profile = () => {
           <div className="bio-container">
             <p className="about-me">ABOUT ME</p>
             <hr />
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            <p>{userData.user.bio}</p>
           </div>
         </div>
         <div className="bottom-container">
           <div className="sports-container">
             <p className="sports-title">SPORTS</p>
             <hr />
-            <ul className="sports-list">
-              <li className="sports-item">Tennis</li>
-              <li className="sports-item">Golf</li>
-              <li className="sports-item">Ping Pong</li>
-            </ul>
+            <ul className="sports-list">{sportList}</ul>
           </div>
           <div className="skill-level-container">
             <p className="skill-level-title">SKILL LEVEL</p>
             <hr />
-            <ul className="skill-level-list">
-              <li className="skill-level-item">Amatuer</li>
-              <li className="skill-level-item">Casual</li>
-              <li className="skill-level-item">Pro</li>
-            </ul>
+            <ul className="skill-level-list">{skillList}</ul>
           </div>
         </div>
         <div className="button-container">

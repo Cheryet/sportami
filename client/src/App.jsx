@@ -24,7 +24,9 @@ const App = () => {
           />
           <Route
             path="/main"
-            element={!token ? <Home setToken={setToken} /> : <Main />}
+            element={
+              !token ? <Home setToken={setToken} /> : <Main token={token} />
+            }
           />
         </Routes>
       </BrowserRouter>
