@@ -1,23 +1,61 @@
 import "./opponent.scss";
 import * as TbIcon from "react-icons/tb";
 import * as AiIcon from "react-icons/ai";
+import SkillItem from "../profile/Skilltem";
+import SportItem from "../profile/SportItem";
 
-function Opponents() {
+function Opponents(props) {
+  //Helper - Get Sports for player from list
+  let mySports = [];
+  const getMySports = (user_id) => {
+    props.sports.forEach((item) => {
+      if (item.user_id === user_id) {
+        mySports.push(item);
+      }
+    });
+  };
+
+  // Helper - Get Skill Level for user
+  let skillList = [];
+  const getSkillList = () => {
+    if (mySports) {
+      skillList = mySports.map((item, index) => {
+        return <SkillItem key={index} skillLevel={item.self_skill} />;
+      });
+    }
+  };
+
+  //Helper - Get Sports for user
+  let sportList = [];
+  const getSportsList = () => {
+    if (mySports) {
+      sportList = mySports.map((item, index) => {
+        return <SportItem key={index} sport_id={item.sport_id} />;
+      });
+    }
+  };
+
+  getMySports(props.user_id);
+  getSkillList();
+  getSportsList();
+
   return (
     <div className="opponents">
       <div className="profile-photo-container">
         <img
-          src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+          src={props.profile_pic}
           alt="profile-photo"
           className="profile-photo"
         />
       </div>
 
       <section className="personal-info">
-        <p className="name-age">Alisa Vorotyntseva, 22</p>
+        <p className="name-age">
+          {props.first_name}, {props.age}
+        </p>
         <p className="location">
           <TbIcon.TbMapPin className="pin-icon" />
-          Oakville, ON
+          {props.location}
         </p>
       </section>
 
@@ -32,18 +70,12 @@ function Opponents() {
         </p>
       </div>
 
-      <div className="bio">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-        laborum labore culpa aliquid officiis laboriosam hic et amet.
-      </div>
+      <div className="bio">{props.bio}</div>
       <section className="sports-skills">
         <div className="sports">
           <p className="sport-title">SPORTS</p>
-          <p className="sport-ammount">2/6 Sports</p>
-          <div className="sport-item-list">
-            <p className="sport-item">Tennis</p>
-            <p className="sport-item">Ping Pong</p>
-          </div>
+          <p className="sport-ammount">{mySports.length}/6 Sports</p>
+          <ul className="sport-item-list">{sportList}</ul>
         </div>
         <div className="skill-level">
           <p className="skill-title">SKILL LEVEL</p>
@@ -55,10 +87,7 @@ function Opponents() {
             <AiIcon.AiFillStar className="star-icon-accuracy four" />
             <AiIcon.AiFillStar className="star-icon-accuracy five" />
           </p>
-          <div className="sport-item-list">
-            <p className="sport-item">Amateur</p>
-            <p className="sport-item">Professional</p>
-          </div>
+          <ul className="sport-item-list">{skillList}</ul>
         </div>
       </section>
       <div className="button-container">
