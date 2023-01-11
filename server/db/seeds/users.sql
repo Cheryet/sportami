@@ -53,13 +53,13 @@ INSERT INTO users (
   age,
   profile_pic) 
   VALUES (
-    'CoolKid',
-    'Laurent',
+    'Cheryet',
+    'Corbin',
     '12345',
-    '12345@gmail.com',
-    'Just a cool kid who is badder at sports',
-    'Vancouver',
-    'Female',
-    25,
-    'https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_0.jpg'
+    'example@gmail.com',
+    'This is my Bio. I need to write some text in here so im stretching it out, Hello from my bio',
+    'Lethrbidge',
+    'Male',
+    24,
+    'https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW4lMjBmYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80'
     );
