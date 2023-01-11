@@ -44,7 +44,6 @@ function Opponents(props) {
 
   //handles the challenge user buttons
   const testSportID = 1;
-
   const { sendMatchRequest } = useContext(matchContext);
 
   const sendRequest = () => {
@@ -98,7 +97,7 @@ function Opponents(props) {
           <ul className="sport-item-list">{skillList}</ul>
         </div>
       </section>
-      <div className="button-container" onclick={sendRequest}>
+      <div className="button-container" onClick={sendRequest}>
         <button className="challenge">CHALLENGE OPPONENT</button>
       </div>
     </div>

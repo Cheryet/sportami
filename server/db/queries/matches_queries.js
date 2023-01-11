@@ -1,4 +1,4 @@
-const db = require('../index.js');
+const db = require("../index.js");
 // Queries for Matches Table
 
 //This query gets all matches
@@ -28,8 +28,8 @@ const getMatchById = (id) => {
 //This query is for creating a match
 const addMatch = (match) => {
   return db.query(
-    `INSERT INTO matches (challenger_id, opponent_id, location_id, sport_id, accepted) VALUES ($1, $2, $3, $4, FALSE)`,
-    [match.challenger_id, match.opponent_id, match.location_id, match.sport_id]
+    `INSERT INTO matches (challenger_id, opponent_id, location, sport_id, accepted) VALUES ($1, $2, $3, $4, FALSE)`,
+    [match.challenger_id, match.opponent_id, match.location, match.sport_id]
   );
 };
 
@@ -62,5 +62,5 @@ module.exports = {
   getMatchById,
   addMatch,
   acceptMatch,
-  deleteMatch
+  deleteMatch,
 };

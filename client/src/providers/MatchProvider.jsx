@@ -34,12 +34,12 @@ export default function MatchProvider(props) {
     });
   }, [matchUpdate]);
 
-  const sendMatchRequest = (userID, oppID, cityID, sportID) => {
+  const sendMatchRequest = (userID, oppID, location, sportID) => {
     axios
       .post("/api/matches/new", {
         challenger_id: userID,
         opponent_id: oppID,
-        location_id: cityID,
+        location: location,
         sport_id: sportID,
       })
       .then(() => {
