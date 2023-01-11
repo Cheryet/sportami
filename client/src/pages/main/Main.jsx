@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./navbar/Navbar";
 //import userAppData from "./hooks/userAppData";
-import { useState } from "react";
 import Profile from "./profile/Profile";
 import OpponentList from "./opponents/OpponentList";
 
