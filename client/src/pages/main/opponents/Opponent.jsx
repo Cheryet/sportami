@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { matchContext } from "../../../providers/MatchProvider";
 
 import "./opponent.scss";
@@ -6,8 +6,25 @@ import * as TbIcon from "react-icons/tb";
 import * as AiIcon from "react-icons/ai";
 import SkillItem from "../profile/Skilltem";
 import SportItem from "../profile/SportItem";
+import SportItemChallenge from "./SportItemChallenge";
 
 function Opponents(props) {
+  //state for challenge drop down buttons
+  const [dropdown, setDropdown] = useState(false);
+
+  //state for if challenge was sent or not
+  const [sentChallenge, setSentChallenge] = useState(false);
+
+  //Helper - Show/Hide challenge button dropdown
+  const showDropdown = () => {
+    setDropdown(!dropdown);
+  };
+
+  //Helper - Toggle SentChallenge
+  const toggleChallenge = () => {
+    setSentChallenge(!sentChallenge);
+  };
+
   //Helper - Get Sports for player from list
   let mySports = [];
   const getMySports = (user_id) => {
@@ -38,17 +55,30 @@ function Opponents(props) {
     }
   };
 
+  //Helper - Get Sports for user for challenge
+  let sportListChallenge = [];
+  const getSportsListChallenge = () => {
+    if (mySports) {
+      sportListChallenge = mySports.map((item, index) => {
+        return (
+          <SportItemChallenge
+            key={index}
+            sport_id={item.sport_id}
+            token={props.token}
+            user_id={props.user_id}
+            location={props.location}
+            showDropdown={showDropdown}
+            toggleChallenge={toggleChallenge}
+          />
+        );
+      });
+    }
+  };
+
   getMySports(props.user_id);
   getSkillList();
   getSportsList();
-
-  //handles the challenge user buttons
-  const testSportID = 1;
-  const { sendMatchRequest } = useContext(matchContext);
-
-  const sendRequest = () => {
-    sendMatchRequest(props.token, props.user_id, props.location, testSportID);
-  };
+  getSportsListChallenge();
 
   return (
     <div className="opponents">
@@ -97,8 +127,41 @@ function Opponents(props) {
           <ul className="sport-item-list">{skillList}</ul>
         </div>
       </section>
-      <div className="button-container" onClick={sendRequest}>
-        <button className="challenge">CHALLENGE OPPONENT</button>
+      <div
+        className={
+          dropdown
+            ? "opponent-challenge-button"
+            : "opponent-challenge-button active"
+        }
+      >
+        <button className="opponent-challenge-btn" onClick={showDropdown}>
+          CHALLENGE OPPONENT
+        </button>
+      </div>
+      <div
+        className={
+          dropdown
+            ? "opponent-challenge-sports-btn-container active"
+            : "opponent-challenge-sports-btn-container"
+        }
+      >
+        {!sentChallenge && (
+          <p className="opponent-challenge-title">
+            Choose a sport to challenge {props.first_name}!
+          </p>
+        )}
+        {sentChallenge && (
+          <p className="opponent-challenge-title">
+            Challenge sent to {props.first_name}!
+          </p>
+        )}
+
+        <div className="opponent-selection-btn">
+          {sportListChallenge}
+          <button className="sportItemChallenge-button" onClick={showDropdown}>
+            Back
+          </button>
+        </div>
       </div>
     </div>
   );
