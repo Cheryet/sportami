@@ -76,3 +76,17 @@ export function getMatchOpponent(state, match) {
 
   return opponent;
 }
+
+//returns the given users user_sport_id
+export function getUserSportID(state, sportID, userID) {
+  const userSports = state.user_sports;
+
+  const userSportArr = userSports.filter(
+    (userSport) =>
+      userSport.user_id === userID && userSport.sport_id === sportID
+  );
+
+  const userSportID = userSportArr[0].id;
+
+  return userSportID;
+}

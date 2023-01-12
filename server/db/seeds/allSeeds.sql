@@ -79,24 +79,24 @@ INSERT INTO users_sports ( user_id, sport_id, self_skill) VALUES (3, 2, 'Casual'
 INSERT INTO users_sports ( user_id, sport_id, self_skill) VALUES (3, 1, 'Amatuer');
 INSERT INTO users_sports ( user_id, sport_id, self_skill) VALUES (3, 4, 'Casual');
 
-INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (1, 2, 'Golf', 1, TRUE);
-INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (1, 3, 'Golf', 2, TRUE);
-INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (1, 2, 'Tennis', 2, FALSE);
-INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (1, 3, 'Tennis', 2, FALSE);
-INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (2, 1, 'Table Tennis', 2, FALSE);
-INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (3, 1, 'Pickle Ball', 2, FALSE);
-INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (2, 1, 'Golf', 1, TRUE);
-INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (2, 3, 'Golf', 2, TRUE);
-INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (2, 1, 'Tennis', 2, FALSE);
-INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (2, 3, 'Tennis', 2, FALSE);
-INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (1, 2, 'Table Tennis', 2, FALSE);
-INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (3, 2, 'Pickle Ball', 2, FALSE);
-INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (3, 2, 'Golf', 1, TRUE);
-INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (3, 1, 'Golf', 2, TRUE);
-INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (3, 2, 'Tennis', 2, FALSE);
-INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (3, 1, 'Tennis', 2, FALSE);
-INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (2, 3, 'Table Tennis', 2, FALSE);
-INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (1, 3, 'Pickle Ball', 2, FALSE);
+INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (1, 2, 'Vancouver', 1, TRUE);
+INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (1, 3, 'Vancouver', 2, TRUE);
+INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (1, 2, 'Lethbridge', 2, FALSE);
+INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (1, 3, 'Lethbridge', 2, FALSE);
+INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (2, 1, 'Lethbridge', 2, FALSE);
+INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (3, 1, 'Oakville', 2, FALSE);
+INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (2, 1, 'Vancouver', 1, TRUE);
+INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (2, 3, 'Vancouver', 2, TRUE);
+INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (2, 1, 'Lethbridge', 2, FALSE);
+INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (2, 3, 'Lethbridge', 2, FALSE);
+INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (1, 2, 'Lethbridge', 2, FALSE);
+INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (3, 2, 'Oakville', 2, FALSE);
+INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (3, 2, 'Vancouver', 1, TRUE);
+INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (3, 1, 'Vancouver', 2, TRUE);
+INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (3, 2, 'Lethbridge', 2, FALSE);
+INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (3, 1, 'Lethbridge', 2, FALSE);
+INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (2, 3, 'Lethbridge', 2, FALSE);
+INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (1, 3, 'Oakville', 2, FALSE);
 
 
 INSERT INTO reviews ( user_sport_id, winner_id, sportsmanship_rating ) VALUES ('1', '1', 5);

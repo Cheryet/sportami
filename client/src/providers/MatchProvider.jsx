@@ -14,6 +14,8 @@ export default function MatchProvider(props) {
 
   const [matchUpdate, setMatchUpdate] = useState(false);
 
+  const [matchState, setMatchState] = useState({});
+
   useEffect(() => {
     Promise.all([
       axios.get("/api/users"),
@@ -77,7 +79,34 @@ export default function MatchProvider(props) {
       .catch((err) => console.log("Match not deleted", err.message));
   };
 
-  const matchData = { state, acceptMatch, deleteMatch, sendMatchRequest };
+  // For Match Reviews
+  const storeMatch = (match) => {
+    setMatchState(match);
+  };
+
+  const createReview = (userSportID, winnerID, rating) => {
+    axios
+      .post("/api/reviews/new", {
+        user_sport_id: userSportID,
+        winner_id: winnerID,
+        sportsmanship_rating: rating,
+      })
+      .then(() => {
+        setMatchUpdate(true);
+        console.log("Review created");
+      })
+      .catch((err) => console.log("Review not created", err.message));
+  };
+
+  const matchData = {
+    state,
+    acceptMatch,
+    deleteMatch,
+    sendMatchRequest,
+    storeMatch,
+    matchState,
+    createReview,
+  };
 
   return (
     <matchContext.Provider value={matchData}>
