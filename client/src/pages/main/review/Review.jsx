@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
 import { matchContext } from "../../../providers/MatchProvider";
 import { modeContext } from "../../../providers/ModeProvider";
-import { getMatchSport, getUserSportID } from "../../../helpers/selectors";
+import { getUserSportID } from "../../../helpers/selectors";
 import { Rating } from "@mui/material";
+
 import "./review.scss";
 
 //INSERT INTO reviews ( user_sport_id, winner_id, sportsmanship_rating ) VALUES ('1', '1', 5);
@@ -24,25 +25,51 @@ const Review = (props) => {
 
   const [rating, setRating] = useState(2.5);
 
+  const [winner, setWinner] = useState();
+
   const userSportID = getUserSportID(state, matchState.sport_id, userID);
 
   const sendReview = () => {
-    createReview(userSportID, testWinnerID, rating);
+    createReview(userSportID, winner, rating);
     changeMode(NOTIFICATIONS);
   };
 
   return (
     <div className="review-container">
       <section>
-        <button onClick={sendReview}>Finish Review</button>
-        <Rating
-          name="half-rating"
-          defaultValue={2.5}
-          precision={0.5}
-          onChange={(event, newValue) => {
-            setRating(newValue);
-          }}
-        />
+        <section className="winner-buttons">
+          <h2>Choose the Winner</h2>
+          <button
+            className="you-button"
+            onClick={() => {
+              setWinner(matchState.challenger_id);
+            }}
+          >
+            You
+          </button>
+          <button
+            className="opponent-button"
+            onClick={() => {
+              setWinner(matchState.opponent_id);
+            }}
+          >
+            Them
+          </button>
+        </section>
+        <section className="rating-select">
+          <h2>Rate your opponent</h2>
+          <Rating
+            name="half-rating"
+            defaultValue={2.5}
+            precision={0.5}
+            onChange={(event, newValue) => {
+              setRating(newValue);
+            }}
+          />
+        </section>
+        <section className="finish-button">
+          <button onClick={sendReview}>Finish Review</button>
+        </section>
       </section>
     </div>
   );
