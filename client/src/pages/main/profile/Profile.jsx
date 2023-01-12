@@ -94,10 +94,13 @@ const Profile = (props) => {
           </div>
           <div
             className={
-              dropdown ? "location-dropdown active" : "location-dropdown"
+              dropdown
+                ? "location-dropdown-123 active"
+                : "location-dropdown-123"
             }
           >
             <button
+              className="btn-location-profile"
               onClick={() => {
                 changeLocation("Lethbridge");
               }}
@@ -105,6 +108,7 @@ const Profile = (props) => {
               Lethbridge
             </button>
             <button
+              className="btn-location-profile"
               onClick={() => {
                 changeLocation("Oakville");
               }}
@@ -112,6 +116,7 @@ const Profile = (props) => {
               OakVille
             </button>
             <button
+              className="btn-location-profile"
               onClick={() => {
                 changeLocation("Vancouver");
               }}
