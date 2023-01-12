@@ -6,62 +6,76 @@ import { Rating } from "@mui/material";
 
 import "./review.scss";
 
-//INSERT INTO reviews ( user_sport_id, winner_id, sportsmanship_rating ) VALUES ('1', '1', 5);
-
-//need to set state to chosen match when review is clicked
-//need to be able to click on stars to set sportsmanship value
-//need 2 buttons or a selector for to set the winner(only display is current user is the match challenger)
-//
-
 const Review = (props) => {
-  //TEST DATA//
-  const testWinnerID = 1;
-  //
-
   const userID = parseInt(props.token);
 
   const { state, matchState, createReview } = useContext(matchContext);
   const { changeMode, NOTIFICATIONS } = useContext(modeContext);
 
-  const [rating, setRating] = useState(2.5);
+  //Handles the MUI rating value
+  const [rating, setRating] = useState(3);
 
-  const [winner, setWinner] = useState();
+  //Handles the winning user_id
+  const [winner, setWinner] = useState(null);
 
   const userSportID = getUserSportID(state, matchState.sport_id, userID);
 
+  //Sends the post request to create the review and returns you to the notifications page
   const sendReview = () => {
     createReview(userSportID, winner, rating);
     changeMode(NOTIFICATIONS);
   };
 
+  //Conditional rendering to allow only one user, the initial challenger, to choose the winner
+  if (matchState.challenger_id === userID) {
+    return (
+      <div className="review-container">
+        <section>
+          <section className="winner-buttons">
+            <h2>Choose the Winner</h2>
+            <button
+              className="you-button"
+              onClick={() => {
+                setWinner(matchState.challenger_id);
+              }}
+            >
+              You
+            </button>
+            <button
+              className="opponent-button"
+              onClick={() => {
+                setWinner(matchState.opponent_id);
+              }}
+            >
+              Them
+            </button>
+          </section>
+          <section className="rating-select">
+            <h2>Rate your opponent</h2>
+            <Rating
+              name="half-rating"
+              defaultValue={3}
+              onChange={(event, newValue) => {
+                setRating(newValue);
+              }}
+            />
+          </section>
+          <section className="finish-button">
+            <button onClick={sendReview}>Finish Review</button>
+          </section>
+        </section>
+      </div>
+    );
+  }
   return (
     <div className="review-container">
       <section>
-        <section className="winner-buttons">
-          <h2>Choose the Winner</h2>
-          <button
-            className="you-button"
-            onClick={() => {
-              setWinner(matchState.challenger_id);
-            }}
-          >
-            You
-          </button>
-          <button
-            className="opponent-button"
-            onClick={() => {
-              setWinner(matchState.opponent_id);
-            }}
-          >
-            Them
-          </button>
-        </section>
+        <h2>Review Your Match</h2>
         <section className="rating-select">
           <h2>Rate your opponent</h2>
           <Rating
             name="half-rating"
-            defaultValue={2.5}
-            precision={0.5}
+            defaultValue={3}
             onChange={(event, newValue) => {
               setRating(newValue);
             }}
