@@ -14,6 +14,8 @@ export default function MatchProvider(props) {
 
   const [matchUpdate, setMatchUpdate] = useState(false);
 
+  const [reviewState, setReviewState] = useState(null);
+
   useEffect(() => {
     Promise.all([
       axios.get("/api/users"),
@@ -77,7 +79,19 @@ export default function MatchProvider(props) {
       .catch((err) => console.log("Match not deleted", err.message));
   };
 
-  const matchData = { state, acceptMatch, deleteMatch, sendMatchRequest };
+  // For Match Reviews
+  const storeMatchID = (id) => {
+    setReviewState(id);
+  };
+
+  const matchData = {
+    state,
+    acceptMatch,
+    deleteMatch,
+    sendMatchRequest,
+    storeMatchID,
+    reviewState,
+  };
 
   return (
     <matchContext.Provider value={matchData}>

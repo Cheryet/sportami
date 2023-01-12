@@ -16,7 +16,7 @@ export default function MatchesListItem(props) {
 
   const { changeMode, REVIEW } = useContext(modeContext);
 
-  const { state, deleteMatch } = useContext(matchContext);
+  const { state, deleteMatch, storeMatchID } = useContext(matchContext);
 
   const { matches } = state;
 
@@ -53,6 +53,7 @@ export default function MatchesListItem(props) {
             <button
               className="acceptedButton"
               onClick={() => {
+                storeMatchID(match.id);
                 changeMode(REVIEW);
               }}
             >
@@ -86,6 +87,7 @@ export default function MatchesListItem(props) {
             <button
               className="acceptedButton"
               onClick={() => {
+                storeMatchID(match.id);
                 changeMode(REVIEW);
               }}
             >
