@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { matchContext } from "../../../providers/MatchProvider";
 import { modeContext } from "../../../providers/ModeProvider";
-import { getMatchSport } from "../../../helpers/selectors";
+import { getMatchSport, getUserSportID } from "../../../helpers/selectors";
+import { Rating } from "@mui/material";
 import "./review.scss";
 
 //INSERT INTO reviews ( user_sport_id, winner_id, sportsmanship_rating ) VALUES ('1', '1', 5);
@@ -13,20 +14,20 @@ import "./review.scss";
 
 const Review = (props) => {
   //TEST DATA//
-  const testUserSportID = 1;
   const testWinnerID = 1;
-  const testRating = 5;
   //
-  const { matchState, createReview } = useContext(matchContext);
-  const { changeMode, NOTIFICATIONS } = useContext(modeContext);
 
   const userID = parseInt(props.token);
 
-  console.log("Reviewed Match", matchState);
-  console.log("Current User", userID);
+  const { state, matchState, createReview } = useContext(matchContext);
+  const { changeMode, NOTIFICATIONS } = useContext(modeContext);
+
+  const [rating, setRating] = useState(2.5);
+
+  const userSportID = getUserSportID(state, matchState.sport_id, userID);
 
   const sendReview = () => {
-    createReview(testUserSportID, testWinnerID, testRating);
+    createReview(userSportID, testWinnerID, rating);
     changeMode(NOTIFICATIONS);
   };
 
@@ -34,6 +35,14 @@ const Review = (props) => {
     <div className="review-container">
       <section>
         <button onClick={sendReview}>Finish Review</button>
+        <Rating
+          name="half-rating"
+          defaultValue={2.5}
+          precision={0.5}
+          onChange={(event, newValue) => {
+            setRating(newValue);
+          }}
+        />
       </section>
     </div>
   );
