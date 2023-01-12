@@ -27,7 +27,7 @@ const OpponentList = (props) => {
   const getOpponentList = (token) => {
     if (opponentData.opponents) {
       opponentList = opponentData.opponents.map((item, index) => {
-        if (item.id != token) {
+        if (item.id !== token) {
           return (
             <Opponents
               key={index}
@@ -39,14 +39,15 @@ const OpponentList = (props) => {
               username={item.username}
               first_name={item.first_name}
               sports={opponentData.sports}
+              token={props.token}
             />
           );
         }
       });
     }
   };
-
-  getOpponentList(props.token);
+  const currentUser = parseInt(props.token);
+  getOpponentList(currentUser);
 
   return (
     <>

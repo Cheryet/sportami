@@ -1,31 +1,26 @@
-import React, { useState } from "react";
+import { React, useContext } from "react";
+import { modeContext } from "../../providers/ModeProvider";
+
+import MatchProvider from "../../providers/MatchProvider";
+
 import Navbar from "./navbar/Navbar";
-//import userAppData from "./hooks/userAppData";
 import Profile from "./profile/Profile";
 import OpponentList from "./opponents/OpponentList";
-import { PinDropSharp } from "@material-ui/icons";
+import Matches from "./matches/Matches";
+import Review from "./review/Review";
 
 const Main = (props) => {
-  //Modes for Main Page
-  const PROFILE = "profile";
-  const OPPONENT = "opponent";
-  const NOTIFICATION = "notificaiton";
-
-  //State for mode
-  const [mode, setMode] = useState(OPPONENT);
-
-  //Helper - Set mode fucntion
-  const changeMode = (mode) => {
-    setMode(mode);
-  };
+  const { mode, PROFILE, OPPONENT, NOTIFICATIONS, REVIEW } =
+    useContext(modeContext);
 
   return (
-    <>
-      {/* <Navbar changeMode={changeMode} mode={mode} /> */}
+    <MatchProvider>
+      <Navbar />
       {mode === PROFILE && <Profile token={props.token} />}
       {mode === OPPONENT && <OpponentList token={props.token} />}
-      {/* {mode === OPPONENT && < ~Notification Component goes here~ /> */}
-    </>
+      {mode === NOTIFICATIONS && <Matches token={props.token} />}
+      {mode === REVIEW && <Review token={props.token} />}
+    </MatchProvider>
   );
 };
 

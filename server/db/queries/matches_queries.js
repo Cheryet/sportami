@@ -1,4 +1,4 @@
-const db = require('../index.js');
+const db = require("../index.js");
 // Queries for Matches Table
 
 //This query gets all matches
@@ -26,24 +26,33 @@ const getMatchById = (id) => {
 };
 
 //This query is for creating a match
-const addMatch = (
-  challenger_id,
-  opponent_id,
-  location_id,
-  sport_id,
-  accepted
-) => {
+const addMatch = (match) => {
   return db.query(
-    `INSERT INTO matches (challenger_id, opponent_id, location_id, sport_id, accepted) VALUES ($1, $2, $3, $4, $5)`,
-    [challenger_id, opponent_id, location_id, sport_id, accepted]
+    `INSERT INTO matches (challenger_id, opponent_id, location, sport_id, accepted) VALUES ($1, $2, $3, $4, FALSE)`,
+    [match.challenger_id, match.opponent_id, match.location, match.sport_id]
   );
 };
 
 //This query is for when a match is accepted
-const setOpponent = (opponent_id, match_id) => {
+const acceptMatch = (id) => {
   return db.query(
-    `UPDATE matches SET opponent_id = $1, accepted = true WHERE id = $2`,
-    [opponent_id, match_id]
+    `
+    UPDATE matches
+    SET accepted = true
+    WHERE id = $1
+    returning *;`,
+    [`${id}`]
+  );
+};
+
+//This query is for when a match is deleted
+const deleteMatch = (id) => {
+  return db.query(
+    `
+    DELETE FROM matches
+    WHERE id = $1
+    returning *;`,
+    [`${id}`]
   );
 };
 
@@ -52,5 +61,6 @@ module.exports = {
   getAllMatches,
   getMatchById,
   addMatch,
-  setOpponent,
+  acceptMatch,
+  deleteMatch,
 };

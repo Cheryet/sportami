@@ -1,0 +1,80 @@
+$mainColor: rgb(242, 172, 22);
+
+.match {
+  width: 80vw;
+  height: 25vh;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.094);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__opponent {
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+    justify-content: space-between;
+    height: 8vh;
+    margin: 0.5vh;
+
+    &-profile {
+      height: 10vh;
+      width: 20vw;
+
+      &-pic {
+        height: 8vh;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    &-message {
+      height: 10vh;
+      width: 60vw;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+.confirmButton {
+  margin-bottom: 2.5vh;
+  background-color: $mainColor;
+  border: 2px solid rgba(0, 0, 0, 0.59);
+  border-radius: 4px;
+  height: 35px;
+  width: 70px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+.acceptedButton {
+  margin-bottom: 2.5vh;
+  margin-top: 1vh;
+  background-color: $mainColor;
+  border: 2px solid rgba(0, 0, 0, 0.59);
+  border-radius: 4px;
+  height: 35px;
+  width: 70px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.buttonCancel {
+  margin-bottom: 2.5vh;
+  margin-left: 33vw;
+  background-color: $mainColor;
+  border: 2px solid rgba(0, 0, 0, 0.59);
+  border-radius: 4px;
+  height: 35px;
+  width: 70px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}

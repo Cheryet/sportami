@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { matchContext } from "../../../providers/MatchProvider";
+
 import "./opponent.scss";
 import * as TbIcon from "react-icons/tb";
 import * as AiIcon from "react-icons/ai";
@@ -39,14 +42,18 @@ function Opponents(props) {
   getSkillList();
   getSportsList();
 
+  //handles the challenge user buttons
+  const testSportID = 1;
+  const { sendMatchRequest } = useContext(matchContext);
+
+  const sendRequest = () => {
+    sendMatchRequest(props.token, props.user_id, props.location, testSportID);
+  };
+
   return (
     <div className="opponents">
       <div className="profile-photo-container">
-        <img
-          src={props.profile_pic}
-          alt="profile-photo"
-          className="profile-photo"
-        />
+        <img src={props.profile_pic} alt="profile" className="profile-photo" />
       </div>
 
       <section className="personal-info">
@@ -90,7 +97,7 @@ function Opponents(props) {
           <ul className="sport-item-list">{skillList}</ul>
         </div>
       </section>
-      <div className="button-container">
+      <div className="button-container" onClick={sendRequest}>
         <button className="challenge">CHALLENGE OPPONENT</button>
       </div>
     </div>

@@ -1,13 +1,12 @@
-import React from "react";
+import { React, useContext } from "react";
+import { modeContext } from "../../../providers/ModeProvider";
 import * as TbIcon from "react-icons/tb";
 import "./navbar.scss";
 
-const Navbar = (props) => {
-  //Modes for Navbar
-  const PROFILE = "profile";
-  const OPPONENT = "opponent";
-  const NOTIFICATION = "notificaiton";
-
+const Navbar = () => {
+  
+  const { mode, changeMode, PROFILE, OPPONENT, NOTIFICATIONS } = useContext(modeContext);
+  
   return (
     <>
       <div className="navbar-container">
@@ -32,30 +31,30 @@ const Navbar = (props) => {
           <ul className="nav-list">
             <li
               className={
-                props.mode === PROFILE ? "nav-item active" : "nav-item"
+                mode === PROFILE ? "nav-item active" : "nav-item"
               }
               onClick={() => {
-                props.changeMode(PROFILE);
+                changeMode(PROFILE);
               }}
             >
               MY PROFILE
             </li>
             <li
               className={
-                props.mode === OPPONENT ? "nav-item active" : "nav-item"
+                mode === OPPONENT ? "nav-item active" : "nav-item"
               }
               onClick={() => {
-                props.changeMode(OPPONENT);
+                changeMode(OPPONENT);
               }}
             >
               FIND OPPONENT
             </li>
             <li
               className={
-                props.mode === NOTIFICATION ? "nav-item active" : "nav-item"
+                mode === NOTIFICATIONS ? "nav-item active" : "nav-item"
               }
               onClick={() => {
-                props.changeMode(NOTIFICATION);
+                changeMode(NOTIFICATIONS);
               }}
             >
               NOTIFICATIONS
