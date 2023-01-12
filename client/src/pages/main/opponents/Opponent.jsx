@@ -56,7 +56,7 @@ function Opponents(props) {
         <img src={props.profile_pic} alt="profile" className="profile-photo" />
       </div>
 
-      <section className="personal-info">
+      <section className="personal-info-123">
         <p className="name-age">
           {props.first_name}, {props.age}
         </p>
