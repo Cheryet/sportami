@@ -35,7 +35,9 @@ CREATE TABLE matches (
     opponent_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     location VARCHAR(255),
     sport_id INTEGER REFERENCES sports(id) ON DELETE CASCADE,
-    accepted BOOLEAN DEFAULT FALSE
+    accepted BOOLEAN DEFAULT FALSE,
+    challenger_reviewed BOOLEAN DEFAULT FALSE,
+    opponent_reviewed BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE reviews (

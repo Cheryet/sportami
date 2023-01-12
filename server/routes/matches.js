@@ -58,4 +58,34 @@ router
     });
   });
 
+router
+  .route("/:id/challenger")
+  .get((req, res) => {
+    db.getMatchById(req.params.id).then((data) => {
+      res.send(data);
+    });
+  })
+  .put((req, res) => {
+    const id = parseInt(req.params.id);
+    db.challengerReviewed(id).then((response) => {
+      console.log("response", response);
+      res.status(200).send(`Match modified with id: ${id}`);
+    });
+  });
+
+router
+  .route("/:id/opponent")
+  .get((req, res) => {
+    db.getMatchById(req.params.id).then((data) => {
+      res.send(data);
+    });
+  })
+  .put((req, res) => {
+    const id = parseInt(req.params.id);
+    db.opponentReviewed(id).then((response) => {
+      console.log("response", response);
+      res.status(200).send(`Match modified with id: ${id}`);
+    });
+  });
+
 module.exports = router;

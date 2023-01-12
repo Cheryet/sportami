@@ -45,6 +45,30 @@ const acceptMatch = (id) => {
   );
 };
 
+//This query is for when a match is accepted
+const challengerReviewed = (id) => {
+  return db.query(
+    `
+    UPDATE matches
+    SET challenger_reviewed = true
+    WHERE id = $1
+    returning *;`,
+    [`${id}`]
+  );
+};
+
+//This query is for when a match is accepted
+const opponentReviewed = (id) => {
+  return db.query(
+    `
+    UPDATE matches
+    SET opponent_reviewed = true
+    WHERE id = $1
+    returning *;`,
+    [`${id}`]
+  );
+};
+
 //This query is for when a match is deleted
 const deleteMatch = (id) => {
   return db.query(
@@ -63,4 +87,6 @@ module.exports = {
   addMatch,
   acceptMatch,
   deleteMatch,
+  challengerReviewed,
+  opponentReviewed,
 };

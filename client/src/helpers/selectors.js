@@ -13,8 +13,12 @@ export function getUser(state, userId) {
 export function getAcceptedMatchesByUser(matches, userId) {
   let userMatches = matches.filter(
     (match) =>
-      (match.challenger_id === userId && match.accepted === true) ||
-      (match.opponent_id === userId && match.accepted === true)
+      (match.challenger_id === userId &&
+        match.accepted === true &&
+        match.challenger_reviewed === false) ||
+      (match.opponent_id === userId &&
+        match.accepted === true &&
+        match.opponent_reviewed === false)
   );
 
   return userMatches;
@@ -23,7 +27,10 @@ export function getAcceptedMatchesByUser(matches, userId) {
 //returns matches for given user that have not yet been accepted
 export function getSentMatchesByUser(matches, userId) {
   let sentMatches = matches.filter(
-    (match) => match.challenger_id === userId && match.accepted === false
+    (match) =>
+      match.challenger_id === userId &&
+      match.accepted === false &&
+      match.challenger_reviewed === false
   );
 
   return sentMatches;
@@ -32,7 +39,10 @@ export function getSentMatchesByUser(matches, userId) {
 //returns matches requests for given user that they have yet to accept
 export function getReceivedMatchesByUser(matches, userId) {
   let receivedMatches = matches.filter(
-    (match) => match.opponent_id === userId && match.accepted === false
+    (match) =>
+      match.opponent_id === userId &&
+      match.accepted === false &&
+      match.opponent_reviewed === false
   );
 
   return receivedMatches;
