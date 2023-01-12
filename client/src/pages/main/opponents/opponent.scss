@@ -81,17 +81,40 @@ $mainColor: rgb(242, 172, 22);
     }
   }
 
-  .button-container {
-    display: flex;
-    justify-content: center;
+  .opponent-challenge-button {
+    display: none;
 
-    .challenge {
+    &.active {
+      display: flex;
+      justify-content: center;
+    }
+
+    .opponent-challenge-btn {
       margin: 3rem 0;
       padding: 0.5rem 1.5rem;
       border: 2px solid rgba(0, 0, 0, 0.59);
       border-radius: 4px;
       background-color: $mainColor;
       letter-spacing: 0.2rem;
+    }
+  }
+
+  .opponent-challenge-sports-btn-container {
+    display: none;
+
+    &.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .opponent-challenge-title {
+      letter-spacing: 0.1rem;
+    }
+
+    .opponent-selection-btn {
+      display: flex;
+      flex-direction: column;
     }
   }
 }
