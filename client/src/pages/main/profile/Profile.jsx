@@ -65,7 +65,7 @@ const Profile = (props) => {
     <>
       <div className="profile-container">
         <div className="top-container">
-          <div className="profile-photo">
+          <div className="profile-photo-123">
             <img
               src="https://i.pinimg.com/originals/fb/c0/47/fbc047e678aaa3f4e09206c61c819d4f.jpg"
               alt=""
