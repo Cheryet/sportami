@@ -10,9 +10,12 @@ import "./review.scss";
 //need 2 buttons or a selector for to set the winner(only display is current user is the match challenger)
 //
 
-const Review = () => {
-  const { reviewState } = useContext(matchContext);
-  console.log(reviewState);
+const Review = (props) => {
+  const { matchState } = useContext(matchContext);
+  const userID = parseInt(props.token);
+
+  console.log("Reviewed Match", matchState);
+  console.log("Current User", userID);
 
   return (
     <div className="review-container">

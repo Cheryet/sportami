@@ -14,7 +14,7 @@ export default function MatchProvider(props) {
 
   const [matchUpdate, setMatchUpdate] = useState(false);
 
-  const [reviewState, setReviewState] = useState(null);
+  const [matchState, setMatchState] = useState({});
 
   useEffect(() => {
     Promise.all([
@@ -80,8 +80,8 @@ export default function MatchProvider(props) {
   };
 
   // For Match Reviews
-  const storeMatchID = (id) => {
-    setReviewState(id);
+  const storeMatch = (match) => {
+    setMatchState(match);
   };
 
   const matchData = {
@@ -89,8 +89,8 @@ export default function MatchProvider(props) {
     acceptMatch,
     deleteMatch,
     sendMatchRequest,
-    storeMatchID,
-    reviewState,
+    storeMatch,
+    matchState,
   };
 
   return (
