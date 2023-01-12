@@ -14,7 +14,8 @@ import "./review.scss";
 const Review = (props) => {
   const userID = parseInt(props.token);
 
-  const { state, matchState, createReview } = useContext(matchContext);
+  const { state, matchState, createReview, challengerReview, opponentReview } =
+    useContext(matchContext);
   const { changeMode, NOTIFICATIONS } = useContext(modeContext);
 
   //Handles the MUI rating value
@@ -34,6 +35,16 @@ const Review = (props) => {
   const sendReview = () => {
     createReview(userSportID, winner, rating);
     changeMode(NOTIFICATIONS);
+  };
+
+  //Sends put request to update match that the challenger has reviewed it
+  const challengerFinish = () => {
+    challengerReview(matchState.id);
+  };
+
+  //Sends put request to update match that the opponent has reviewed it
+  const opponentFinish = () => {
+    opponentReview(matchState.id);
   };
 
   //Conditional rendering to allow only one user, the initial challenger, to choose the winner
@@ -74,7 +85,14 @@ const Review = (props) => {
             />
           </section>
           <section className="finish-button">
-            <button onClick={sendReview}>Finish Review</button>
+            <button
+              onClick={() => {
+                sendReview();
+                challengerFinish();
+              }}
+            >
+              Finish Review
+            </button>
           </section>
         </section>
       </div>
@@ -97,7 +115,14 @@ const Review = (props) => {
           />
         </section>
         <section className="finish-button">
-          <button onClick={sendReview}>Finish Review</button>
+          <button
+            onClick={() => {
+              sendReview();
+              opponentFinish();
+            }}
+          >
+            Finish Review
+          </button>
         </section>
       </section>
     </div>

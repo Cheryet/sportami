@@ -65,6 +65,34 @@ export default function MatchProvider(props) {
       .catch((err) => console.log("Match not updated", err.message));
   };
 
+  const challengerReview = (id) => {
+    console.log(`/api/matches/${id}/challenger`);
+
+    axios
+      .put(`/api/matches/${id}/challenger`, {
+        id: id,
+      })
+      .then(() => {
+        setMatchUpdate(true);
+        console.log("Match updated");
+      })
+      .catch((err) => console.log("Match not updated", err.message));
+  };
+
+  const opponentReview = (id) => {
+    console.log(`/api/matches/${id}/opponent`);
+
+    axios
+      .put(`/api/matches/${id}/opponent`, {
+        id: id,
+      })
+      .then(() => {
+        setMatchUpdate(true);
+        console.log("Match updated");
+      })
+      .catch((err) => console.log("Match not updated", err.message));
+  };
+
   const deleteMatch = (id) => {
     console.log("/api/matches/" + id);
 
@@ -106,6 +134,8 @@ export default function MatchProvider(props) {
     storeMatch,
     matchState,
     createReview,
+    challengerReview,
+    opponentReview,
   };
 
   return (
