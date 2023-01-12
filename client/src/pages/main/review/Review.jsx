@@ -1,7 +1,12 @@
 import React, { useContext, useState } from "react";
 import { matchContext } from "../../../providers/MatchProvider";
 import { modeContext } from "../../../providers/ModeProvider";
-import { getUserSportID } from "../../../helpers/selectors";
+import {
+  getUserSportID,
+  getMatchSport,
+  getMatchChallenger,
+  getMatchOpponent,
+} from "../../../helpers/selectors";
 import { Rating } from "@mui/material";
 
 import "./review.scss";
@@ -13,12 +18,17 @@ const Review = (props) => {
   const { changeMode, NOTIFICATIONS } = useContext(modeContext);
 
   //Handles the MUI rating value
-  const [rating, setRating] = useState(3);
+  const [rating, setRating] = useState(0);
 
   //Handles the winning user_id
   const [winner, setWinner] = useState(null);
 
   const userSportID = getUserSportID(state, matchState.sport_id, userID);
+
+  //Used to get access to user and sport names to populate the page
+  const matchSport = getMatchSport(state, matchState);
+  const opponent = getMatchOpponent(state, matchState);
+  const challenger = getMatchChallenger(state, matchState);
 
   //Sends the post request to create the review and returns you to the notifications page
   const sendReview = () => {
@@ -30,6 +40,9 @@ const Review = (props) => {
   if (matchState.challenger_id === userID) {
     return (
       <div className="review-container">
+        <h2>
+          Review your {matchSport} match with {opponent.first_name}
+        </h2>
         <section>
           <section className="winner-buttons">
             <h2>Choose the Winner</h2>
@@ -47,14 +60,14 @@ const Review = (props) => {
                 setWinner(matchState.opponent_id);
               }}
             >
-              Them
+              {opponent.first_name}
             </button>
           </section>
           <section className="rating-select">
-            <h2>Rate your opponent</h2>
+            <h2>Rate {opponent.first_name}'s sportsmanship!</h2>
             <Rating
               name="half-rating"
-              defaultValue={3}
+              defaultValue={0}
               onChange={(event, newValue) => {
                 setRating(newValue);
               }}
@@ -69,13 +82,15 @@ const Review = (props) => {
   }
   return (
     <div className="review-container">
+      <h2>
+        Review your {matchSport} match with {challenger.first_name}
+      </h2>
       <section>
-        <h2>Review Your Match</h2>
         <section className="rating-select">
-          <h2>Rate your opponent</h2>
+          <h2>Rate {challenger.first_name}'s sportsmanship!</h2>
           <Rating
             name="half-rating"
-            defaultValue={3}
+            defaultValue={0}
             onChange={(event, newValue) => {
               setRating(newValue);
             }}
