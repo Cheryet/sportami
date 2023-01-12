@@ -84,6 +84,20 @@ export default function MatchProvider(props) {
     setMatchState(match);
   };
 
+  const createReview = (userSportID, winnerID, rating) => {
+    axios
+      .post("/api/reviews/new", {
+        user_sport_id: userSportID,
+        winner_id: winnerID,
+        sportsmanship_rating: rating,
+      })
+      .then(() => {
+        setMatchUpdate(true);
+        console.log("Review created");
+      })
+      .catch((err) => console.log("Review not created", err.message));
+  };
+
   const matchData = {
     state,
     acceptMatch,
@@ -91,6 +105,7 @@ export default function MatchProvider(props) {
     sendMatchRequest,
     storeMatch,
     matchState,
+    createReview,
   };
 
   return (

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { matchContext } from "../../../providers/MatchProvider";
+import { modeContext } from "../../../providers/ModeProvider";
 import { getMatchSport } from "../../../helpers/selectors";
 import "./review.scss";
 
@@ -11,15 +12,29 @@ import "./review.scss";
 //
 
 const Review = (props) => {
-  const { matchState } = useContext(matchContext);
+  //TEST DATA//
+  const testUserSportID = 1;
+  const testWinnerID = 1;
+  const testRating = 5;
+  //
+  const { matchState, createReview } = useContext(matchContext);
+  const { changeMode, NOTIFICATIONS } = useContext(modeContext);
+
   const userID = parseInt(props.token);
 
   console.log("Reviewed Match", matchState);
   console.log("Current User", userID);
 
+  const sendReview = () => {
+    createReview(testUserSportID, testWinnerID, testRating);
+    changeMode(NOTIFICATIONS);
+  };
+
   return (
     <div className="review-container">
-      <section></section>
+      <section>
+        <button onClick={sendReview}>Finish Review</button>
+      </section>
     </div>
   );
 };
