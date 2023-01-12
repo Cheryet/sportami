@@ -9,14 +9,14 @@ INSERT INTO users (
   age,
   profile_pic) 
   VALUES (
-    'SportyDuder',
-    'Ophelia',
+    'Vorotyna',
+    'Alisa',
     '12345',
-    '123@gmail.com',
-    'Just a cool kid who is bad at sports',
-    'Vancouver',
-    'Male',
-    64,
+    'Vorotyna@LHL.com',
+    'This is the bio for Alisa',
+    'Oakville',
+    'Female',
+    22,
     'https://i.pinimg.com/originals/fb/c0/47/fbc047e678aaa3f4e09206c61c819d4f.jpg'
     );
 
@@ -31,14 +31,14 @@ INSERT INTO users (
   age,
   profile_pic) 
   VALUES (
-    'Less Sporty Person',
-    'Terrance',
+    'ItsGentleB',
+    'B',
     '12345',
-    '1234@gmail.com',
-    'Just a cool kid who is badder at sports',
+    'ItsGentleB@LHL.com',
+    'This is the bio for B',
     'Vancouver',
-    'Male',
-    19,
+    'Other',
+    29,
     'https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW4lMjBmYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80'
     );
 
@@ -56,7 +56,7 @@ INSERT INTO users (
     'Cheryet',
     'Corbin',
     '12345',
-    'example@gmail.com',
+    'CHeryet@LHL.com',
     'This is my Bio. I need to write some text in here so im stretching it out, Hello from my bio',
     'Lethrbidge',
     'Male',
