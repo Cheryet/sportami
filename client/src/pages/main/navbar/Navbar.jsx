@@ -4,9 +4,9 @@ import * as TbIcon from "react-icons/tb";
 import "./navbar.scss";
 
 const Navbar = () => {
-  
-  const { mode, changeMode, PROFILE, OPPONENT, NOTIFICATIONS } = useContext(modeContext);
-  
+  const { mode, changeMode, PROFILE, OPPONENT, NOTIFICATIONS } =
+    useContext(modeContext);
+
   return (
     <>
       <div className="navbar-container">
@@ -17,12 +17,12 @@ const Navbar = () => {
           </div>
           <button>Logout</button>
         </div>
-        <div className="middle-container">
+        <div className="container-middle">
           <p className="welcome-message">Welcome, Corbin!</p>
           <p className="best-sport">
             <span>TOP SPORT:</span>&nbsp;Golf
           </p>
-          <p className="location">
+          <p className="nav-location">
             <TbIcon.TbMapPin className="pin-icon" />
             Lethrbidge
           </p>
@@ -30,9 +30,7 @@ const Navbar = () => {
         <nav className="navbar">
           <ul className="nav-list">
             <li
-              className={
-                mode === PROFILE ? "nav-item active" : "nav-item"
-              }
+              className={mode === PROFILE ? "nav-item active" : "nav-item"}
               onClick={() => {
                 changeMode(PROFILE);
               }}
@@ -40,9 +38,7 @@ const Navbar = () => {
               MY PROFILE
             </li>
             <li
-              className={
-                mode === OPPONENT ? "nav-item active" : "nav-item"
-              }
+              className={mode === OPPONENT ? "nav-item active" : "nav-item"}
               onClick={() => {
                 changeMode(OPPONENT);
               }}

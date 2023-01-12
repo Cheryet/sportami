@@ -65,7 +65,7 @@ const Profile = (props) => {
     <>
       <div className="profile-container">
         <div className="top-container">
-          <div className="profile-photo">
+          <div className="profile-photo-123">
             <img
               src="https://i.pinimg.com/originals/fb/c0/47/fbc047e678aaa3f4e09206c61c819d4f.jpg"
               alt=""
@@ -94,10 +94,13 @@ const Profile = (props) => {
           </div>
           <div
             className={
-              dropdown ? "location-dropdown active" : "location-dropdown"
+              dropdown
+                ? "location-dropdown-123 active"
+                : "location-dropdown-123"
             }
           >
             <button
+              className="btn-location-profile"
               onClick={() => {
                 changeLocation("Lethbridge");
               }}
@@ -105,6 +108,7 @@ const Profile = (props) => {
               Lethbridge
             </button>
             <button
+              className="btn-location-profile"
               onClick={() => {
                 changeLocation("Oakville");
               }}
@@ -112,6 +116,7 @@ const Profile = (props) => {
               OakVille
             </button>
             <button
+              className="btn-location-profile"
               onClick={() => {
                 changeLocation("Vancouver");
               }}
