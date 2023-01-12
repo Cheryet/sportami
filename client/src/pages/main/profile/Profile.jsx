@@ -25,7 +25,7 @@ const Profile = (props) => {
     setDropdown(false);
   };
 
-  // Helper - Get Skill Level for user
+  // Helper - Get Skill Levels for user
   let skillList = [];
   const getSkillList = () => {
     if (userData.sports) {
