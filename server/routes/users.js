@@ -20,7 +20,7 @@ router
     });
   })
   .put((req, res) => {
-    db.updateLocation(req.params.location, req.params.user_id)
+    db.updateLocation(req.body.location, req.params.user_id)
       .then(() => {
         res.status(204);
       })

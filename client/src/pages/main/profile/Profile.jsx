@@ -8,11 +8,22 @@ import SkillItem from "./Skilltem";
 import SportItem from "./SportItem";
 
 const Profile = (props) => {
+  //Helper - Get users data when logged in
+  useEffect(() => {
+    const userPromise = axios.get(`/api/users/${props.token}`);
+    const sportsPromise = axios.get(`/api/user_sports/${props.token}`);
+
+    Promise.all([userPromise, sportsPromise]).then((all) => {
+      setUserData({ user: all[0].data[0], sports: all[1].data });
+      setLocation(all[0].data[0].location);
+    });
+  }, []);
+
   //Location Dropdown state
   const [dropdown, setDropdown] = useState(false);
 
   //Location state
-  const [location, setLocation] = useState("Lethbridge");
+  const [location, setLocation] = useState();
 
   //User State
   const [userData, setUserData] = useState({ user: {}, sports: [] });
@@ -27,16 +38,6 @@ const Profile = (props) => {
     setLocation(city);
     setDropdown(false);
   };
-
-  //Helper - Get users data when logged in
-  useEffect(() => {
-    const userPromise = axios.get(`/api/users/${props.token}`);
-    const sportsPromise = axios.get(`/api/user_sports/${props.token}`);
-
-    Promise.all([userPromise, sportsPromise]).then((all) => {
-      setUserData({ user: all[0].data[0], sports: all[1].data });
-    });
-  }, []);
 
   // Helper - Get Skill Level for user
   let skillList = [];
