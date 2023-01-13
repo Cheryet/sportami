@@ -1,11 +1,42 @@
-import { React, useContext } from "react";
+import { React, useContext, useState } from "react";
 import { modeContext } from "../../../providers/ModeProvider";
+import { userDataContext } from "../../../providers/UserDataProvider";
+import TopSport from "./TopSport";
 import * as TbIcon from "react-icons/tb";
 import "./navbar.scss";
+import { useEffect } from "react";
+import axios from "axios";
 
 const Navbar = () => {
+  //Providers
   const { mode, changeMode, PROFILE, OPPONENT, NOTIFICATIONS } =
     useContext(modeContext);
+
+  const { userData, location } = useContext(userDataContext);
+
+  const [topSportId, setTopSportId] = useState();
+
+  //Helper - Get top sport for user
+
+  const getTopSport = (sports) => {
+    sports.forEach((item) => {
+      if (item.self_skill === "Pro") {
+        return setTopSportId(item.sport_id);
+      }
+
+      if (item.self_skill === "Amatuer") {
+        return setTopSportId(item.sport_id);
+      }
+    });
+  };
+
+  useEffect(() => {
+    getTopSport(userData.sports);
+  });
+
+  console.log("topsportid:", topSportId);
+
+  //getTopSport(userData.sports);
 
   return (
     <>
@@ -18,13 +49,16 @@ const Navbar = () => {
           <button>Logout</button>
         </div>
         <div className="container-middle">
-          <p className="welcome-message">Welcome, Corbin!</p>
+          <p className="welcome-message">
+            Welcome, {userData.user.first_name}!
+          </p>
           <p className="best-sport">
-            <span>TOP SPORT:</span>&nbsp;Golf
+            <span>TOP SPORT:&nbsp;</span>
+            <TopSport sport_id={topSportId} />
           </p>
           <p className="nav-location">
             <TbIcon.TbMapPin className="pin-icon" />
-            Lethrbidge
+            {location}
           </p>
         </div>
         <nav className="navbar">
