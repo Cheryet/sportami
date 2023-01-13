@@ -1,6 +1,4 @@
-import { useContext, useState } from "react";
-import { matchContext } from "../../../providers/MatchProvider";
-
+import { useState } from "react";
 import "./opponent.scss";
 import * as TbIcon from "react-icons/tb";
 import * as AiIcon from "react-icons/ai";
