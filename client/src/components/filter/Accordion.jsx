@@ -59,7 +59,7 @@ function Accordion({ setShowAccordion, showAccordion }) {
                 </div>
                 <div className={openCategory === index ? "active" : "inactive"}>
                   {item.options.map((option, index) => (
-                    <div>
+                    <div key={option}>
                       <input
                         type="checkbox"
                         id={option}
