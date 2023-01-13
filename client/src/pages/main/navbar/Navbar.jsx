@@ -5,7 +5,6 @@ import TopSport from "./TopSport";
 import * as TbIcon from "react-icons/tb";
 import "./navbar.scss";
 import { useEffect } from "react";
-import axios from "axios";
 
 const Navbar = () => {
   //Providers
