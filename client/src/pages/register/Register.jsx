@@ -22,7 +22,7 @@ const userParams = {
   bio: "",
 };
 
-function Register() {
+function Register({ setToken }) {
   const navigate = useNavigate();
   const [current, setCurrent] = useState("Credentials");
   const [credentials, setCredentials] = useState({
@@ -78,11 +78,11 @@ function Register() {
           "/api/register",
           allUserParams
         );
+        console.log(allUserParams);
         if (registerSuccess.data.success === true) {
-          navigate("/");
-          // Change to main ^
+          setToken(registerSuccess.data.token);
+          navigate("/main");
         }
-        console.log(registerSuccess);
       } catch (error) {
         console.error(error);
       }

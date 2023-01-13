@@ -30,7 +30,15 @@ const App = () => {
           />
           <Route
             path="/register"
-            element={!token ? <Home setToken={setToken} /> : <Register />}
+            element={
+              !token ? (
+                <ModeProvider>
+                  <Register setToken={setToken} />
+                </ModeProvider>
+              ) : (
+                <Navigate to="/main" />
+              )
+            }
           />
           <Route
             path="/main"
