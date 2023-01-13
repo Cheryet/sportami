@@ -33,10 +33,6 @@ const Navbar = () => {
     getTopSport(userData.sports);
   });
 
-  console.log("topsportid:", topSportId);
-
-  //getTopSport(userData.sports);
-
   return (
     <>
       <div className="navbar-container">
