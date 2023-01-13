@@ -1,4 +1,5 @@
-import { React, useContext } from "react";
+import { React, useContext, useState } from "react";
+
 import { matchContext } from "../../../../providers/MatchProvider";
 import { modeContext } from "../../../../providers/ModeProvider";
 import {
@@ -21,6 +22,17 @@ export default function MatchesListItem(props) {
   const { matches } = state;
 
   const userMatches = getAcceptedMatchesByUser(matches, userID);
+
+  //Change copy email button text after copying to clipboard
+  const [active, setActive] = useState(false);
+  const [currentMatch, setCurrentMatch] = useState(0);
+  const handleEmailClick = (matchID) => {
+    if (currentMatch !== matchID) {
+      setCurrentMatch(matchID);
+      setActive(!active);
+    }
+    setActive(true);
+  };
 
   const matchesItem = userMatches.map((match) => {
     const matchSport = getMatchSport(state, match);
@@ -49,7 +61,15 @@ export default function MatchesListItem(props) {
           </section>
 
           <section className="match__buttons">
-            <button className="acceptedButton">EMAIL</button>
+            <button
+              className="acceptedButton"
+              onClick={() => {
+                navigator.clipboard.writeText(`${opponent.email}`);
+                handleEmailClick(match.id);
+              }}
+            >
+              {active && currentMatch === match.id ? "COPIED!" : "COPY EMAIL"}
+            </button>
             <button
               className="acceptedButton"
               onClick={() => {
@@ -83,7 +103,15 @@ export default function MatchesListItem(props) {
           </section>
 
           <section className="match__buttons">
-            <button className="acceptedButton">EMAIL</button>
+            <button
+              className="acceptedButton"
+              onClick={() => {
+                navigator.clipboard.writeText(`${challenger.email}`);
+                handleEmailClick(match.id);
+              }}
+            >
+              {active && currentMatch === match.id ? "COPIED!" : "COPY EMAIL"}
+            </button>
             <button
               className="acceptedButton"
               onClick={() => {
