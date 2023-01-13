@@ -1,6 +1,6 @@
-import React from "react";
-import axios from "axios";
-import { useState, useEffect } from "react";
+import React, { useContext } from "react";
+import { userDataContext } from "../../../providers/UserDataProvider";
+import { useState } from "react";
 import "./profile.scss";
 import * as TbIcon from "react-icons/tb";
 import * as MdIcon from "react-icons/md";
@@ -8,25 +8,11 @@ import SkillItem from "./Skilltem";
 import SportItem from "./SportItem";
 
 const Profile = (props) => {
-  //Helper - Get users data when logged in
-  useEffect(() => {
-    const userPromise = axios.get(`/api/users/${props.token}`);
-    const sportsPromise = axios.get(`/api/user_sports/${props.token}`);
-
-    Promise.all([userPromise, sportsPromise]).then((all) => {
-      setUserData({ user: all[0].data[0], sports: all[1].data });
-      setLocation(all[0].data[0].location);
-    });
-  }, []);
+  //Provider
+  const { userData, setLocation, location } = useContext(userDataContext);
 
   //Location Dropdown state
   const [dropdown, setDropdown] = useState(false);
-
-  //Location state
-  const [location, setLocation] = useState();
-
-  //User State
-  const [userData, setUserData] = useState({ user: {}, sports: [] });
 
   //Helper - Show/Hide location dropdown
   const showDropdown = () => {
@@ -39,7 +25,7 @@ const Profile = (props) => {
     setDropdown(false);
   };
 
-  // Helper - Get Skill Level for user
+  // Helper - Get Skill Levels for user
   let skillList = [];
   const getSkillList = () => {
     if (userData.sports) {
