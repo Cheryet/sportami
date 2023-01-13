@@ -30,7 +30,12 @@ const SportItemChallenge = (props) => {
   const { sendMatchRequest } = useContext(matchContext);
 
   const sendRequest = () => {
-    sendMatchRequest(props.token, props.user_id, props.location, sport);
+    sendMatchRequest(
+      props.token,
+      props.user_id,
+      props.location,
+      props.sport_id
+    );
     props.toggleChallenge();
   };
 
