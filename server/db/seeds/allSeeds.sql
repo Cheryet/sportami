@@ -101,3 +101,8 @@ INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) 
 
 INSERT INTO reviews ( user_sport_id, winner_id, sportsmanship_rating ) VALUES ('1', '1', 5);
 INSERT INTO reviews ( user_sport_id, winner_id, sportsmanship_rating ) VALUES ('2', '2', 3);
+INSERT INTO reviews ( user_sport_id, winner_id, sportsmanship_rating ) VALUES ('3', '2', 5);
+INSERT INTO reviews ( user_sport_id, winner_id, sportsmanship_rating ) VALUES ('4', '2', 5);
+INSERT INTO reviews ( user_sport_id, winner_id, sportsmanship_rating ) VALUES ('5', '3', 5);
+INSERT INTO reviews ( user_sport_id, winner_id, sportsmanship_rating ) VALUES ('6', '3', 3);
+INSERT INTO reviews ( user_sport_id, winner_id, sportsmanship_rating ) VALUES ('7', '3', 4);
