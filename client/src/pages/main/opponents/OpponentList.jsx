@@ -4,12 +4,15 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Opponents from "./Opponent";
 import "./opponentList.scss";
+import Accordion from "../../../components/filter/Accordion";
 
 const OpponentList = (props) => {
   const [opponentData, setOpponentData] = useState({
     opponents: [],
     sports: [],
   });
+
+  const [showAccordion, setShowAccordion] = useState(false);
 
   //Helper - Get all opponents
   useEffect(() => {
@@ -54,8 +57,19 @@ const OpponentList = (props) => {
       <div className="opponent-list">
         <section className="description-container">
           <p className="text">Start searching for opponents in your area!</p>
-          <button className="filter-button">FILTER</button>
+          <button
+            className="filter-button"
+            onClick={() => setShowAccordion(!showAccordion)}
+          >
+            FILTER
+          </button>
         </section>
+        {showAccordion && (
+          <Accordion
+            setShowAccordion={setShowAccordion}
+            showAccordion={showAccordion}
+          />
+        )}
         <hr />
         {opponentList}
       </div>
