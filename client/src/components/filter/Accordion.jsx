@@ -65,7 +65,6 @@ function Accordion({ setShowAccordion, showAccordion }) {
                         id={option}
                         name={option}
                         value={option}
-                        key={option}
                       ></input>
                       <label htmlFor={option}>{option}</label>
                     </div>
