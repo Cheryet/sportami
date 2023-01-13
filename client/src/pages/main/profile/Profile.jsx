@@ -127,7 +127,7 @@ const Profile = (props) => {
           </div>
         </div>
         <div className="button-container">
-          <button>EDIT PROFILE</button>
+          <button className="edit-profile-btn">EDIT PROFILE</button>
         </div>
       </div>
     </>
