@@ -3,10 +3,11 @@ import "./app.scss";
 import Home from "./pages/home/Home";
 import Main from "./pages/main/Main";
 import Register from "./pages/register/Register";
+import Accordion from "./components/filter/Accordion";
 import useToken from "./hooks/useToken";
 import ModeProvider from "./providers/ModeProvider";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 const App = () => {
   const { token, setToken } = useToken();
@@ -17,7 +18,15 @@ const App = () => {
         <Routes>
           <Route
             path="/"
-            element={!token ? <Home setToken={setToken} /> : <Main />}
+            element={
+              !token ? (
+                <ModeProvider>
+                  <Home setToken={setToken} />
+                </ModeProvider>
+              ) : (
+                <Navigate to="/main" />
+              )
+            }
           />
           <Route
             path="/register"
@@ -27,9 +36,7 @@ const App = () => {
             path="/main"
             element={
               !token ? (
-                <ModeProvider>
-                  <Home setToken={setToken} />
-                </ModeProvider>
+                <Navigate to="/" />
               ) : (
                 <ModeProvider>
                   <Main token={token} />
@@ -37,6 +44,7 @@ const App = () => {
               )
             }
           />
+          <Route path="/filter" element={<Accordion />} />
         </Routes>
       </BrowserRouter>
     </>
