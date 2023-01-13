@@ -13,9 +13,13 @@ function Opponents(props) {
   //state for if challenge was sent or not
   const [sentChallenge, setSentChallenge] = useState(false);
 
+  //state for challenge sport
+  const [challengeSport, setChallengeSport] = useState(null);
+
   //Helper - Show/Hide challenge button dropdown
   const showDropdown = () => {
     setDropdown(!dropdown);
+    setSentChallenge(false);
   };
 
   //Helper - Toggle SentChallenge
@@ -66,7 +70,8 @@ function Opponents(props) {
             user_id={props.user_id}
             location={props.location}
             showDropdown={showDropdown}
-            toggleChallenge={toggleChallenge}
+            toggleChallenge={setSentChallenge}
+            challengeSport={setChallengeSport}
           />
         );
       });
@@ -80,49 +85,53 @@ function Opponents(props) {
 
   return (
     <div className="opponents">
-      <div className="profile-photo-container">
-        <img src={props.profile_pic} alt="profile" className="profile-photo" />
+      <div className="opp-profile-photo-container">
+        <img
+          src={props.profile_pic}
+          alt="profile"
+          className="opp-profile-photo"
+        />
       </div>
 
-      <section className="personal-info-123">
-        <p className="name-age">
+      <section className="opp-personal-info">
+        <p className="opp-name-age">
           {props.first_name}, {props.age}
         </p>
-        <p className="location">
-          <TbIcon.TbMapPin className="pin-icon" />
+        <p className="opp-location">
+          <TbIcon.TbMapPin className="opp-pin-icon" />
           {props.location}
         </p>
       </section>
 
-      <div className="sportsmanship">
-        <p className="sportsmanship-text">
+      <div className="opp-sportsmanship">
+        <p className="opp-sportsmanship-text">
           SPORTSMANSHIP&nbsp;
-          <AiIcon.AiFillStar className="star-icon-sportsmanship one" />
-          <AiIcon.AiFillStar className="star-icon-sportsmanship two" />
-          <AiIcon.AiFillStar className="star-icon-sportsmanship three" />
-          <AiIcon.AiFillStar className="star-icon-sportsmanship four" />
-          <AiIcon.AiFillStar className="star-icon-sportsmanship five" />
+          <AiIcon.AiFillStar className="opp-star-icon-sportsmanship one" />
+          <AiIcon.AiFillStar className="opp-star-icon-sportsmanship two" />
+          <AiIcon.AiFillStar className="opp-star-icon-sportsmanship three" />
+          <AiIcon.AiFillStar className="opp-star-icon-sportsmanship four" />
+          <AiIcon.AiFillStar className="opp-star-icon-sportsmanship five" />
         </p>
       </div>
 
-      <div className="bio">{props.bio}</div>
-      <section className="sports-skills">
-        <div className="sports">
-          <p className="sport-title">SPORTS</p>
-          <p className="sport-ammount">{mySports.length}/6 Sports</p>
-          <ul className="sport-item-list">{sportList}</ul>
+      <div className="opp-bio">{props.bio}</div>
+      <section className="opp-sports-skills">
+        <div className="opp-sports">
+          <p className="opp-sport-title">SPORTS</p>
+          <p className="opp-sport-ammount">{mySports.length}/6 Sports</p>
+          <ul className="opp-sport-item-list">{sportList}</ul>
         </div>
-        <div className="skill-level">
-          <p className="skill-title">SKILL LEVEL</p>
-          <p className="skill-accuracy">
+        <div className="opp-skill-level">
+          <p className="opp-skill-title">SKILL LEVEL</p>
+          <p className="opp-skill-accuracy">
             SKILL ACCURACY&nbsp;
-            <AiIcon.AiFillStar className="star-icon-accuracy one" />
-            <AiIcon.AiFillStar className="star-icon-accuracy two" />
-            <AiIcon.AiFillStar className="star-icon-accuracy three" />
-            <AiIcon.AiFillStar className="star-icon-accuracy four" />
-            <AiIcon.AiFillStar className="star-icon-accuracy five" />
+            <AiIcon.AiFillStar className="opp-star-icon-accuracy one" />
+            <AiIcon.AiFillStar className="opp-star-icon-accuracy two" />
+            <AiIcon.AiFillStar className="opp-star-icon-accuracy three" />
+            <AiIcon.AiFillStar className="opp-star-icon-accuracy four" />
+            <AiIcon.AiFillStar className="opp-star-icon-accuracy five" />
           </p>
-          <ul className="sport-item-list">{skillList}</ul>
+          <ul className="opp-sport-item-list">{skillList}</ul>
         </div>
       </section>
       <div
@@ -150,7 +159,7 @@ function Opponents(props) {
         )}
         {sentChallenge && (
           <p className="opponent-challenge-title">
-            Challenge sent to {props.first_name}!
+            {challengeSport} challenge sent to {props.first_name}!
           </p>
         )}
 
