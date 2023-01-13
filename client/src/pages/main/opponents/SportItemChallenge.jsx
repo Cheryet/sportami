@@ -29,21 +29,27 @@ const SportItemChallenge = (props) => {
   //handles the challenge user buttons
   const { sendMatchRequest } = useContext(matchContext);
 
-  const sendRequest = () => {
+  const sendRequest = (sport) => {
     sendMatchRequest(
       props.token,
       props.user_id,
       props.location,
       props.sport_id
     );
-    props.toggleChallenge();
+    props.toggleChallenge(true);
+    props.challengeSport(sport);
   };
 
   getSportById(props.sport_id);
 
   return (
     <>
-      <button className="sportItemChallenge-button" onClick={sendRequest}>
+      <button
+        className="opp-sportItemChallenge-button"
+        onClick={() => {
+          sendRequest(sport);
+        }}
+      >
         {sport}
       </button>
     </>

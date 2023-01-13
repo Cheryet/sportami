@@ -95,18 +95,20 @@ $mainColor: rgb(242, 172, 22);
       margin-top: 1rem;
 
       .btn-location-profile {
-        padding: 0.25rem 1rem;
-        border: none;
+        width: 60%;
+        margin-top: 1rem;
+        padding: 0.25rem 2rem;
+        border: 2px solid rgba(0, 0, 0, 0.59);
         border-radius: 4px;
-        height: 1.5rem;
         background-color: $mainColor;
+        letter-spacing: 0.2rem;
       }
     }
     .location-dropdown-123.active {
       height: auto;
       display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
+      flex-direction: column;
+      align-items: center;
     }
 
     .bio-container {
@@ -199,12 +201,12 @@ $mainColor: rgb(242, 172, 22);
     display: flex;
     justify-content: center;
 
-    button {
-      border: 1px solid $mainColor;
+    .edit-profile-btn {
+      padding: 0.25rem 2rem;
+      border: 2px solid rgba(0, 0, 0, 0.59);
       border-radius: 4px;
-      height: 2rem;
-      width: 50%;
       background-color: $mainColor;
+      letter-spacing: 0.2rem;
     }
   }
 }
