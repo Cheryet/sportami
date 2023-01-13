@@ -31,9 +31,9 @@ export default function MatchesListItem(props) {
       <main className="match" key={match.id}>
         <section className="match__opponent">
           <section className="match__opponent-profile">
-            <div
+            <img
               className="match__opponent-profile-pic"
-              style={{ backgroundImage: `url(${opponent.profile_pic})` }}
+              src={opponent.profile_pic}
               alt={opponent.username}
             />
           </section>
