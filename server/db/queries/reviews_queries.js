@@ -38,7 +38,15 @@ const setWinner = (winner_id, review_id) => {
   ]);
 };
 
+const getRatingForPlayer = (user_id) => {
+  return db.query(
+    `SELECT AVG(sportsmanship_rating) FROM reviews JOIN users_sports ON user_sport_id = users_sports.id WHERE users_sports.user_id = $1`,
+    [user_id]
+  );
+};
+
 module.exports = {
+  getRatingForPlayer,
   getAllReviews,
   getReviewsById,
   addReview,
