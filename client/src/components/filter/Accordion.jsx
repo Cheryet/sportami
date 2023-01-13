@@ -43,8 +43,11 @@ function Accordion({ setShowAccordion, showAccordion }) {
         <div className="accordion__faq">
           <form>
             {categories.map((item, index) => (
-              <div key={index} onClick={() => toggleCategory(index)}>
-                <div className="accordion__faq-heading">
+              <div key={index}>
+                <div
+                  className="accordion__faq-heading"
+                  onClick={() => toggleCategory(index)}
+                >
                   <h3>{item.category}</h3>
                   <div>
                     {openCategory === index ? (
@@ -59,12 +62,12 @@ function Accordion({ setShowAccordion, showAccordion }) {
                     <div>
                       <input
                         type="checkbox"
-                        id={index}
+                        id={option}
                         name={option}
                         value={option}
-                        key={openCategory}
+                        key={option}
                       ></input>
-                      <label htmlFor={index}>{option}</label>
+                      <label htmlFor={option}>{option}</label>
                     </div>
                   ))}
                 </div>
