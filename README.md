@@ -1,33 +1,39 @@
 # Sportami
 
-Write a short sentence or two about this project and what it does. Be sure to include a link and a screenshot (we're front end devs so we can actually see our work!).
+Created by [Alisa Vorotyntseva](https://github.com/vorotyna), [Corbin Heryet](https://github.com/Cheryet), and [B Stolb](https://github.com/ItsGentleBen)
 
-**Link to project:** http://recruiters-love-seeing-live-demos.com/
+Sportami is an online geosocial networking application utilizing the PERN stack to allow people to find an opponent for their next game of their, and your, favourite sport. Become a part of a vast community of people and find some amis to turn into your enemies!
 
-![alt tag](http://placecorgi.com/1200/650)
+![GIFS GO HERE](http://placecorgi.com/1200/650)
 
 ## How It's Made:
 
-**Tech used:** HTML, CSS, JavaScript, Framework of choice
+**Tech used:** PostgreSQL, Express, React, Node, Material UI
+Sportami utilizes the PERN stack to cover front-end, back-end and database management.
 
-Here's where you can go to town on how you actually built this thing. Write as much as you can here, it's totally fine if it's not too much just make sure you write _something_. If you don't have too much experience on your resume working on the front end that's totally fine. This is where you can really show off your passion and make up for that ten fold.
-
-## Optimizations
-
-_(optional)_
-
-You don't have to include this section but interviewers _love_ that you can not only deliver a final product that looks great but also functions efficiently. Did you write something then refactor it later and the result was 5x faster than the original implementation? Did you cache your assets? Things that you write in this section are **GREAT** to bring up in interviews and you can use this section as reference when studying for technical interviews!
+Need more here
 
 ## Lessons Learned:
 
-No matter what your experience level, being an engineer means continuously learning. Every time you build something you always have those _whoa this is awesome_ or _fuck yeah I did it!_ moments. This is where you should share those moments! Recruiters and interviewers love to see that you're self-aware and passionate about growing.
+TBD?
 
-## Examples:
+## Setup:
 
-Take a look at these couple examples that I have in my own portfolio:
-
-**Palettable:** https://github.com/alecortega/palettable
-
-**Twitter Battle:** https://github.com/alecortega/twitter-battle
-
-**Patch Panel:** https://github.com/alecortega/patch-panel
+    On your terminal, clone the repo via git clone git@github.com:Cheryet/sportami.git
+    On your preferred code editor, open the root project folder, i.e. the main sportami folder
+        duplicate the .env.example file located in sportami/server, then remove .example from its filename
+            in this newly-created .env file, provide the variables with relevant values
+            save your changes
+    On your terminal, enter psql
+      then \c sportami;
+      then \i server/db/schema/create.sql
+      then \i server/db/seeds/allSeeds.sql
+      then exit psql
+    On your terminal, navigate to sportami/server
+        then npm i
+        then npm start
+    On a separate terminal, navigate to sportami/client
+        then npm i
+        then npm start
+    Keep the 2 terminals up and running
+    On your browser, navigate to http://localhost:3000/ and start exploring the app!
