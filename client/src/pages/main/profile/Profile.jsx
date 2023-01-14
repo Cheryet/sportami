@@ -6,6 +6,7 @@ import * as TbIcon from "react-icons/tb";
 import * as MdIcon from "react-icons/md";
 import SkillItem from "./Skilltem";
 import SportItem from "./SportItem";
+import Rating from "@mui/material/Rating";
 
 const Profile = (props) => {
   //Provider
@@ -45,6 +46,16 @@ const Profile = (props) => {
     }
   };
 
+  //Helper - Get Sportsmanship rating
+  const getRating = () => {
+    if (userData.rating.avg) {
+      return parseInt(userData.rating.avg);
+    } else {
+      return 0;
+    }
+  };
+
+  const rating = getRating();
   getSportsList();
   getSkillList();
 
@@ -67,6 +78,7 @@ const Profile = (props) => {
             <p className="item email">{userData.user.email}</p>
           </div>
         </div>
+
         <div className="middle-container">
           <div className="location-gender-container">
             <div className="location-container" onClick={showDropdown}>
@@ -112,6 +124,17 @@ const Profile = (props) => {
             <p className="about-me">ABOUT ME</p>
             <hr />
             <p>{userData.user.bio}</p>
+            <div className="profile-sportsmanship-rating">
+              <p className="profile-rating-title">MY SPORTSMANSHIP RATING: </p>
+              <Rating
+                className="profile-rating-stars"
+                name="half-rating-read"
+                size="small"
+                value={rating}
+                precision={0.5}
+                readOnly
+              />
+            </div>
           </div>
         </div>
         <div className="bottom-container">
