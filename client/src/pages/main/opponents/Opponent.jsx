@@ -5,6 +5,9 @@ import * as AiIcon from "react-icons/ai";
 import SkillItem from "../profile/Skilltem";
 import SportItem from "../profile/SportItem";
 import SportItemChallenge from "./SportItemChallenge";
+import Rating from "@mui/material/Rating";
+import { useEffect } from "react";
+import axios from "axios";
 
 function Opponents(props) {
   //state for challenge drop down buttons
@@ -16,15 +19,20 @@ function Opponents(props) {
   //state for challenge sport
   const [challengeSport, setChallengeSport] = useState(null);
 
+  //state for rating
+  const [rating, setRating] = useState();
+
+  //set rating for user
+  useEffect(() => {
+    axios.get(`/api/reviews/rating/${props.user_id}`).then((data) => {
+      setRating(data.data);
+    });
+  }, []);
+
   //Helper - Show/Hide challenge button dropdown
   const showDropdown = () => {
     setDropdown(!dropdown);
     setSentChallenge(false);
-  };
-
-  //Helper - Toggle SentChallenge
-  const toggleChallenge = () => {
-    setSentChallenge(!sentChallenge);
   };
 
   //Helper - Get Sports for player from list
@@ -78,6 +86,15 @@ function Opponents(props) {
     }
   };
 
+  //Helper - Get Sportsmanship rating
+  const getRating = () => {
+    if (rating) {
+      return parseInt(rating.avg);
+    }
+    return 0;
+  };
+
+  const userRating = getRating();
   getMySports(props.user_id);
   getSkillList();
   getSportsList();
@@ -103,34 +120,26 @@ function Opponents(props) {
         </p>
       </section>
 
-      <div className="opp-sportsmanship">
-        <p className="opp-sportsmanship-text">
-          SPORTSMANSHIP&nbsp;
-          <AiIcon.AiFillStar className="opp-star-icon-sportsmanship one" />
-          <AiIcon.AiFillStar className="opp-star-icon-sportsmanship two" />
-          <AiIcon.AiFillStar className="opp-star-icon-sportsmanship three" />
-          <AiIcon.AiFillStar className="opp-star-icon-sportsmanship four" />
-          <AiIcon.AiFillStar className="opp-star-icon-sportsmanship five" />
-        </p>
+      <div className="opp-sportsmanship-rating">
+        <p className="opp-rating-title">SPORTSMANSHIP </p>
+        <Rating
+          className="opp-rating-stars"
+          name="half-rating-read"
+          size="small"
+          value={userRating}
+          precision={0.5}
+          readOnly
+        />
       </div>
 
       <div className="opp-bio">{props.bio}</div>
       <section className="opp-sports-skills">
         <div className="opp-sports">
           <p className="opp-sport-title">SPORTS</p>
-          <p className="opp-sport-ammount">{mySports.length}/6 Sports</p>
           <ul className="opp-sport-item-list">{sportList}</ul>
         </div>
         <div className="opp-skill-level">
           <p className="opp-skill-title">SKILL LEVEL</p>
-          <p className="opp-skill-accuracy">
-            SKILL ACCURACY&nbsp;
-            <AiIcon.AiFillStar className="opp-star-icon-accuracy one" />
-            <AiIcon.AiFillStar className="opp-star-icon-accuracy two" />
-            <AiIcon.AiFillStar className="opp-star-icon-accuracy three" />
-            <AiIcon.AiFillStar className="opp-star-icon-accuracy four" />
-            <AiIcon.AiFillStar className="opp-star-icon-accuracy five" />
-          </p>
           <ul className="opp-sport-item-list">{skillList}</ul>
         </div>
       </section>
