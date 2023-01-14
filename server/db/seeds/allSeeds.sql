@@ -58,7 +58,7 @@ INSERT INTO users (
     '12345',
     'CHeryet@LHL.com',
     'This is my Bio. I need to write some text in here so im stretching it out, Hello from my bio',
-    'Lethrbidge',
+    'Lethbridge',
     'Male',
     24,
     'https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW4lMjBmYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80'
@@ -71,13 +71,13 @@ INSERT INTO sports ( name ) VALUES ('Squash');
 INSERT INTO sports ( name ) VALUES ('Table Tennis');
 INSERT INTO sports ( name ) VALUES ('Pickle Ball');
 
-INSERT INTO users_sports ( user_id, sport_id, self_skill) VALUES (1, 1, 'Casual');
-INSERT INTO users_sports ( user_id, sport_id, self_skill) VALUES (1, 2, 'Pro');
+INSERT INTO users_sports ( user_id, sport_id, self_skill) VALUES (1, 1, 'Beginner');
+INSERT INTO users_sports ( user_id, sport_id, self_skill) VALUES (1, 2, 'Advanced');
 INSERT INTO users_sports ( user_id, sport_id, self_skill) VALUES (2, 1, 'Intermediate');
-INSERT INTO users_sports ( user_id, sport_id, self_skill) VALUES (2, 2, 'Casual');
-INSERT INTO users_sports ( user_id, sport_id, self_skill) VALUES (3, 2, 'Casual');
-INSERT INTO users_sports ( user_id, sport_id, self_skill) VALUES (3, 1, 'Amatuer');
-INSERT INTO users_sports ( user_id, sport_id, self_skill) VALUES (3, 4, 'Casual');
+INSERT INTO users_sports ( user_id, sport_id, self_skill) VALUES (2, 2, 'Beginner');
+INSERT INTO users_sports ( user_id, sport_id, self_skill) VALUES (3, 2, 'Beginner');
+INSERT INTO users_sports ( user_id, sport_id, self_skill) VALUES (3, 1, 'Intermediate');
+INSERT INTO users_sports ( user_id, sport_id, self_skill) VALUES (3, 4, 'Beginner');
 
 INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (1, 2, 'Vancouver', 1, TRUE);
 INSERT INTO matches ( challenger_id, opponent_id, location, sport_id, accepted) VALUES (1, 3, 'Vancouver', 2, TRUE);
