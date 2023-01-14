@@ -41,7 +41,7 @@ const Navbar = () => {
             <p className="title">SPORTAMI</p>
             <p className="slogan">Turn an ami into an enemy</p>
           </div>
-          <button>Logout</button>
+          <button className="logout-btn">Logout</button>
         </div>
         <div className="container-middle">
           <p className="welcome-message">

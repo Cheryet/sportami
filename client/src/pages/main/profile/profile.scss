@@ -110,10 +110,15 @@ $mainColor: rgb(242, 172, 22);
         width: 60%;
         margin-top: 1rem;
         padding: 0.25rem 2rem;
-        border: 2px solid rgba(0, 0, 0, 0.59);
+        border-bottom: 3px solid rgba(0, 0, 0, 0.858);
+        border-left: 3px solid rgba(0, 0, 0, 0.858);
         border-radius: 4px;
         background-color: $mainColor;
         letter-spacing: 0.2rem;
+      }
+
+      .btn-location-profile:active {
+        border: 2px solid rgba(0, 0, 0, 0.59);
       }
     }
     .location-dropdown-123.active {
@@ -215,10 +220,15 @@ $mainColor: rgb(242, 172, 22);
 
     .edit-profile-btn {
       padding: 0.25rem 2rem;
-      border: 2px solid rgba(0, 0, 0, 0.59);
+      border-bottom: 3px solid rgba(0, 0, 0, 0.858);
+      border-left: 3px solid rgba(0, 0, 0, 0.858);
       border-radius: 4px;
       background-color: $mainColor;
       letter-spacing: 0.2rem;
+    }
+
+    .edit-profile-btn:active {
+      border: 2px solid rgba(0, 0, 0, 0.59);
     }
   }
 }

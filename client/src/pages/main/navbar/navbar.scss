@@ -27,13 +27,18 @@ $mainColor: rgb(242, 172, 22);
       font-size: 1.7rem;
     }
 
-    button {
+    .logout-btn {
       align-self: center;
-      border: 2px solid rgba(0, 0, 0, 0.59);
+      border-bottom: 3px solid rgba(0, 0, 0, 0.858);
+      border-left: 3px solid rgba(0, 0, 0, 0.858);
       border-radius: 4px;
       height: 2rem;
       width: 25%;
       background-color: $mainColor;
+    }
+
+    .logout-btn:active {
+      border: 2px solid rgba(0, 0, 0, 0.59);
     }
   }
 
