@@ -3,12 +3,11 @@ $mainColor: rgb(242, 172, 22);
 .match {
   width: 80vw;
   height: 25vh;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  padding: 0.5rem;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.094);
+  margin: 1.5rem 1rem 0rem 1rem;
+  padding: 0.2rem 1rem 0rem 1rem;
+  background-color: rgba(242, 172, 22, 0.089);
+  border: 1.5px solid rgba(242, 172, 22, 0.217);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

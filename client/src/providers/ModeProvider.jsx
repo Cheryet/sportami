@@ -10,7 +10,7 @@ export default function ModeProvider(props) {
   const REVIEW = "review";
 
   //State for mode
-  const [mode, setMode] = useState(PROFILE);
+  const [mode, setMode] = useState(NOTIFICATIONS);
 
   //Helper - Set mode fucntion
   const changeMode = (newMode) => {
