@@ -19,21 +19,20 @@ TBD?
 
 ## Setup:
 
-    On your terminal, clone the repo via git clone git@github.com:Cheryet/sportami.git
-    On your preferred code editor, open the root project folder, i.e. the main sportami folder
-        duplicate the .env.example file located in sportami/server, then remove .example from its filename
-            in this newly-created .env file, provide the variables with relevant values
-            save your changes
-    On your terminal, enter psql
-      then \c sportami;
-      then \i server/db/schema/create.sql
-      then \i server/db/seeds/allSeeds.sql
-      then exit psql
-    On your terminal, navigate to sportami/server
-        then npm i
-        then npm start
-    On a separate terminal, navigate to sportami/client
-        then npm i
-        then npm start
-    Keep the 2 terminals up and running
-    On your browser, navigate to http://localhost:3000/ and start exploring the app!
+- On your terminal, clone the repo via `git@github.com:Cheryet/sportami.git`
+- On your preferred code editor, open the root project folder, i.e. the main `sportami` folder
+  - duplicate the `.env.example` file located in `sportami/server`, then remove `.example` from its filename
+    - in this newly-created `.env` file, provide the variables with relevant values
+    - save your changes
+- On your terminal, enter `psql`
+  - then `\c sportami`
+  - then `\i server/db/schema/create.sql`
+  - and finally `\i server/db/seeds/allSeeds.sql`
+- On your terminal, navigate to `sportami/server`
+  - then `npm i`
+  - then `npm start`
+- On a **separate** terminal, navigate to `sportami/client`
+  - then `npm i`
+  - then `npm start`
+- Keep the 2 terminals up and running
+- On your browser, navigate to `http://localhost:3000/` and start exploring the app!
