@@ -44,7 +44,7 @@ export default function MatchesListItem(props) {
     };
 
     //If the logged in user sent the match request render this
-    if (match.challenger_id === props.token) {
+    if (match.challenger_id === userID) {
       const message = `Send ${opponent.username} a message at ${opponent.email} to set up your game of ${matchSport}!`;
 
       return (
@@ -88,6 +88,8 @@ export default function MatchesListItem(props) {
     } else {
       //If the logged in user recieved the match request render this
       const message = `Send ${challenger.username} a message at ${challenger.email} to set up your game of ${matchSport}!`;
+
+      console.log(challenger.username);
 
       return (
         <main className="match" key={match.id}>

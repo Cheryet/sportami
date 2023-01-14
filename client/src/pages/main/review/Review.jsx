@@ -7,7 +7,8 @@ import {
   getMatchChallenger,
   getMatchOpponent,
 } from "../../../helpers/selectors";
-import { Rating } from "@mui/material";
+import { Rating, Box } from "@mui/material";
+import StarIcon from "@mui/icons-material/Star";
 
 import "./review.scss";
 
@@ -17,9 +18,6 @@ const Review = (props) => {
   const { state, matchState, createReview, challengerReview, opponentReview } =
     useContext(matchContext);
   const { changeMode, NOTIFICATIONS } = useContext(modeContext);
-
-  //Handles the MUI rating value
-  const [rating, setRating] = useState(0);
 
   //Handles the winning user_id
   const [winner, setWinner] = useState(null);
@@ -33,7 +31,7 @@ const Review = (props) => {
 
   //Sends the post request to create the review and returns you to the notifications page
   const sendReview = () => {
-    createReview(userSportID, winner, rating);
+    createReview(userSportID, winner, starValue);
     changeMode(NOTIFICATIONS);
   };
 
@@ -47,48 +45,144 @@ const Review = (props) => {
     opponentReview(matchState.id);
   };
 
+  //Handles the rating star hover effect
+
+  const labels = {
+    1: "Very Bad Sport",
+    2: "Poor Sport",
+    3: "Good Sport",
+    4: "Great Sport",
+    5: "Excellent Sport",
+  };
+
+  function getLabelText(starValue) {
+    return `${starValue} Star${starValue !== 1 ? "s" : ""}, ${
+      labels[starValue]
+    }`;
+  }
+
+  const [starValue, setStarValue] = useState(3);
+  const [hover, setHover] = useState(-1);
+
   //Conditional rendering to allow only one user, the initial challenger, to choose the winner
   if (matchState.challenger_id === userID) {
     return (
+      <div className="review">
+        <div className="review-container">
+          <h2 className="review-header">
+            We hope you had fun against {opponent.first_name}!
+          </h2>
+          <section>
+            <div className="review-winner">
+              <div className="review-winner-header">
+                Who won the game of {matchSport}?
+              </div>
+              <section className="review__button-winner">
+                <button
+                  className={
+                    winner === matchState.challenger_id
+                      ? "review__button--winner-chosen"
+                      : "review__button--winner"
+                  }
+                  onClick={() => {
+                    setWinner(matchState.challenger_id);
+                  }}
+                >
+                  You
+                </button>
+                <button
+                  className={
+                    winner === matchState.opponent_id
+                      ? "review__button--winner-chosen"
+                      : "review__button--winner"
+                  }
+                  onClick={() => {
+                    setWinner(matchState.opponent_id);
+                  }}
+                >
+                  {opponent.first_name}
+                </button>
+              </section>
+            </div>
+            <section className="review__sportsmanship">
+              <div className="sportsmanship-header">
+                How was {opponent.first_name}'s sportsmanship?
+              </div>
+              <Rating
+                name="hover-feedback"
+                value={starValue}
+                precision={1}
+                getLabelText={getLabelText}
+                onChange={(event, newValue) => {
+                  setStarValue(newValue);
+                }}
+                onChangeActive={(event, newHover) => {
+                  setHover(newHover);
+                }}
+                emptyIcon={
+                  <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
+                }
+              />
+              {starValue !== null && (
+                <Box sx={{ ml: 2 }}>
+                  {labels[hover !== -1 ? hover : starValue]}
+                </Box>
+              )}
+            </section>
+            <section className="finish_review">
+              <button
+                className="review__button--finish"
+                onClick={() => {
+                  sendReview();
+                  challengerFinish();
+                }}
+              >
+                Finish Review
+              </button>
+            </section>
+          </section>
+        </div>
+      </div>
+    );
+  }
+  return (
+    <div className="review">
       <div className="review-container">
-        <h2>
-          Review your {matchSport} match with {opponent.first_name}
+        <h2 className="review-header">
+          We hope you had fun against {challenger.first_name}!
         </h2>
         <section>
-          <section className="winner-buttons">
-            <h2>Choose the Winner</h2>
-            <button
-              className="you-button"
-              onClick={() => {
-                setWinner(matchState.challenger_id);
-              }}
-            >
-              You
-            </button>
-            <button
-              className="opponent-button"
-              onClick={() => {
-                setWinner(matchState.opponent_id);
-              }}
-            >
-              {opponent.first_name}
-            </button>
-          </section>
-          <section className="rating-select">
-            <h2>Rate {opponent.first_name}'s sportsmanship!</h2>
+          <section className="review__sportsmanship">
+            <div className="sportsmanship-header">
+              How was {challenger.first_name}'s sportsmanship?
+            </div>
             <Rating
-              name="half-rating"
-              defaultValue={0}
+              name="hover-feedback"
+              value={starValue}
+              precision={1}
+              getLabelText={getLabelText}
               onChange={(event, newValue) => {
-                setRating(newValue);
+                setStarValue(newValue);
               }}
+              onChangeActive={(event, newHover) => {
+                setHover(newHover);
+              }}
+              emptyIcon={
+                <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
+              }
             />
+            {starValue !== null && (
+              <Box sx={{ ml: 2 }}>
+                {labels[hover !== -1 ? hover : starValue]}
+              </Box>
+            )}
           </section>
-          <section className="finish-button">
+          <section className="finish_review">
             <button
+              className="review__button--finish"
               onClick={() => {
                 sendReview();
-                challengerFinish();
+                opponentFinish();
               }}
             >
               Finish Review
@@ -96,37 +190,7 @@ const Review = (props) => {
           </section>
         </section>
       </div>
-    );
-  }
-  return (
-    <div className="review-container">
-      <h2>
-        Review your {matchSport} match with {challenger.first_name}
-      </h2>
-      <section>
-        <section className="rating-select">
-          <h2>Rate {challenger.first_name}'s sportsmanship!</h2>
-          <Rating
-            name="half-rating"
-            defaultValue={0}
-            onChange={(event, newValue) => {
-              setRating(newValue);
-            }}
-          />
-        </section>
-        <section className="finish-button">
-          <button
-            onClick={() => {
-              sendReview();
-              opponentFinish();
-            }}
-          >
-            Finish Review
-          </button>
-        </section>
-      </section>
     </div>
   );
 };
-
 export default Review;

@@ -1,4 +1,76 @@
-.review-container {
-  padding-top: 38vh;
-  margin: 1rem;
+$mainColor: rgb(242, 172, 22);
+
+.review {
+  padding-top: 40vh;
+
+  .review-container {
+    background-color: rgba(242, 172, 22, 0.089);
+    border: 1.5px solid rgba(242, 172, 22, 0.217);
+    border-radius: 10px;
+    margin: 1.5rem 1rem 0rem 1rem;
+    padding: 0.2rem 1rem 0rem 1rem;
+
+    .review-header {
+      font-size: 1rem;
+      display: flex;
+      justify-content: center;
+    }
+    .review-winner {
+      .review-winner-header {
+        display: flex;
+        justify-content: center;
+      }
+      .review__button-winner {
+        display: flex;
+        justify-content: space-evenly;
+        .review__button--winner {
+          margin-bottom: 2.5vh;
+          background-color: $mainColor;
+          border-bottom: 3px solid rgba(0, 0, 0, 0.858);
+          border-left: 3px solid rgba(0, 0, 0, 0.858);
+          border-radius: 4px;
+          height: 35px;
+          width: 70px;
+          font-size: 0.75rem;
+          cursor: pointer;
+        }
+
+        .review__button--winner-chosen {
+          margin-bottom: 2.5vh;
+          background-color: $mainColor;
+          border: 2px solid rgba(0, 0, 0, 0.59);
+          border-radius: 4px;
+          height: 35px;
+          width: 70px;
+          font-size: 0.75rem;
+          cursor: pointer;
+        }
+      }
+    }
+    .review__sportsmanship {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .finish_review {
+      display: flex;
+      justify-content: center;
+
+      .review__button--finish {
+        margin-bottom: 2.5vh;
+        margin-top: 1vh;
+        background-color: $mainColor;
+        border-bottom: 3px solid rgba(0, 0, 0, 0.858);
+        border-left: 3px solid rgba(0, 0, 0, 0.858);
+        border-radius: 4px;
+        height: 35px;
+        width: 140px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      .review__button--finish:active {
+        border: 2px solid rgba(0, 0, 0, 0.59);
+      }
+    }
+  }
 }
