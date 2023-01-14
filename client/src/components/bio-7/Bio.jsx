@@ -35,7 +35,7 @@ function Bio({ setCurrent, bio, setBio, setIsPost }) {
         />
         <p>{count} / 300</p>
       </form>
-      <button className="finish-button" onClick={handleFinish}>
+      <button className="finish-button-bio" onClick={handleFinish}>
         Finish
       </button>
     </div>

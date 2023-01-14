@@ -90,9 +90,9 @@ function Sports({ setCurrent, sports, setSports }) {
                 <option value="" selected disabled>
                   Select a skill
                 </option>
-                <option value="beginner">Beginner</option>
-                <option value="intermediate">Intermediate</option>
-                <option value="advanced">Advanced</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
               </select>
               {skillsList.length === 1 ? (
                 <></>
