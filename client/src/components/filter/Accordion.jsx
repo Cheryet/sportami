@@ -1,32 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./accordion.scss";
 
-// Categories and options for filter
-const categories = [
-  {
-    category: "Sport",
-    options: ["Golf", "Tennis", "Bowling", "Squash", "Ping Pong", "Pickleball"],
-  },
-  {
-    category: "Gender",
-    options: ["Male", "Female", "Other"],
-  },
-  {
-    category: "Location",
-    options: ["Lethbridge", "Oakville", "Vancouver"],
-  },
-  {
-    category: "Skill",
-    options: ["Casual", "Intermediate", "Advanced"],
-  },
-  {
-    category: "Age",
-    options: ["18-25", "25-30", "30-35", "35-40", "40+"],
-  },
-];
-
-function Accordion({ setShowAccordion, showAccordion }) {
+function Accordion({
+  setShowAccordion,
+  showAccordion,
+  setSelectedOptions,
+  selectedOptions,
+  setIsGet,
+  userSport,
+}) {
   const [openCategory, setOpenCategory] = useState(null);
+
+  // Categories and options for filter
+  const categories = [
+    {
+      category: "Sport",
+      options: userSport,
+    },
+    {
+      category: "Gender",
+      options: ["Male", "Female", "Other"],
+    },
+    {
+      category: "Location",
+      options: ["Lethbridge", "Oakville", "Vancouver"],
+    },
+    {
+      category: "Skill",
+      options: ["Beginner", "Intermediate", "Advanced"],
+    },
+    {
+      category: "Age",
+      options: ["18-25", "25-30", "30-35", "35-40", "40+"],
+    },
+  ];
 
   function toggleCategory(index) {
     if (openCategory === index) {
@@ -35,6 +42,26 @@ function Accordion({ setShowAccordion, showAccordion }) {
       setOpenCategory(index);
     }
   }
+
+  const handleSelectedOptions = (event) => {
+    const { name, value, checked } = event.target;
+    if (checked) {
+      setSelectedOptions({
+        ...selectedOptions,
+        [name]: [...selectedOptions[name], value],
+      });
+    } else {
+      setSelectedOptions({
+        ...selectedOptions,
+        [name]: selectedOptions[name].filter((item) => item !== value),
+      });
+    }
+  };
+
+  const handleApply = () => {
+    setShowAccordion(!showAccordion);
+    setIsGet(true);
+  };
 
   return (
     <>
@@ -61,10 +88,16 @@ function Accordion({ setShowAccordion, showAccordion }) {
                   {item.options.map((option, index) => (
                     <div key={option}>
                       <input
+                        checked={
+                          selectedOptions[item.category].includes(option)
+                            ? true
+                            : false
+                        }
                         type="checkbox"
                         id={option}
-                        name={option}
+                        name={item.category}
                         value={option}
+                        onChange={handleSelectedOptions}
                       ></input>
                       <label htmlFor={option}>{option}</label>
                     </div>
@@ -73,10 +106,7 @@ function Accordion({ setShowAccordion, showAccordion }) {
               </div>
             ))}
           </form>
-          <button
-            className="apply-button"
-            onClick={() => setShowAccordion(!showAccordion)}
-          >
+          <button className="apply-button" onClick={handleApply}>
             APPLY
           </button>
         </div>
