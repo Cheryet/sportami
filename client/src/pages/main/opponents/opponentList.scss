@@ -13,6 +13,8 @@ $mainColor: rgb(242, 172, 22);
     background-color: rgba(0, 0, 0, 0.094);
     padding: 0.5rem;
     border-radius: 5px;
+    padding-left: 1rem;
+    padding-right: 1rem;
 
     p {
       font-size: 0.85rem;
@@ -20,21 +22,22 @@ $mainColor: rgb(242, 172, 22);
 
     .filter-button {
       align-self: center;
-      border-bottom: 3px solid rgba(0, 0, 0, 0.858);
-      border-left: 3px solid rgba(0, 0, 0, 0.858);
       border-radius: 4px;
       background-color: $mainColor;
-      padding: 0.1rem 0.6rem;
+      border: 0;
+      padding: 0.3rem 0.6rem;
       font-size: 0.75rem;
       margin-bottom: 0px;
+      box-shadow: var(--box-shadow);
+      letter-spacing: 0.2rem;
     }
 
     .filter-button:active {
-      border: 2px solid rgba(0, 0, 0, 0.59);
+      background-color: var(--hover-colour);
     }
   }
 
-  hr {
+  .hr-opponentList {
     width: 80%;
     background-color: $mainColor;
     margin: 1.2rem auto 0rem auto;

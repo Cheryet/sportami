@@ -64,10 +64,6 @@ const OpponentList = (props) => {
   getOpponentList(currentUser);
 
   useEffect(() => {
-    console.log(selectedOptions);
-  }, [selectedOptions]);
-
-  useEffect(() => {
     if (isGet) {
       handlePost();
     }
@@ -126,7 +122,6 @@ const OpponentList = (props) => {
         }
       }
     });
-    console.log("FILTERED", filteredData);
     return filteredData;
   }
 
@@ -158,7 +153,6 @@ const OpponentList = (props) => {
           loggedInUserSelectedSports.push(sportsMap[userSport.sport_id].name);
         }
       });
-      console.log(loggedInUserSelectedSports);
       // Combine the data
       const combinedData = users.map((user) => {
         return {
@@ -177,16 +171,14 @@ const OpponentList = (props) => {
       const filteredOpponents = filterOpponents(combinedData, selectedOptions);
       setFilteredList(filteredOpponents);
       setIsGet(false);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   return (
     <>
       <div className="opponent-list">
         <section className="description-container">
-          <p className="text">Start searching for opponents in your area!</p>
+          <p className="text">Search for opponents in your area!</p>
           <button
             className="filter-button"
             onClick={() => setShowAccordion(!showAccordion)}
@@ -204,7 +196,7 @@ const OpponentList = (props) => {
             userSport={userSport}
           />
         )}
-        <hr />
+        <hr className="hr-opponentList" />
         {filteredList.map((opponent, index) => {
           return (
             <Opponents

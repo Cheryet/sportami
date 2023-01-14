@@ -8,12 +8,13 @@ $mainColor: rgb(242, 172, 22);
     border: 1.5px solid rgba(242, 172, 22, 0.217);
     border-radius: 10px;
     margin: 1.5rem 1rem 0rem 1rem;
-    padding: 0.2rem 1rem 0rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
 
     .review-header {
       font-size: 1rem;
       display: flex;
       justify-content: center;
+      font-weight: 500;
     }
     .review-winner {
       .review-winner-header {
@@ -57,20 +58,29 @@ $mainColor: rgb(242, 172, 22);
       justify-content: center;
 
       .review__button--finish {
-        margin-bottom: 2.5vh;
-        margin-top: 1vh;
-        background-color: $mainColor;
-        border-bottom: 3px solid rgba(0, 0, 0, 0.858);
-        border-left: 3px solid rgba(0, 0, 0, 0.858);
         border-radius: 4px;
-        height: 35px;
-        width: 140px;
-        font-size: 1rem;
+        border: 0;
+        padding: 0.3rem 0.6rem;
+        box-shadow: var(--box-shadow);
+        letter-spacing: 0.2rem;
+        align-self: center;
+        border-radius: 4px;
+        width: 60%;
+        background-color: rgb(242, 172, 22);
+        font-size: 16px;
+        font-weight: 300;
+        margin-top: 20px;
         cursor: pointer;
       }
+
       .review__button--finish:active {
-        border: 2px solid rgba(0, 0, 0, 0.59);
+        background-color: var(--hover-colour);
       }
     }
   }
+}
+
+.sportsmanship-header {
+  margin-bottom: 10px;
+  font-weight: 200;
 }

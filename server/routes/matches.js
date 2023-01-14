@@ -13,7 +13,6 @@ router.get("/", (req, res) => {
 });
 
 router.post("/new", (req, res) => {
-  console.log(req);
   const challenger_id = req.body.challenger_id;
   const opponent_id = req.body.opponent_id;
   const location = req.body.location;
@@ -27,7 +26,6 @@ router.post("/new", (req, res) => {
 
   db.addMatch(match)
     .then((response) => {
-      console.log("response", response);
       res.status(200).send("Match added");
     })
     .catch((error) => {
@@ -46,14 +44,12 @@ router
   .put((req, res) => {
     const id = parseInt(req.params.id);
     db.acceptMatch(id).then((response) => {
-      console.log("response", response);
       res.status(200).send(`Match modified with id: ${id}`);
     });
   })
   .delete((req, res) => {
     const id = parseInt(req.params.id);
     db.deleteMatch(id).then((response) => {
-      console.log("response", response);
       res.status(200).send(`Match deleted with id: ${id}`);
     });
   });
@@ -68,7 +64,6 @@ router
   .put((req, res) => {
     const id = parseInt(req.params.id);
     db.challengerReviewed(id).then((response) => {
-      console.log("response", response);
       res.status(200).send(`Match modified with id: ${id}`);
     });
   });
@@ -83,7 +78,6 @@ router
   .put((req, res) => {
     const id = parseInt(req.params.id);
     db.opponentReviewed(id).then((response) => {
-      console.log("response", response);
       res.status(200).send(`Match modified with id: ${id}`);
     });
   });

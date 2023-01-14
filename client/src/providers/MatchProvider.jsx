@@ -46,63 +46,50 @@ export default function MatchProvider(props) {
       })
       .then(() => {
         setMatchUpdate(true);
-        console.log("Match created");
       })
       .catch((err) => console.log("Match not created", err.message));
   };
 
   const acceptMatch = (id) => {
-    console.log("/api/matches/" + id);
-
     axios
       .put("/api/matches/" + id, {
         id: id,
       })
       .then(() => {
         setMatchUpdate(true);
-        console.log("Match updated");
       })
       .catch((err) => console.log("Match not updated", err.message));
   };
 
   const challengerReview = (id) => {
-    console.log(`/api/matches/${id}/challenger`);
-
     axios
       .put(`/api/matches/${id}/challenger`, {
         id: id,
       })
       .then(() => {
         setMatchUpdate(true);
-        console.log("Match updated");
       })
       .catch((err) => console.log("Match not updated", err.message));
   };
 
   const opponentReview = (id) => {
-    console.log(`/api/matches/${id}/opponent`);
-
     axios
       .put(`/api/matches/${id}/opponent`, {
         id: id,
       })
       .then(() => {
         setMatchUpdate(true);
-        console.log("Match updated");
       })
       .catch((err) => console.log("Match not updated", err.message));
   };
 
   const deleteMatch = (id) => {
-    console.log("/api/matches/" + id);
-
     axios
       .delete("/api/matches/" + id, {
         id: id,
       })
       .then(() => {
         setMatchUpdate(true);
-        console.log("Match deleted");
       })
       .catch((err) => console.log("Match not deleted", err.message));
   };
@@ -121,7 +108,6 @@ export default function MatchProvider(props) {
       })
       .then(() => {
         setMatchUpdate(true);
-        console.log("Review created");
       })
       .catch((err) => console.log("Review not created", err.message));
   };

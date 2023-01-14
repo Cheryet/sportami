@@ -136,10 +136,12 @@ function Opponents(props) {
       <section className="opp-sports-skills">
         <div className="opp-sports">
           <p className="opp-sport-title">SPORTS</p>
+          <hr className="hr2-opponent"></hr>
           <ul className="opp-sport-item-list">{sportList}</ul>
         </div>
         <div className="opp-skill-level">
           <p className="opp-skill-title">SKILL LEVEL</p>
+          <hr className="hr1-opponent"></hr>
           <ul className="opp-sport-item-list">{skillList}</ul>
         </div>
       </section>
