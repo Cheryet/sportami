@@ -49,18 +49,8 @@ $mainColor: rgb(242, 172, 22);
 .confirmButton {
   margin-bottom: 2.5vh;
   background-color: $mainColor;
-  border: 2px solid rgba(0, 0, 0, 0.59);
-  border-radius: 4px;
-  height: 35px;
-  width: 70px;
-  font-size: 0.75rem;
-  cursor: pointer;
-}
-.acceptedButton {
-  margin-bottom: 2.5vh;
-  margin-top: 1vh;
-  background-color: $mainColor;
-  border: 2px solid rgba(0, 0, 0, 0.59);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.858);
+  border-left: 3px solid rgba(0, 0, 0, 0.858);
   border-radius: 4px;
   height: 35px;
   width: 70px;
@@ -68,14 +58,40 @@ $mainColor: rgb(242, 172, 22);
   cursor: pointer;
 }
 
-.buttonCancel {
-  margin-bottom: 2.5vh;
-  margin-left: 33vw;
-  background-color: $mainColor;
+.confirmButton:active {
   border: 2px solid rgba(0, 0, 0, 0.59);
+}
+
+.acceptedButton {
+  margin-bottom: 2.5vh;
+  margin-top: 1vh;
+  background-color: $mainColor;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.858);
+  border-left: 3px solid rgba(0, 0, 0, 0.858);
   border-radius: 4px;
   height: 35px;
   width: 70px;
   font-size: 0.75rem;
   cursor: pointer;
+}
+
+.acceptedButton:active {
+  border: 2px solid rgba(0, 0, 0, 0.59);
+}
+
+.buttonCancel {
+  margin-bottom: 2.5vh;
+  margin-left: 33vw;
+  background-color: $mainColor;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.858);
+  border-left: 3px solid rgba(0, 0, 0, 0.858);
+  border-radius: 4px;
+  height: 35px;
+  width: 70px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.buttonCancel:active {
+  border: 2px solid rgba(0, 0, 0, 0.59);
 }
