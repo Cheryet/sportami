@@ -35,9 +35,15 @@ router.post("/new", (req, res) => {
     });
 });
 
-router.route("/:id").get((req, res) => {
+router.get("/:id", (req, res) => {
   db.getReviewsById(req.params.id).then((data) => {
     res.send(data);
+  });
+});
+
+router.get("/rating/:id", (req, res) => {
+  db.getRatingForPlayer(req.params.id).then((data) => {
+    res.send(data.rows[0]);
   });
 });
 

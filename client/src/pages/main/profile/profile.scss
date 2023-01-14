@@ -60,9 +60,21 @@ $mainColor: rgb(242, 172, 22);
       }
     }
   }
+  .profile-sportsmanship-rating {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .profile-rating-title {
+      margin-top: 0.2rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.1rem;
+    }
+  }
 
   .middle-container {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 
     .location-gender-container {
       display: flex;
@@ -112,7 +124,7 @@ $mainColor: rgb(242, 172, 22);
     }
 
     .bio-container {
-      margin-top: 2rem;
+      margin-top: 1.75rem;
       text-align: left;
 
       .about-me {
@@ -123,7 +135,7 @@ $mainColor: rgb(242, 172, 22);
 
       hr {
         margin: 0 auto;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
         height: 1px;
         width: 130px;
         background-color: $mainColor;
@@ -133,7 +145,7 @@ $mainColor: rgb(242, 172, 22);
   }
 
   .bottom-container {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;

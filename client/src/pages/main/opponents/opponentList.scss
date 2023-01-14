@@ -1,10 +1,11 @@
 $mainColor: rgb(242, 172, 22);
 
 .opponent-list {
-  margin: 40vh 1rem 0rem 1rem;
+  margin: 40vh 0rem 0rem 0rem;
 
   .description-container {
     //border: 1px solid black;
+    margin: 0rem 1rem;
     display: flex;
     flex-direction: row;
     align-items: center;
