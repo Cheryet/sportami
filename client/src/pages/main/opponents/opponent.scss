@@ -19,6 +19,7 @@ $mainColor: rgb(242, 172, 22);
       width: 200px;
       margin: 0 auto;
       border-radius: 6px;
+      object-fit: cover;
     }
   }
 
@@ -100,6 +101,8 @@ $mainColor: rgb(242, 172, 22);
 
     .opp-sport-item {
       margin-left: 1rem;
+      display: flex;
+      flex-direction: row;
     }
 
     .opp-sports {
