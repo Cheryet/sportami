@@ -22,7 +22,7 @@ export default function ModeProvider(props) {
     setMode(THANKS);
     setTimeout(() => {
       setMode(MATCHES);
-    }, 1500);
+    }, 2000);
   };
 
   const modeData = {
