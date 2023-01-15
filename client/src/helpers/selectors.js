@@ -48,6 +48,27 @@ export function getReceivedMatchesByUser(matches, userId) {
   return receivedMatches;
 }
 
+//returns matches requests for given user that they have yet to accept
+export function getUnfinishedMatchesByUser(matches, userId) {
+  let unfinishedMatches = matches.filter(
+    (match) =>
+      (match.opponent_id === userId &&
+        match.accepted === false &&
+        match.opponent_reviewed === false) ||
+      (match.challenger_id === userId &&
+        match.accepted === false &&
+        match.challenger_reviewed === false) ||
+      (match.challenger_id === userId &&
+        match.accepted === true &&
+        match.challenger_reviewed === false) ||
+      (match.opponent_id === userId &&
+        match.accepted === true &&
+        match.opponent_reviewed === false)
+  );
+
+  return unfinishedMatches;
+}
+
 //returns the sport name for given match
 export function getMatchSport(state, match) {
   const matchSportID = match.sport_id;

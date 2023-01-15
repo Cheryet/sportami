@@ -4,7 +4,7 @@ const db = require("../index.js");
 //This query gets all matches
 const getAllMatches = () => {
   return db
-    .query(`SELECT * FROM matches`)
+    .query(`SELECT * FROM matches ORDER BY created_at DESC`)
     .then((result) => {
       return result.rows;
     })
