@@ -1,10 +1,9 @@
 import { React, useContext, useState } from "react";
 import { modeContext } from "../../../providers/ModeProvider";
 import { userDataContext } from "../../../providers/UserDataProvider";
-import TopSport from "./TopSport";
 import * as TbIcon from "react-icons/tb";
 import "./navbar.scss";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 const Navbar = () => {
   //Providers
@@ -13,25 +12,25 @@ const Navbar = () => {
 
   const { userData, location } = useContext(userDataContext);
 
-  const [topSportId, setTopSportId] = useState();
+  // const [topSportId, setTopSportId] = useState();
 
   //Helper - Get top sport for user
 
-  const getTopSport = (sports) => {
-    sports.forEach((item) => {
-      if (item.self_skill === "Pro") {
-        return setTopSportId(item.sport_id);
-      }
+  // const getTopSport = (sports) => {
+  //   sports.forEach((item) => {
+  //     if (item.self_skill === "Pro") {
+  //       return setTopSportId(item.sport_id);
+  //     }
 
-      if (item.self_skill === "Amatuer") {
-        return setTopSportId(item.sport_id);
-      }
-    });
-  };
+  //     if (item.self_skill === "Amatuer") {
+  //       return setTopSportId(item.sport_id);
+  //     }
+  //   });
+  // };
 
-  useEffect(() => {
-    getTopSport(userData.sports);
-  });
+  // useEffect(() => {
+  //   getTopSport(userData.sports);
+  // });
 
   return (
     <>
@@ -46,10 +45,6 @@ const Navbar = () => {
         <div className="container-middle">
           <p className="welcome-message">
             Welcome, {userData.user.first_name}!
-          </p>
-          <p className="best-sport">
-            <span>TOP SPORT:&nbsp;</span>
-            <TopSport sport_id={topSportId} />
           </p>
           <p className="nav-location">
             <TbIcon.TbMapPin className="pin-icon" />

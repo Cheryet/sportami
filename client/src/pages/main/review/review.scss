@@ -1,7 +1,7 @@
 $mainColor: rgb(242, 172, 22);
 
 .review {
-  padding-top: 40vh;
+  padding-top: 32vh;
 
   .review-container {
     background-color: rgba(242, 172, 22, 0.089);
@@ -20,29 +20,33 @@ $mainColor: rgb(242, 172, 22);
       .review-winner-header {
         display: flex;
         justify-content: center;
+        font-weight: 200;
       }
       .review__button-winner {
         display: flex;
         justify-content: space-evenly;
         .review__button--winner {
-          margin-bottom: 2.5vh;
-          background-color: $mainColor;
-          border-bottom: 3px solid rgba(0, 0, 0, 0.858);
-          border-left: 3px solid rgba(0, 0, 0, 0.858);
+          border: 1px solid darkgray;
           border-radius: 4px;
-          height: 35px;
-          width: 70px;
+          background-color: rgba(246, 246, 246, 0.9098039216);
+          letter-spacing: 0.2rem;
+          height: 2rem;
+          width: 25%;
+          margin-top: 1rem;
+          margin-bottom: 2.5vh;
           font-size: 0.75rem;
           cursor: pointer;
         }
-
         .review__button--winner-chosen {
-          margin-bottom: 2.5vh;
-          background-color: $mainColor;
-          border: 2px solid rgba(0, 0, 0, 0.59);
+          border: 1px solid rgb(242, 172, 22);
           border-radius: 4px;
-          height: 35px;
-          width: 70px;
+          background-color: white;
+          letter-spacing: 0.2rem;
+          box-shadow: var(--box-shadow);
+          height: 2rem;
+          width: 25%;
+          margin-top: 1rem;
+          margin-bottom: 2.5vh;
           font-size: 0.75rem;
           cursor: pointer;
         }
