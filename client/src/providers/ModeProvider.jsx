@@ -6,15 +6,23 @@ export default function ModeProvider(props) {
   //Modes for Main Page
   const PROFILE = "profile";
   const OPPONENT = "opponent";
-  const NOTIFICATIONS = "notifications";
+  const MATCHES = "matches";
   const REVIEW = "review";
+  const THANKS = "thanks";
 
   //State for mode
-  const [mode, setMode] = useState(NOTIFICATIONS);
+  const [mode, setMode] = useState(PROFILE);
 
   //Helper - Set mode fucntion
   const changeMode = (newMode) => {
     setMode(newMode);
+  };
+
+  const transitionMode = () => {
+    setMode(THANKS);
+    setTimeout(() => {
+      setMode(MATCHES);
+    }, 1500);
   };
 
   const modeData = {
@@ -22,8 +30,10 @@ export default function ModeProvider(props) {
     changeMode,
     PROFILE,
     OPPONENT,
-    NOTIFICATIONS,
+    MATCHES,
     REVIEW,
+    THANKS,
+    transitionMode,
   };
 
   return (

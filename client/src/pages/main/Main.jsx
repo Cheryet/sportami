@@ -9,9 +9,10 @@ import Profile from "./profile/Profile";
 import OpponentList from "./opponents/OpponentList";
 import Matches from "./matches/Matches";
 import Review from "./review/Review";
+import Thanks from "./review/Thanks/Thanks";
 
 const Main = (props) => {
-  const { mode, PROFILE, OPPONENT, NOTIFICATIONS, REVIEW } =
+  const { mode, PROFILE, OPPONENT, MATCHES, REVIEW, THANKS } =
     useContext(modeContext);
 
   return (
@@ -20,8 +21,9 @@ const Main = (props) => {
         <Navbar />
         {mode === PROFILE && <Profile token={props.token} />}
         {mode === OPPONENT && <OpponentList token={props.token} />}
-        {mode === NOTIFICATIONS && <Matches token={props.token} />}
+        {mode === MATCHES && <Matches token={props.token} />}
         {mode === REVIEW && <Review token={props.token} />}
+        {mode === THANKS && <Thanks token={props.token} />}
       </MatchProvider>
     </UserDataProvider>
   );
