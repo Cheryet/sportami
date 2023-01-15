@@ -7,7 +7,6 @@ $mainColor: rgb(242, 172, 22);
 }
 
 .navbar-container {
-  //border: 1px solid black;
   height: 37vh;
   width: 100%;
   position: fixed;
@@ -15,7 +14,6 @@ $mainColor: rgb(242, 172, 22);
   z-index: 9999;
 
   .top-container {
-    //border: 1px solid blue;
     padding: 1rem;
     display: flex;
     flex-direction: row;
@@ -31,7 +29,6 @@ $mainColor: rgb(242, 172, 22);
       border-radius: 4px;
       border: 0;
       padding: 0.3rem 0.6rem;
-      box-shadow: var(--box-shadow);
       letter-spacing: 0.2rem;
       align-self: center;
       border-radius: 4px;
@@ -56,19 +53,15 @@ $mainColor: rgb(242, 172, 22);
       font-size: 1.5rem;
     }
 
-    .best-sport {
-      text-align: center;
-      margin-top: 0.6rem;
-    }
-
     span {
       font-size: 0.9rem;
       letter-spacing: 0.2rem;
     }
 
     .nav-location {
-      padding-top: 0.6rem;
+      padding-top: 0.2rem;
       text-align: center;
+      font-weight: 300;
     }
 
     .pin-icon {
