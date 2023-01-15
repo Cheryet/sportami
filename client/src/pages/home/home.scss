@@ -68,15 +68,24 @@
       }
     }
 
-    button {
+    .login-button {
+      border-radius: 4px;
+      border: 0;
+      padding: 0.3rem 0.6rem;
+      box-shadow: var(--box-shadow);
+      letter-spacing: 0.2rem;
       margin-bottom: 2.5vh;
       background-color: var(--main-colour);
       border-radius: 6px;
-      height: 35px;
       border: none;
       font-size: 20px;
+      width: 19rem;
       font-weight: 200;
       cursor: pointer;
+    }
+
+    .login-button:active {
+      background-color: var(--hover-colour);
     }
 
     span {

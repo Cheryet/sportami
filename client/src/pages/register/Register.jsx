@@ -78,7 +78,6 @@ function Register({ setToken }) {
           "/api/register",
           allUserParams
         );
-        console.log(allUserParams);
         if (registerSuccess.data.success === true) {
           setToken(registerSuccess.data.token);
           navigate("/main");

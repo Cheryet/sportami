@@ -47,13 +47,20 @@
 }
 
 .finish-button-bio {
-  margin-bottom: 2.5vh;
-  background-color: var(--main-colour);
-  border-radius: 6px;
-  height: 35px;
+  border-radius: 4px;
+  border: 0;
+  padding: 0.3rem 0.6rem;
+  box-shadow: var(--box-shadow);
+  letter-spacing: 0.2rem;
+  align-self: center;
+  border-radius: 4px;
   width: 100%;
-  border: none;
-  font-size: 20px;
-  font-weight: 200;
+  background-color: rgb(242, 172, 22);
+  font-size: 16px;
+  font-weight: 300;
   cursor: pointer;
+}
+
+.finish-button-bio:active {
+  background-color: var(--hover-colour);
 }

@@ -39,7 +39,7 @@ const Navbar = () => {
         <div className="top-container">
           <div className="title-container">
             <p className="title">SPORTAMI</p>
-            <p className="slogan">Turn an ami into an enemy</p>
+            <p className="slogan-nav">Turn an ami into an enemy</p>
           </div>
           <button className="logout-btn">Logout</button>
         </div>
