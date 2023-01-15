@@ -99,7 +99,9 @@ function Accordion({
                         value={option}
                         onChange={handleSelectedOptions}
                       ></input>
-                      <label htmlFor={option}>{option}</label>
+                      <label className="label-accordion" htmlFor={option}>
+                        {option}
+                      </label>
                     </div>
                   ))}
                 </div>

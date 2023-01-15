@@ -6,8 +6,8 @@ $mainColor: rgb(242, 172, 22);
   background-color: rgba(242, 172, 22, 0.089);
   border: 1.5px solid rgba(242, 172, 22, 0.217);
   border-radius: 10px;
-  margin: 1.5rem 1rem 0rem 1rem;
-  padding: 0.2rem 1rem 0rem 1rem;
+  margin: 1.5rem 1rem 1rem 1rem;
+  padding: 0.2rem 1rem 1rem 1rem;
 
   .opp-profile-photo-container {
     margin-top: 1.2rem;
@@ -18,22 +18,26 @@ $mainColor: rgb(242, 172, 22);
       height: 200px;
       width: 200px;
       margin: 0 auto;
-      border-radius: 4px;
+      border-radius: 6px;
     }
   }
 
   .opp-personal-info {
     margin-top: 1.5rem;
+    margin-left: 9px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
     .opp-name-age {
       font-size: 1.1rem;
+      font-weight: 600;
     }
 
     .opp-location {
       font-size: 1.1rem;
+      font-weight: 600;
+      margin-right: 8px;
     }
 
     .opp-pin-icon {
@@ -71,6 +75,7 @@ $mainColor: rgb(242, 172, 22);
   .opp-bio {
     margin-top: 1rem;
     margin-left: 0.5rem;
+    font-weight: 200;
   }
 
   .opp-sports-skills {
@@ -80,9 +85,17 @@ $mainColor: rgb(242, 172, 22);
     gap: 10px;
 
     .opp-sport-item-list {
-      margin-top: 0.5rem;
       margin-left: 1.5rem;
       list-style: none;
+      font-weight: 200;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-left: 0;
+      margin-top: 1rem;
+      margin-right: 1.7rem;
     }
 
     .opp-sport-item {
@@ -93,6 +106,8 @@ $mainColor: rgb(242, 172, 22);
       .opp-sport-title {
         letter-spacing: 0.2rem;
         margin-left: 0.5rem;
+        font-weight: 600;
+        margin-left: 30px;
       }
 
       .opp-sport-ammount {
@@ -101,10 +116,12 @@ $mainColor: rgb(242, 172, 22);
     }
 
     .opp-skill-level {
-      padding-left: 20px;
+      padding-left: 10px;
 
       .opp-skill-title {
         letter-spacing: 0.2rem;
+        font-weight: 600;
+        margin-left: 10px;
       }
 
       .opp-skill-accuracy {
@@ -126,18 +143,18 @@ $mainColor: rgb(242, 172, 22);
     }
 
     .opponent-challenge-btn {
-      margin: 2rem 0;
-      padding: 0.5rem 1.5rem;
-
-      border-bottom: 3px solid rgba(0, 0, 0, 0.858);
-      border-left: 3px solid rgba(0, 0, 0, 0.858);
+      margin-top: 1.5rem;
+      padding: 0.25rem 2rem;
+      border: 0;
       border-radius: 4px;
       background-color: $mainColor;
       letter-spacing: 0.2rem;
+      box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 24%),
+        0 17px 50px 0 rgb(0 0 0 / 19%);
     }
 
     .opponent-challenge-btn:active {
-      border: 2px solid rgba(0, 0, 0, 0.59);
+      background-color: rgba(242, 172, 22, 0.595);
     }
   }
 
@@ -152,7 +169,7 @@ $mainColor: rgb(242, 172, 22);
     }
 
     .opponent-challenge-title {
-      font-weight: bold;
+      font-weight: 600;
       letter-spacing: 0.1rem;
       margin-bottom: 1rem;
       text-align: center;
@@ -165,16 +182,40 @@ $mainColor: rgb(242, 172, 22);
       .sportItemChallenge-button {
         margin-top: 0.5rem;
         padding: 0.25rem 2rem;
-        border-bottom: 3px solid rgba(0, 0, 0, 0.858);
-        border-left: 3px solid rgba(0, 0, 0, 0.858);
+        border: 0;
         border-radius: 4px;
         background-color: $mainColor;
         letter-spacing: 0.2rem;
+        box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 24%),
+          0 17px 50px 0 rgb(0 0 0 / 19%);
       }
 
       .sportItemChallenge-button:active {
-        border: 2px solid rgba(0, 0, 0, 0.59);
+        background-color: rgba(242, 172, 22, 0.595);
       }
     }
   }
+}
+
+.hr1-opponent {
+  margin-left: 0.2rem;
+  margin-bottom: 1rem;
+  height: 1px;
+  width: 140px;
+  background-color: rgb(242, 172, 22);
+  border: none;
+}
+
+.hr2-opponent {
+  margin-right: 0.9rem;
+  margin-left: 0.9rem;
+  margin-bottom: 1rem;
+  height: 1px;
+  width: 110px;
+  background-color: rgb(242, 172, 22);
+  border: none;
+}
+
+.sports-item {
+  margin: 0.2rem;
 }

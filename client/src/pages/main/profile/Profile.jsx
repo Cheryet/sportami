@@ -123,7 +123,7 @@ const Profile = (props) => {
           <div className="bio-container">
             <p className="about-me">ABOUT ME</p>
             <hr />
-            <p>{userData.user.bio}</p>
+            <p className="bio-nav">{userData.user.bio}</p>
             <div className="profile-sportsmanship-rating">
               <p className="profile-rating-title">MY SPORTSMANSHIP RATING: </p>
               <Rating

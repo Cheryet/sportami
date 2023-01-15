@@ -13,7 +13,6 @@ router.get("/", (req, res) => {
 });
 
 router.post("/new", (req, res) => {
-  console.log(req);
   const user_sport_id = req.body.user_sport_id;
   const winner_id = req.body.winner_id;
   const sportsmanship_rating = req.body.sportsmanship_rating;
@@ -26,7 +25,6 @@ router.post("/new", (req, res) => {
 
   db.addReview(review)
     .then((response) => {
-      console.log("response", response);
       res.status(200).send("Review added");
     })
     .catch((error) => {

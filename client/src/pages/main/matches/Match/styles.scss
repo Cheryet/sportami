@@ -1,13 +1,12 @@
 $mainColor: rgb(242, 172, 22);
 
 .match {
-  width: 80vw;
   height: 25vh;
-  margin: 1.5rem 1rem 0rem 1rem;
-  padding: 0.2rem 1rem 0rem 1rem;
+  margin: 1rem 1rem 2rem 1rem;
+  padding: 1rem 1rem 0rem 1rem;
   background-color: rgba(242, 172, 22, 0.089);
   border: 1.5px solid rgba(242, 172, 22, 0.217);
-  border-radius: 10px;
+  border-radius: 6px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -25,9 +24,9 @@ $mainColor: rgb(242, 172, 22);
       width: 20vw;
 
       &-pic {
-        height: 8vh;
-        width: 8vh;
-        border-radius: 50%;
+        height: 10vh;
+        width: 10vh;
+        border-radius: 6px;
         object-fit: cover;
       }
     }
@@ -46,51 +45,44 @@ $mainColor: rgb(242, 172, 22);
 }
 
 .confirmButton {
-  margin-bottom: 2.5vh;
-  background-color: $mainColor;
-  border-bottom: 3px solid rgba(0, 0, 0, 0.858);
-  border-left: 3px solid rgba(0, 0, 0, 0.858);
-  border-radius: 4px;
-  height: 35px;
-  width: 70px;
-  font-size: 0.75rem;
+  @extend .acceptedButton;
   cursor: pointer;
 }
 
 .confirmButton:active {
-  border: 2px solid rgba(0, 0, 0, 0.59);
+  background-color: rgba(242, 172, 22, 0.595);
 }
 
 .acceptedButton {
   margin-bottom: 2.5vh;
   margin-top: 1vh;
-  background-color: $mainColor;
-  border-bottom: 3px solid rgba(0, 0, 0, 0.858);
-  border-left: 3px solid rgba(0, 0, 0, 0.858);
-  border-radius: 4px;
   height: 35px;
-  width: 70px;
+  width: 90px;
   font-size: 0.75rem;
+  letter-spacing: 0.2rem;
+  box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+  border: 0;
+  border-radius: 4px;
+  background-color: var(--main-colour);
   cursor: pointer;
 }
 
 .acceptedButton:active {
-  border: 2px solid rgba(0, 0, 0, 0.59);
+  background-color: rgba(242, 172, 22, 0.595);
 }
 
 .buttonCancel {
-  margin-bottom: 2.5vh;
-  margin-left: 33vw;
-  background-color: $mainColor;
-  border-bottom: 3px solid rgba(0, 0, 0, 0.858);
-  border-left: 3px solid rgba(0, 0, 0, 0.858);
-  border-radius: 4px;
-  height: 35px;
-  width: 70px;
-  font-size: 0.75rem;
+  @extend .acceptedButton;
   cursor: pointer;
 }
 
 .buttonCancel:active {
-  border: 2px solid rgba(0, 0, 0, 0.59);
+  background-color: rgba(242, 172, 22, 0.595);
+}
+
+.copy-email {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }

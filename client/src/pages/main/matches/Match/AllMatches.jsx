@@ -10,6 +10,7 @@ import {
 } from "../../../../helpers/selectors";
 
 import "./styles.scss";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
 export default function MatchesListItem(props) {
   //converts userID token to a number to keep the selectors happy
@@ -73,7 +74,16 @@ export default function MatchesListItem(props) {
                 handleEmailClick(match.id);
               }}
             >
-              {active && currentMatch === match.id ? "COPIED!" : "COPY EMAIL"}
+              {active && currentMatch === match.id ? (
+                "COPIED!"
+              ) : (
+                <div className="copy-email">
+                  <div className="copy-icon">
+                    <ContentCopyIcon fontSize="small" />
+                  </div>
+                  <div className="email-copy">EMAIL</div>
+                </div>
+              )}
             </button>
             <button
               className="acceptedButton"
@@ -117,7 +127,16 @@ export default function MatchesListItem(props) {
                 handleEmailClick(match.id);
               }}
             >
-              {active && currentMatch === match.id ? "COPIED!" : "COPY EMAIL"}
+              {active && currentMatch === match.id ? (
+                "COPIED!"
+              ) : (
+                <div className="copy-email">
+                  <div className="copy-icon">
+                    <ContentCopyIcon fontSize="small" />
+                  </div>
+                  <div className="email-copy">EMAIL</div>
+                </div>
+              )}
             </button>
             <button
               className="acceptedButton"
