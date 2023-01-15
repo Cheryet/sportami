@@ -17,12 +17,21 @@ const Review = (props) => {
 
   const { state, matchState, createReview, challengerReview, opponentReview } =
     useContext(matchContext);
-  const { changeMode, NOTIFICATIONS } = useContext(modeContext);
+  const { changeMode, transitionMode } = useContext(modeContext);
 
   //Handles the winning user_id
   const [winner, setWinner] = useState(null);
 
-  const userSportID = getUserSportID(state, matchState.sport_id, userID);
+  const challengerSportID = getUserSportID(
+    state,
+    matchState.sport_id,
+    matchState.challenger_id
+  );
+  const opponentSportID = getUserSportID(
+    state,
+    matchState.sport_id,
+    matchState.opponent_id
+  );
 
   //Used to get access to user and sport names to populate the page
   const matchSport = getMatchSport(state, matchState);
@@ -30,9 +39,15 @@ const Review = (props) => {
   const challenger = getMatchChallenger(state, matchState);
 
   //Sends the post request to create the review and returns you to the notifications page
-  const sendReview = () => {
-    createReview(userSportID, winner, starValue);
-    changeMode(NOTIFICATIONS);
+  const sendChallengerReview = () => {
+    createReview(challengerSportID, winner, starValue);
+    transitionMode();
+  };
+
+  //Sends the post request to create the review and returns you to the notifications page
+  const sendOpponentReview = () => {
+    createReview(opponentSportID, winner, starValue);
+    transitionMode();
   };
 
   //Sends put request to update match that the challenger has reviewed it
@@ -133,7 +148,7 @@ const Review = (props) => {
               <button
                 className="review__button--finish"
                 onClick={() => {
-                  sendReview();
+                  sendOpponentReview();
                   challengerFinish();
                 }}
               >
@@ -181,7 +196,7 @@ const Review = (props) => {
             <button
               className="review__button--finish"
               onClick={() => {
-                sendReview();
+                sendChallengerReview();
                 opponentFinish();
               }}
             >

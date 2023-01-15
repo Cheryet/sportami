@@ -8,7 +8,7 @@ import { useEffect } from "react";
 
 const Navbar = () => {
   //Providers
-  const { mode, changeMode, PROFILE, OPPONENT, NOTIFICATIONS } =
+  const { mode, changeMode, PROFILE, OPPONENT, MATCHES } =
     useContext(modeContext);
 
   const { userData, location } = useContext(userDataContext);
@@ -75,14 +75,12 @@ const Navbar = () => {
               FIND OPPONENT
             </li>
             <li
-              className={
-                mode === NOTIFICATIONS ? "nav-item active" : "nav-item"
-              }
+              className={mode === MATCHES ? "nav-item active" : "nav-item"}
               onClick={() => {
-                changeMode(NOTIFICATIONS);
+                changeMode(MATCHES);
               }}
             >
-              NOTIFICATIONS
+              MATCHES
             </li>
           </ul>
         </nav>
