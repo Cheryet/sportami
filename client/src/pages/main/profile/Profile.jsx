@@ -109,7 +109,7 @@ const Profile = (props) => {
                 changeLocation("Oakville");
               }}
             >
-              OakVille
+              Oakville
             </button>
             <button
               className="btn-location-profile"
