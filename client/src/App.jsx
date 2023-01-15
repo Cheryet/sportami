@@ -4,6 +4,7 @@ import Home from "./pages/home/Home";
 import Main from "./pages/main/Main";
 import Register from "./pages/register/Register";
 import Accordion from "./components/filter/Accordion";
+import About from "./pages/about/About";
 import useToken from "./hooks/useToken";
 import ModeProvider from "./providers/ModeProvider";
 
@@ -53,6 +54,7 @@ const App = () => {
             }
           />
           <Route path="/filter" element={<Accordion />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
     </>
