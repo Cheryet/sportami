@@ -52,6 +52,7 @@ function Register({ setToken }) {
       sports: sports,
       bio: bio["bio"],
     });
+    console.log(allUserParams);
   }, [
     credentials,
     emailName,
