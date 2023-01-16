@@ -1,5 +1,6 @@
-import { React, useContext, useState } from "react";
+import { React, useContext } from "react";
 import { modeContext } from "../../../providers/ModeProvider";
+import { matchContext } from "../../../providers/MatchProvider";
 import { userDataContext } from "../../../providers/UserDataProvider";
 import * as TbIcon from "react-icons/tb";
 import "./navbar.scss";
@@ -9,6 +10,8 @@ const Navbar = () => {
   //Providers
   const { mode, changeMode, PROFILE, OPPONENT, MATCHES } =
     useContext(modeContext);
+
+  const { updateMatches } = useContext(matchContext);
 
   const { userData, location } = useContext(userDataContext);
 
@@ -56,6 +59,7 @@ const Navbar = () => {
             <li
               className={mode === PROFILE ? "nav-item active" : "nav-item"}
               onClick={() => {
+                updateMatches();
                 changeMode(PROFILE);
               }}
             >
@@ -64,6 +68,7 @@ const Navbar = () => {
             <li
               className={mode === OPPONENT ? "nav-item active" : "nav-item"}
               onClick={() => {
+                updateMatches();
                 changeMode(OPPONENT);
               }}
             >
@@ -72,6 +77,7 @@ const Navbar = () => {
             <li
               className={mode === MATCHES ? "nav-item active" : "nav-item"}
               onClick={() => {
+                updateMatches();
                 changeMode(MATCHES);
               }}
             >

@@ -47,7 +47,7 @@ export default function MatchProvider(props) {
       .then(() => {
         setMatchUpdate(true);
       })
-      .catch((err) => console.log("Match not created", err.message));
+      .catch((err) => console.log(err.message));
   };
 
   const acceptMatch = (id) => {
@@ -58,7 +58,7 @@ export default function MatchProvider(props) {
       .then(() => {
         setMatchUpdate(true);
       })
-      .catch((err) => console.log("Match not updated", err.message));
+      .catch((err) => console.log(err.message));
   };
 
   const challengerReview = (id) => {
@@ -69,7 +69,7 @@ export default function MatchProvider(props) {
       .then(() => {
         setMatchUpdate(true);
       })
-      .catch((err) => console.log("Match not updated", err.message));
+      .catch((err) => console.log(err.message));
   };
 
   const opponentReview = (id) => {
@@ -80,7 +80,7 @@ export default function MatchProvider(props) {
       .then(() => {
         setMatchUpdate(true);
       })
-      .catch((err) => console.log("Match not updated", err.message));
+      .catch((err) => console.log(err.message));
   };
 
   const deleteMatch = (id) => {
@@ -91,7 +91,7 @@ export default function MatchProvider(props) {
       .then(() => {
         setMatchUpdate(true);
       })
-      .catch((err) => console.log("Match not deleted", err.message));
+      .catch((err) => console.log(err.message));
   };
 
   // For Match Reviews
@@ -109,7 +109,11 @@ export default function MatchProvider(props) {
       .then(() => {
         setMatchUpdate(true);
       })
-      .catch((err) => console.log("Review not created", err.message));
+      .catch((err) => console.log(err.message));
+  };
+
+  const updateMatches = () => {
+    setMatchUpdate(true);
   };
 
   const matchData = {
@@ -122,6 +126,7 @@ export default function MatchProvider(props) {
     createReview,
     challengerReview,
     opponentReview,
+    updateMatches,
   };
 
   return (
