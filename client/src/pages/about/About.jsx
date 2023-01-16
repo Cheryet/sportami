@@ -91,7 +91,7 @@ const About = () => {
             <p className="item username">@ItsGentleBen</p>
             <p className="email-title">LINKED IN</p>
             <hr className="email-line" />
-            <p className="item email">/linkedIn</p>
+            <p className="item email">/b-stolb</p>
           </div>
         </div>
 
@@ -102,7 +102,7 @@ const About = () => {
               <p>Vancouver, BC</p>
               <MdIcon.MdOutlineKeyboardArrowDown className="down-icon" />
             </div>
-            <p className="gender">Male</p>
+            <p className="gender">Other</p>
           </div>
 
           <div className="bio-container">
@@ -110,17 +110,18 @@ const About = () => {
             <hr />
             <p className="bio-nav">
               <b> What I Learned:</b>
-              <br /> ANSWER HERE
+              <br /> React Context, better Git workflow, and a stronger
+              understanding of State
             </p>
             <br />
             <p className="bio-nav">
               <b>An obstacle I overcame was:</b>
-              <br /> ANSWER HERE
+              <br /> My own doubt in my abilities.
             </p>
             <br />
             <p className="bio-nav">
               <b>A stretch goal of mine was:</b>
-              <br /> ANSWER HERE
+              <br /> Implement a functioning chat feature using websockets.
             </p>
             <div className="profile-sportsmanship-rating">
               <p className="profile-rating-title">SPORTSMANSHIP RATING: </p>
