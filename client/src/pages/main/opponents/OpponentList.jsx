@@ -213,6 +213,7 @@ const OpponentList = (props) => {
               first_name={opponent.first_name}
               sports={opponent.sports}
               token={props.token}
+              filteredList={filteredList}
             />
           );
         })}

@@ -27,7 +27,7 @@ function Opponents(props) {
     axios.get(`/api/reviews/rating/${props.user_id}`).then((data) => {
       setRating(data.data);
     });
-  }, []);
+  }, [props.filteredList]);
 
   //Helper - Show/Hide challenge button dropdown
   const showDropdown = () => {
@@ -99,6 +99,10 @@ function Opponents(props) {
   getSkillList();
   getSportsList();
   getSportsListChallenge();
+
+  console.log("First Name", props.first_name);
+  console.log("User_ID", props.user_id);
+  console.log("User Rating:", userRating);
 
   return (
     <div className="opponents">
