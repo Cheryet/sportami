@@ -91,7 +91,7 @@ INSERT INTO sports ( name ) VALUES ('Tennis');
 INSERT INTO sports ( name ) VALUES ('Bowling');
 INSERT INTO sports ( name ) VALUES ('Squash');
 INSERT INTO sports ( name ) VALUES ('Table Tennis');
-INSERT INTO sports ( name ) VALUES ('Pickle Ball');
+INSERT INTO sports ( name ) VALUES ('Pickleball');
 
 INSERT INTO users_sports ( user_id, sport_id, self_skill) VALUES (1, 6, 'Intermediate');
 INSERT INTO users_sports ( user_id, sport_id, self_skill) VALUES (1, 3, 'Advanced');
