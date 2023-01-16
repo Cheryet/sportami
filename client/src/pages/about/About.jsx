@@ -11,10 +11,7 @@ const About = () => {
       <div className="about-us-container">
         <div className="top-container">
           <div className="profile-photo-123">
-            <img
-              src="https://www.unitedway.ca/wp-content/uploads/2017/06/TempProfile.jpg"
-              alt=""
-            />
+            <img src="alisa.png" alt="" />
           </div>
           <div className="user-info">
             <p className="name-title">NAME</p>
@@ -25,7 +22,7 @@ const About = () => {
             <p className="item username">@vorotyna</p>
             <p className="email-title">LINKED IN</p>
             <hr className="email-line" />
-            <p className="item email">/linkedIn</p>
+            <p className="item email">/alisa-vorotyntseva</p>
           </div>
         </div>
 
@@ -43,17 +40,20 @@ const About = () => {
             <hr />
             <p className="bio-nav">
               <b> What I Learned:</b>
-              <br /> ANSWER HERE
+              <br /> React Router, setting state in a multi-page component,
+              using state to post to multiple DB tables
             </p>
             <br />
             <p className="bio-nav">
               <b>An obstacle I overcame was:</b>
-              <br /> ANSWER HERE
+              <br /> Conceptualizing how to use data that is returned from a
+              many-to-many DB relationship, force pushing to main 😇
             </p>
             <br />
             <p className="bio-nav">
               <b>A stretch goal of mine was:</b>
-              <br /> ANSWER HERE
+              <br /> Supporting team sports, partnering with sports venues and
+              handling facility bookings through the app
             </p>
             <div className="profile-sportsmanship-rating">
               <p className="profile-rating-title">SPORTSMANSHIP RATING: </p>
@@ -180,7 +180,7 @@ const About = () => {
             <br />
             <p className="bio-nav">
               <b>An obstacle I overcame was:</b>
-              <br /> Using contex in mulitble pages and not having infinite
+              <br /> Using contex in mulitple pages and not having infinite
               render loops
             </p>
             <br />
