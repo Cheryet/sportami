@@ -72,7 +72,7 @@ const OpponentList = (props) => {
   const filteredData = [];
   function filterOpponents(opponents, selectedOptions) {
     opponents.forEach((opponent) => {
-      if (opponent.id.toString() !== props.token) {
+      if (opponent.id.toString() != props.token) {
         let match = true;
         // check if opponent's gender property matches any selected options in the Gender category
         if (
@@ -122,6 +122,7 @@ const OpponentList = (props) => {
         }
       }
     });
+    console.log("filtered Data", filteredData);
     return filteredData;
   }
 
@@ -173,6 +174,8 @@ const OpponentList = (props) => {
       setIsGet(false);
     } catch (error) {}
   };
+
+  console.log("This is Opponent List");
 
   return (
     <>

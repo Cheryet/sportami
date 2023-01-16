@@ -14,7 +14,7 @@ CREATE TABLE users (
     location VARCHAR(255),
     gender VARCHAR(255),
     age INTEGER,
-    profile_pic VARCHAR(10000)
+    profile_pic VARCHAR(100000)
 );
 
 CREATE TABLE sports (
