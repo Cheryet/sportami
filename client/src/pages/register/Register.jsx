@@ -26,12 +26,15 @@ function Register({ setToken }) {
   const navigate = useNavigate();
   const [current, setCurrent] = useState("Credentials");
   const [credentials, setCredentials] = useState({
-    username: "",
-    password: "",
+    username: "MammaSmash",
+    password: "12345",
   });
-  const [emailName, setEmailName] = useState({ first_name: "", email: "" });
+  const [emailName, setEmailName] = useState({
+    first_name: "Serena",
+    email: "s.williams@gmail.com",
+  });
   const [location, setLocation] = useState({ location: "" });
-  const [birthGender, setBirthGender] = useState({ age: "", gender: "" });
+  const [birthGender, setBirthGender] = useState({ age: "41", gender: "" });
   const [profilePhoto, setProfilePhoto] = useState({ profile_pic: "" });
   const [sports, setSports] = useState([{ sport: "", self_skill: "" }]);
   const [bio, setBio] = useState({ bio: "" });
@@ -61,6 +64,7 @@ function Register({ setToken }) {
     profilePhoto,
     sports,
     bio,
+    isPost,
   ]);
 
   useEffect(() => {
