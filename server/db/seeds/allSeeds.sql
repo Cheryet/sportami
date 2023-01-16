@@ -78,9 +78,9 @@ INSERT INTO users (
     'CausingARacquet',
     'Alex',
     '12345',
-    'CausingARacquet@LHL.com',
+    'alex@LHL.com',
     'Hi, I''m Alex, a passionate bowler, tennis enthusiast, and pickle ball lover. I''ve got a fun little 4 year old that I bring along to be my little cheerleader to the games I play. If you''re looking for a fun and competitive match, I''m is the perfect opponent for you!',
-    'Oakville',
+    'Vancouver',
     'Female',
     31,
     'https://images.livemint.com/rf/Image-621x414/LiveMint/Period2/2018/10/06/Photos/Processed/tyes-kdED--621x414@LiveMint.jpg'
