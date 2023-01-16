@@ -4,6 +4,7 @@ import { matchContext } from "../../../providers/MatchProvider";
 import { userDataContext } from "../../../providers/UserDataProvider";
 import * as TbIcon from "react-icons/tb";
 import "./navbar.scss";
+
 // import { useEffect } from "react";
 
 const Navbar = () => {
@@ -14,26 +15,6 @@ const Navbar = () => {
   const { updateMatches } = useContext(matchContext);
 
   const { userData, location } = useContext(userDataContext);
-
-  // const [topSportId, setTopSportId] = useState();
-
-  //Helper - Get top sport for user
-
-  // const getTopSport = (sports) => {
-  //   sports.forEach((item) => {
-  //     if (item.self_skill === "Pro") {
-  //       return setTopSportId(item.sport_id);
-  //     }
-
-  //     if (item.self_skill === "Amatuer") {
-  //       return setTopSportId(item.sport_id);
-  //     }
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   getTopSport(userData.sports);
-  // });
 
   return (
     <>
