@@ -57,7 +57,7 @@ INSERT INTO users (
     'Maria',
     '12345',
     'Masha@LHL.com',
-    'TBD Maria Sharapova tbd tennis and pickle ball',
+    'Former World No. 1 tennis player with a fierce serve and competitive spirit. I may have retired from the tour, but I''m always looking for a challenge on the court. Whether you''re a beginner or a pro, let''s hit the court and have some fun!',
     'Vancouver',
     'Female',
     35,

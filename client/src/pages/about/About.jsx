@@ -77,10 +77,7 @@ const About = () => {
       <div className="about-us-container">
         <div className="top-container">
           <div className="profile-photo-123">
-            <img
-              src="https://www.unitedway.ca/wp-content/uploads/2017/06/TempProfile.jpg"
-              alt=""
-            />
+            <img src="B-Pic.jpg" alt="" />
           </div>
           <div className="user-info">
             <p className="name-title">NAME</p>
