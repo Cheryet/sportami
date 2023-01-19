@@ -6,12 +6,9 @@ Sportami is an online geosocial networking application utilizing the PERN stack 
 
 
 
-###Registration Pages
-
+### Registration Pages
 
 https://user-images.githubusercontent.com/97066398/213570084-502bba6f-6d07-47c5-a6d0-44ab5a8cbdc2.mov
-
-
 
 
 ### Main Page
@@ -24,11 +21,6 @@ https://user-images.githubusercontent.com/97066398/213569867-5bcccb07-6035-4d83-
 **Tech used:** PostgreSQL, Express, React, Node, Material UI
 Sportami utilizes the PERN stack to cover front-end, back-end and database management.
 
-Need more here
-
-## Lessons Learned:
-
-TBD?
 
 ## Setup:
 
