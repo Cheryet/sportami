@@ -7,10 +7,15 @@ Sportami is an online geosocial networking application utilizing the PERN stack 
 
 
 ###Registration Pages
-https://user-images.githubusercontent.com/97066398/213569905-8aedfb9c-4cb2-45a7-a942-bb3385f9180e.mov
+
+
+https://user-images.githubusercontent.com/97066398/213570084-502bba6f-6d07-47c5-a6d0-44ab5a8cbdc2.mov
+
+
 
 
 ### Main Page
+
 https://user-images.githubusercontent.com/97066398/213569867-5bcccb07-6035-4d83-9afe-bab2f6eb191d.mov
 
 
