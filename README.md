@@ -4,7 +4,15 @@ Created by [Alisa Vorotyntseva](https://github.com/vorotyna), [Corbin Heryet](ht
 
 Sportami is an online geosocial networking application utilizing the PERN stack to allow people to find an opponent for their next game of their, and your, favourite sport. Become a part of a vast community of people and find some amis to turn into your enemies!
 
-![GIFS GO HERE](http://placecorgi.com/1200/650)
+
+
+###Registration Pages
+https://user-images.githubusercontent.com/97066398/213569905-8aedfb9c-4cb2-45a7-a942-bb3385f9180e.mov
+
+
+### Main Page
+https://user-images.githubusercontent.com/97066398/213569867-5bcccb07-6035-4d83-9afe-bab2f6eb191d.mov
+
 
 ## How It's Made:
 
