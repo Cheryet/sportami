@@ -1,6 +1,6 @@
 # Sportami
 
-Created by [Alisa Vorotyntseva](https://github.com/vorotyna), [Corbin Heryet](https://github.com/Cheryet), and [B Stolb](https://github.com/ItsGentleBen)
+Created by [Alisa Vorotyntseva](https://github.com/vorotyna), [Corbin Heryet](https://github.com/Cheryet), and [B Stolb](https://github.com/ItsGentleB)
 
 Sportami is an online geosocial networking application utilizing the PERN stack to allow people to find an opponent for their next game of their, and your, favourite sport. Become a part of a vast community of people and find some amis to turn into your enemies!
 
